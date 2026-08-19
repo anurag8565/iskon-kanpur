@@ -10,12 +10,12 @@
 <link rel="icon" href="assets/image-01a94a.png?v=20260818" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com/">
 <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Hind:wght@400;500;600;700&family=Karla:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Hind:wght@400;500;600;700;800&family=Karla:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Yatra+One&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/stylea94a.css?v=20260818">
 
 <style>
 /* ============================================================
-   EXACT REPLICA MATCHING USER CROPPED TRUST CARD SCREENSHOT
+   EXACT REPLICA MATCHING USER SCREENSHOT HERO SECTION
    ============================================================ */
 :root {
   --jm-bg-main: #FBF7F0;
@@ -41,69 +41,19 @@ body {
   font-family: 'Rozha One', 'Noto Serif Devanagari', serif;
 }
 
-/* ---------------- HERO SECTION WITH FULL BG IMAGE ---------------- */
+/* ---------------- HERO SECTION WITH FULL BG IMAGE (EXACT REPLICA) ---------------- */
 .hero-full-bg-section {
   background:
-    /* Left deep dark vignette for text readability */
-    radial-gradient(ellipse at 8% 55%, rgba(2, 6, 20, 0.97) 0%, rgba(2, 8, 25, 0.92) 30%, rgba(3, 12, 35, 0.75) 55%, transparent 80%),
-    /* Top dark overlay */
-    linear-gradient(180deg, rgba(2, 6, 20, 0.55) 0%, rgba(2, 6, 20, 0.2) 35%, rgba(2, 6, 20, 0.0) 60%, rgba(2, 6, 20, 0.75) 100%),
-    /* Subtle indigo tint across full width */
-    linear-gradient(100deg, rgba(5, 10, 40, 0.55) 0%, transparent 55%),
-    url('assets/janmashtami_hero.jpg') center right / cover no-repeat;
+    linear-gradient(90deg, rgba(2, 8, 24, 0.82) 0%, rgba(2, 8, 24, 0.60) 38%, rgba(2, 8, 24, 0.10) 65%, transparent 100%),
+    url('assets/janmashtami_hero.jpg?v=20260819_03') center right / cover no-repeat;
   color: #FFFFFF;
   position: relative;
   overflow: hidden;
-  padding: 90px 0 0 0;
+  padding: 24px 0 20px 0;
   border-bottom: 3px solid #F7CA45;
-  min-height: 680px;
-}
-
-/* Starfield / bokeh particles using pseudo element */
-.hero-full-bg-section::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image:
-    radial-gradient(1.5px 1.5px at 5% 15%, rgba(255,239,166,0.8) 0%, transparent 100%),
-    radial-gradient(1px 1px at 12% 75%, rgba(255,239,166,0.5) 0%, transparent 100%),
-    radial-gradient(2px 2px at 18% 35%, rgba(255,239,166,0.6) 0%, transparent 100%),
-    radial-gradient(1.5px 1.5px at 25% 55%, rgba(255,220,100,0.4) 0%, transparent 100%),
-    radial-gradient(1px 1px at 8% 88%, rgba(255,239,166,0.55) 0%, transparent 100%),
-    radial-gradient(1.5px 1.5px at 3% 48%, rgba(255,239,166,0.45) 0%, transparent 100%),
-    radial-gradient(1px 1px at 15% 22%, rgba(255,200,80,0.5) 0%, transparent 100%);
-  pointer-events: none;
-  z-index: 1;
-  animation: heroStarsTwinkle 5s ease-in-out infinite alternate;
-}
-
-@keyframes heroStarsTwinkle {
-  0%   { opacity: 0.6; }
-  100% { opacity: 1; }
-}
-
-/* Gold shimmer sweep across hero */
-.hero-full-bg-section::after {
-  content: '';
-  position: absolute;
-  top: 0; left: -100%;
-  width: 50%; height: 100%;
-  background: linear-gradient(90deg,
-    transparent 0%,
-    rgba(247, 202, 69, 0.035) 40%,
-    rgba(255, 239, 166, 0.07) 50%,
-    rgba(247, 202, 69, 0.035) 60%,
-    transparent 100%);
-  transform: skewX(-15deg);
-  animation: heroGoldSweep 10s ease-in-out infinite;
-  pointer-events: none;
-  z-index: 1;
-}
-
-@keyframes heroGoldSweep {
-  0%   { left: -100%; }
-  45%  { left: 120%; }
-  100% { left: 120%; }
+  min-height: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Top Nav Link */
@@ -127,149 +77,167 @@ body {
   max-width: 580px;
   position: relative;
   z-index: 5;
-  padding-top: 10px;
-  padding-bottom: 40px;
+  padding-top: 0px;
+  padding-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero-brand-top-logo {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 12px;
+  padding: 4px 10px;
+  background: linear-gradient(135deg, rgba(247, 202, 69, 0.12) 0%, rgba(3, 12, 34, 0.75) 100%);
+  border: 1.2px solid rgba(247, 202, 69, 0.45);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(247,202,69,0.3);
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.hero-brand-top-logo:hover {
+  transform: translateY(-2px) scale(1.03);
+  border-color: rgba(247, 202, 69, 0.9);
+  box-shadow: 0 0 25px rgba(247, 202, 69, 0.5), inset 0 1px 0 rgba(247,202,69,0.5);
+}
+
+.hero-iskcon-logo-img {
+  height: clamp(50px, 5.8vw, 66px);
+  width: auto;
+  object-fit: contain;
+  display: block;
 }
 
 .hero-eyebrow-text {
-  font-size: clamp(1.1rem, 1.8vw, 1.45rem);
-  color: transparent;
+  font-size: clamp(1.2rem, 1.9vw, 1.55rem);
+  color: #FFFFFF;
   font-weight: 700;
-  margin-bottom: 14px;
+  margin-bottom: 8px;
   font-family: 'Noto Serif Devanagari', serif;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  background: linear-gradient(90deg, #FFD54F 0%, #FFEF9C 40%, #FFD700 70%, #FFA000 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  position: relative;
-  display: inline-block;
-  filter: drop-shadow(0 0 18px rgba(255, 200, 50, 0.7));
-  animation: eyebrowPulse 3s ease-in-out infinite alternate;
-}
-
-.hero-eyebrow-text::after {
-  content: '';
-  position: absolute;
-  bottom: -6px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #F7CA45, #FFE57F, #F7CA45, transparent);
-  border-radius: 2px;
-  animation: eyebrowLine 3s ease-in-out infinite alternate;
-}
-
-@keyframes eyebrowPulse {
-  0%   { filter: drop-shadow(0 0 12px rgba(255, 200, 50, 0.5)); }
-  100% { filter: drop-shadow(0 0 28px rgba(255, 215, 0, 0.9)); }
-}
-
-@keyframes eyebrowLine {
-  0%   { opacity: 0.5; transform: scaleX(0.7); }
-  100% { opacity: 1;   transform: scaleX(1.0); }
+  font-style: italic;
+  letter-spacing: 0.04em;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.95), 0 0 20px rgba(247,202,69,0.7);
 }
 
 .hero-main-title {
-  font-size: clamp(3rem, 5.5vw, 5rem);
+  font-size: clamp(2.9rem, 5.2vw, 4.4rem);
   font-weight: 900;
-  line-height: 1.08;
-  margin-bottom: 26px;
+  line-height: 1.1;
+  margin-bottom: 16px;
   letter-spacing: -0.02em;
   font-family: 'Rozha One', 'Noto Serif Devanagari', serif;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Line 1: 3D Royal Gold (Heavy Metallic Emboss) */
+.hero-main-title .hero-title-gold {
+  display: block;
+  font-family: 'Rozha One', 'Noto Serif Devanagari', serif;
   background: linear-gradient(
-    160deg,
+    175deg,
     #FFFFFF 0%,
-    #FFFEF0 10%,
-    #FFEE99 28%,
+    #FFFDE0 12%,
+    #FFE970 28%,
     #FFD700 45%,
-    #F7CA45 55%,
-    #FFA000 72%,
-    #E5850A 85%,
-    #C47A00 100%
+    #F5B800 65%,
+    #D98500 82%,
+    #945000 100%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   filter:
-    drop-shadow(0 6px 30px rgba(0,0,0,1))
-    drop-shadow(0 2px 6px rgba(0,0,0,0.9))
-    drop-shadow(0 0 60px rgba(255, 200, 50, 0.5));
-  animation: titleGlow 4s ease-in-out infinite alternate;
+    drop-shadow(0 2px 0px rgba(60, 25, 0, 0.95))
+    drop-shadow(0 4px 14px rgba(0, 0, 0, 0.95))
+    drop-shadow(0 0 40px rgba(255, 215, 0, 0.55));
 }
 
-@keyframes titleGlow {
-  0%   { filter: drop-shadow(0 6px 30px rgba(0,0,0,1)) drop-shadow(0 0 40px rgba(247,202,69,0.3)); }
-  100% { filter: drop-shadow(0 6px 30px rgba(0,0,0,1)) drop-shadow(0 0 70px rgba(255,215,0,0.65)); }
+/* Line 2: 3D Pearl White / Silver (Heavy Platinum Emboss) */
+.hero-main-title .hero-title-white {
+  display: block;
+  font-family: 'Rozha One', 'Noto Serif Devanagari', serif;
+  color: #FFFFFF;
+  background: linear-gradient(
+    175deg,
+    #FFFFFF 0%,
+    #FFFFFF 45%,
+    #F1F5F9 70%,
+    #CBD5E1 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter:
+    drop-shadow(0 2px 0px rgba(0, 0, 0, 0.95))
+    drop-shadow(0 4px 16px rgba(0, 0, 0, 0.95))
+    drop-shadow(0 0 30px rgba(255, 255, 255, 0.4));
 }
 
 .hero-p-hi {
-  font-size: 1.12rem;
-  line-height: 1.75;
-  color: #EDF2FF;
-  margin-bottom: 12px;
+  font-size: clamp(1rem, 1.2vw, 1.12rem);
+  line-height: 1.6;
+  color: #FFFFFF;
+  margin-bottom: 8px;
   font-weight: 500;
-  font-family: 'Noto Serif Devanagari', serif;
-  text-shadow: 0 2px 16px rgba(0,0,0,1), 0 0 8px rgba(0,0,0,0.8);
-  max-width: 520px;
-  border-left: 3px solid rgba(247, 202, 69, 0.6);
-  padding-left: 14px;
-  background: linear-gradient(90deg, rgba(247,202,69,0.05) 0%, transparent 100%);
-  border-radius: 0 4px 4px 0;
+  font-family: 'Hind', 'Noto Serif Devanagari', sans-serif;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.95), 0 1px 3px rgba(0,0,0,0.9);
+  max-width: 540px;
 }
 
 .hero-p-en {
-  font-size: 0.88rem;
-  line-height: 1.6;
-  color: #A8B8D8;
-  margin-bottom: 36px;
-  font-style: italic;
+  font-size: clamp(0.82rem, 0.98vw, 0.90rem);
+  line-height: 1.5;
+  color: #CBD5E1;
+  margin-bottom: 20px;
   font-family: 'Karla', sans-serif;
-  letter-spacing: 0.02em;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.95);
-  max-width: 500px;
-  padding-left: 17px;
-  opacity: 0.9;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.95);
+  max-width: 520px;
+  opacity: 0.95;
 }
 
 /* Hero Buttons */
 .hero-buttons-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 18px;
+  align-items: center;
+  gap: 16px;
   margin-bottom: 0;
 }
 
 .btn-pill-gold {
-  background: linear-gradient(135deg, #FFF8DC 0%, #FFE066 30%, #F7CA45 55%, #E09900 85%, #C47A00 100%);
+  background: linear-gradient(180deg, #FFF6C4 0%, #FFDF6B 25%, #F7BC18 60%, #DF8200 90%, #B86000 100%);
   color: #120500;
   border-radius: 50px;
-  padding: 15px 30px;
+  padding: 13px 28px;
   display: inline-flex;
   align-items: center;
   gap: 14px;
   text-decoration: none;
+  border: 1px solid rgba(255, 248, 200, 0.9);
   box-shadow:
-    0 0 0 1px rgba(255,230,100,0.5),
-    0 8px 32px rgba(247, 202, 69, 0.7),
-    0 3px 10px rgba(0,0,0,0.5),
-    inset 0 1px 0 rgba(255,255,255,0.55),
-    inset 0 -2px 4px rgba(150, 90, 0, 0.3);
-  border: none;
+    0 0 0 1px rgba(255,240,150,0.6),
+    0 8px 32px rgba(247, 180, 20, 0.7),
+    0 3px 8px rgba(0,0,0,0.6),
+    inset 0 2px 2px rgba(255,255,255,0.9),
+    inset 0 -2px 4px rgba(160, 85, 0, 0.4);
   cursor: pointer;
   transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
   position: relative;
   overflow: hidden;
   font-family: 'Hind', sans-serif;
-  letter-spacing: 0.01em;
 }
 
 .btn-pill-gold::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(255,255,255,0.25) 0%, transparent 60%);
+  background: linear-gradient(180deg, rgba(255,255,255,0.4) 0%, transparent 60%);
   border-radius: 50px;
   pointer-events: none;
 }
@@ -279,25 +247,30 @@ body {
   position: absolute;
   top: -50%; left: -70%;
   width: 35%; height: 200%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.7), transparent);
   transform: skewX(-20deg);
   transition: left 0.6s ease;
+  animation: shineGleam 4.5s ease-in-out infinite;
 }
 
-.btn-pill-gold:hover::after { left: 140%; }
+@keyframes shineGleam {
+  0%, 80% { left: -70%; }
+  100%    { left: 150%; }
+}
 
 .btn-pill-gold:hover {
-  transform: translateY(-4px) scale(1.03);
+  transform: translateY(-3px) scale(1.03);
   box-shadow:
-    0 0 0 2px rgba(255,230,100,0.7),
-    0 14px 45px rgba(247, 202, 69, 0.85),
-    0 6px 16px rgba(0,0,0,0.55),
-    inset 0 1px 0 rgba(255,255,255,0.6);
+    0 0 0 2px rgba(255,240,150,0.9),
+    0 14px 45px rgba(247, 190, 30, 0.85),
+    0 6px 16px rgba(0,0,0,0.7),
+    inset 0 2px 2px rgba(255,255,255,0.95);
+  color: #0B0300;
 }
 
 .btn-circle-icon {
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
   background: rgba(20, 8, 0, 0.2);
   border: 1.5px solid rgba(20, 8, 0, 0.25);
@@ -305,66 +278,96 @@ body {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  box-shadow: inset 0 1px 3px rgba(0,0,0,0.3);
+}
+
+.btn-circle-icon.dark-icon-bg {
+  background: rgba(247, 202, 69, 0.16);
+  border: 1.5px solid rgba(247, 202, 69, 0.5);
+}
+
+.btn-text-col {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.btn-main-hi {
+  font-size: 1.02rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.btn-sub-en {
+  font-size: 0.76rem;
+  font-weight: 600;
+  opacity: 0.88;
+}
+
+.btn-arrow-icon {
+  font-size: 1.15rem;
+  margin-left: 2px;
+  transition: transform 0.3s ease;
+}
+
+.btn-pill-gold:hover .btn-arrow-icon,
+.btn-pill-dark:hover .btn-arrow-icon {
+  transform: translateX(4px);
 }
 
 .btn-pill-dark {
-  background: rgba(5, 14, 38, 0.8);
+  background: linear-gradient(180deg, rgba(12, 36, 92, 0.92) 0%, rgba(4, 15, 45, 0.98) 100%);
   color: #FFFFFF;
   border-radius: 50px;
-  padding: 15px 30px;
+  padding: 12px 26px;
   display: inline-flex;
   align-items: center;
   gap: 14px;
   text-decoration: none;
-  border: 1.5px solid rgba(247, 202, 69, 0.55);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  border: 1.8px solid #F7CA45;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   cursor: pointer;
   transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
   box-shadow:
-    0 4px 22px rgba(0,0,0,0.5),
-    0 0 0 1px rgba(247,202,69,0.1),
-    inset 0 1px 0 rgba(247,202,69,0.12);
+    0 0 0 1px rgba(247,202,69,0.25),
+    0 8px 28px rgba(0,0,0,0.7),
+    0 0 24px rgba(247,202,69,0.3),
+    inset 0 1px 0 rgba(247,202,69,0.4);
   font-family: 'Hind', sans-serif;
 }
 
 .btn-pill-dark:hover {
-  background: rgba(247, 202, 69, 0.14);
-  border-color: rgba(247, 202, 69, 0.9);
-  transform: translateY(-4px);
+  background: rgba(247, 202, 69, 0.2);
+  border-color: #FFE375;
+  transform: translateY(-3px) scale(1.02);
   box-shadow:
-    0 12px 35px rgba(0,0,0,0.6),
-    0 0 30px rgba(247,202,69,0.3),
-    0 0 0 1.5px rgba(247,202,69,0.5),
-    inset 0 1px 0 rgba(247,202,69,0.2);
+    0 14px 40px rgba(0,0,0,0.75),
+    0 0 35px rgba(247,202,69,0.5),
+    inset 0 1px 0 rgba(247,202,69,0.5);
   color: #FFE375;
 }
 
 /* ============================================================
-   ULTRA-ROYAL FLOATING TRUST CARD BANNER (ATTRACTIVE HERO SECTION)
+   ULTRA-ROYAL FLOATING TRUST CARD BANNER (EXACT TO SCREENSHOT)
    ============================================================ */
 .hero-floating-trust-card {
   background:
-    radial-gradient(ellipse at 50% 0%, rgba(247, 202, 69, 0.22) 0%, rgba(3, 10, 30, 0.97) 50%, rgba(2, 7, 22, 0.99) 100%),
-    url('assets/trust_card_bg.png') center / cover no-repeat;
-  border-top: 2.5px solid rgba(247, 202, 69, 0.9);
-  border-left: 1.5px solid rgba(247, 202, 69, 0.5);
-  border-right: 1.5px solid rgba(247, 202, 69, 0.5);
-  border-bottom: 1.5px solid rgba(247, 202, 69, 0.4);
-  border-radius: 0;
-  padding: 28px 40px;
+    radial-gradient(ellipse at 50% 0%, rgba(247, 202, 69, 0.18) 0%, rgba(3, 10, 30, 0.95) 55%, rgba(2, 7, 22, 0.98) 100%);
+  border: 1.5px solid rgba(247, 202, 69, 0.75);
+  border-radius: 18px;
+  padding: 14px 28px;
   box-shadow:
-    0 -8px 40px rgba(247, 202, 69, 0.2),
-    0 0 60px rgba(0, 0, 0, 0.8),
-    inset 0 1px 0 rgba(255, 239, 166, 0.25),
-    inset 0 0 30px rgba(247, 202, 69, 0.08);
+    0 10px 40px rgba(0, 0, 0, 0.8),
+    0 0 30px rgba(247, 202, 69, 0.15),
+    inset 0 1px 0 rgba(255, 239, 166, 0.3),
+    inset 0 0 20px rgba(247, 202, 69, 0.06);
   position: relative;
   z-index: 5;
   overflow: hidden;
   backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   transition: box-shadow 0.4s ease;
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
 .hero-floating-trust-card::before {
@@ -375,9 +378,9 @@ body {
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(255, 239, 166, 0.06) 40%,
-    rgba(247, 202, 69, 0.14) 50%,
-    rgba(255, 239, 166, 0.06) 60%,
+    rgba(255, 239, 166, 0.05) 40%,
+    rgba(247, 202, 69, 0.12) 50%,
+    rgba(255, 239, 166, 0.05) 60%,
     transparent 100%
   );
   transform: skewX(-18deg);
@@ -394,23 +397,22 @@ body {
 /* L-Shaped Gold Corner Brackets */
 .gold-l-corner {
   position: absolute;
-  width: 48px;
-  height: 48px;
+  width: 38px;
+  height: 38px;
   pointer-events: none;
   z-index: 6;
-  filter: drop-shadow(0 0 8px rgba(247,202,69,0.7)) drop-shadow(0 2px 4px rgba(0,0,0,0.9));
-  transition: transform 0.3s ease;
+  filter: drop-shadow(0 0 6px rgba(247,202,69,0.7));
 }
 
-.corner-tl-bracket { top: 8px; left: 8px; }
-.corner-tr-bracket { top: 8px; right: 8px; transform: scaleX(-1); }
-.corner-bl-bracket { bottom: 8px; left: 8px; transform: scaleY(-1); }
-.corner-br-bracket { bottom: 8px; right: 8px; transform: scale(-1); }
+.corner-tl-bracket { top: 6px; left: 6px; }
+.corner-tr-bracket { top: 6px; right: 6px; transform: scaleX(-1); }
+.corner-bl-bracket { bottom: 6px; left: 6px; transform: scaleY(-1); }
+.corner-br-bracket { bottom: 6px; right: 6px; transform: scale(-1); }
 
 .trust-three-cols-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  align-items: stretch;
+  grid-template-columns: 1fr 1.15fr 1fr;
+  align-items: center;
   gap: 0;
 }
 
@@ -418,7 +420,7 @@ body {
   display: flex;
   align-items: center;
   gap: 14px;
-  padding: 16px 20px;
+  padding: 10px 18px;
   position: relative;
   transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   min-width: 0;
@@ -428,123 +430,95 @@ body {
   content: '';
   position: absolute;
   right: 0;
-  top: 10%;
-  height: 80%;
+  top: 12%;
+  height: 76%;
   width: 1.5px;
   background: linear-gradient(to bottom,
     transparent 0%,
-    rgba(247, 202, 69, 0.6) 40%,
-    rgba(247, 202, 69, 0.6) 60%,
+    rgba(247, 202, 69, 0.55) 30%,
+    rgba(247, 202, 69, 0.55) 70%,
     transparent 100%);
 }
 
 .trust-col-item:last-child::after { display: none; }
 
 .trust-col-item:hover {
-  background: rgba(247, 202, 69, 0.06);
+  background: rgba(247, 202, 69, 0.05);
+  border-radius: 10px;
 }
 
-.trust-col-item:first-child { padding-left: 20px; }
-.trust-col-item:last-child  { padding-right: 20px; }
+.trust-col-item:first-child { padding-left: 10px; }
+.trust-col-item:last-child  { padding-right: 10px; }
 
 .trust-badge-wrap {
   position: relative;
-  width: 60px;
-  height: 60px;
+  width: 52px;
+  height: 52px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
 }
 
-/* Outer rotating ring behind badge */
-.trust-badge-wrap::before {
-  content: '';
-  position: absolute;
-  inset: -6px;
-  border-radius: 50%;
-  background: conic-gradient(
-    from 0deg,
-    rgba(247,202,69,0.9),
-    rgba(247,202,69,0.2) 25%,
-    rgba(247,202,69,0.9) 50%,
-    rgba(247,202,69,0.2) 75%,
-    rgba(247,202,69,0.9)
-  );
-  animation: badgeRingRotate 8s linear infinite;
-  opacity: 0.55;
-}
-
-@keyframes badgeRingRotate {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
-}
-
 .trust-ornate-badge-img {
-  width: 60px;
-  height: 60px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
   object-fit: contain;
   position: relative;
   z-index: 1;
   filter:
-    drop-shadow(0 0 14px rgba(247, 202, 69, 0.8))
-    drop-shadow(0 4px 12px rgba(0, 0, 0, 0.8));
+    drop-shadow(0 0 10px rgba(247, 202, 69, 0.75))
+    drop-shadow(0 3px 8px rgba(0, 0, 0, 0.8));
   flex-shrink: 0;
-  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.4s ease;
-  animation: badgeGlowPulse 3.5s infinite ease-in-out;
-}
-
-@keyframes badgeGlowPulse {
-  0%, 100% {
-    filter: drop-shadow(0 0 14px rgba(247, 202, 69, 0.7)) drop-shadow(0 6px 14px rgba(0, 0, 0, 0.8));
-  }
-  50% {
-    filter: drop-shadow(0 0 28px rgba(247, 202, 69, 1)) drop-shadow(0 8px 20px rgba(0, 0, 0, 0.9));
-  }
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .trust-col-item:hover .trust-ornate-badge-img {
-  transform: scale(1.12) rotate(5deg);
-  filter: drop-shadow(0 0 35px rgba(247, 202, 69, 1)) drop-shadow(0 10px 24px rgba(0, 0, 0, 0.95));
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 20px rgba(247, 202, 69, 0.95)) drop-shadow(0 4px 12px rgba(0, 0, 0, 0.9));
+}
+
+.trust-text-block {
+  min-width: 0;
+  flex: 1;
 }
 
 .trust-col-num {
-  font-size: clamp(1.4rem, 1.9vw, 2rem);
+  font-size: clamp(1.35rem, 1.8vw, 1.85rem);
   font-weight: 800;
-  line-height: 1.0;
+  line-height: 1.1;
   font-family: 'Rozha One', 'Noto Serif Devanagari', serif;
-  margin-bottom: 4px;
+  margin-bottom: 3px;
   background: linear-gradient(170deg,
     #FFFFFF 0%,
-    #FFF5C0 20%,
+    #FFF5C0 25%,
     #FFE060 50%,
-    #F7CA45 70%,
+    #F7CA45 75%,
     #C48800 100%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.95)) drop-shadow(0 0 18px rgba(247,202,69,0.4));
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.95)) drop-shadow(0 0 14px rgba(247,202,69,0.35));
   letter-spacing: -0.01em;
   white-space: nowrap;
 }
 
 .trust-col-title-bold {
-  font-size: clamp(0.78rem, 1vw, 0.92rem);
+  font-size: clamp(0.78rem, 0.95vw, 0.92rem);
   font-weight: 700;
   color: #FFFFFF;
-  line-height: 1.35;
-  margin-bottom: 3px;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.95);
+  line-height: 1.3;
+  margin-bottom: 2px;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.95);
   font-family: 'Hind', 'Noto Serif Devanagari', sans-serif;
 }
 
 .trust-col-subtext {
-  font-size: clamp(0.68rem, 0.8vw, 0.76rem);
-  color: #8FA3CC;
-  line-height: 1.3;
+  font-size: clamp(0.68rem, 0.78vw, 0.76rem);
+  color: #94A3B8;
+  line-height: 1.25;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9);
-  font-style: italic;
   opacity: 0.92;
 }
 
@@ -1569,28 +1543,93 @@ body {
   white-space: nowrap;
 }
 
+/* ============================================================
+   HERO SECTION RESPONSIVE — All Breakpoints
+   ============================================================ */
+
+/* Tablet Landscape: 861px–1024px */
 @media (max-width: 1024px) {
-  .hero-content-left { max-width: 100%; text-align: center; }
-  .hero-buttons-row { justify-content: center; }
-  .hero-floating-trust-card { padding: 22px 20px; }
-  .trust-three-cols-grid { grid-template-columns: 1fr; gap: 14px; }
-  .trust-col-item { 
-    border-right: none; 
-    border-bottom: 1.5px solid;
-    border-image: linear-gradient(to right, rgba(247, 202, 69, 0.1), rgba(247, 202, 69, 0.55) 50%, rgba(247, 202, 69, 0.1)) 1;
-    padding: 16px 12px !important; 
+  .hero-full-bg-section {
+    background:
+      linear-gradient(90deg, rgba(2, 8, 24, 0.90) 0%, rgba(2, 8, 24, 0.65) 50%, rgba(2, 8, 24, 0.18) 100%),
+      url('assets/janmashtami_hero.jpg?v=20260819_03') 72% center / cover no-repeat;
+    padding: 28px 0 22px 0;
   }
-  .trust-col-item:last-child { border-bottom: none; }
+  .hero-content-left { max-width: 500px; }
+  .hero-main-title { font-size: clamp(2.4rem, 4.5vw, 3.5rem); }
+  .hero-brand-top-logo { margin-bottom: 10px; }
+  .hero-floating-trust-card { padding: 12px 18px; margin-top: 18px; }
+  .trust-three-cols-grid { gap: 6px; }
   .cards-three-column-grid { grid-template-columns: 1fr; }
   .exact-impact-four-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
-  .exact-stat-col { border-right: none; border-bottom: 1px solid rgba(247, 202, 69, 0.2); padding-bottom: 16px; }
+  .exact-stat-col { border-right: none; border-bottom: 1px solid rgba(247,202,69,0.2); padding-bottom: 16px; }
   .form-outer-card-box { grid-template-columns: 1fr; }
-  .form-sub-three-columns { grid-template-columns: 1fr; }
+  .form-sub-three-columns { grid-template-columns: 1fr 1fr; gap: 16px; }
 }
 
+/* Tablet Portrait: 601px–860px */
+@media (max-width: 860px) {
+  .hero-full-bg-section {
+    background:
+      linear-gradient(175deg, rgba(2, 8, 24, 0.55) 0%, rgba(2, 8, 24, 0.88) 50%, rgba(2, 7, 22, 0.97) 100%),
+      url('assets/janmashtami_hero.jpg?v=20260819_03') center 20% / cover no-repeat;
+    padding: 40px 0 20px 0;
+    min-height: auto;
+  }
+  .hero-content-left { max-width: 100%; text-align: center; align-items: center; padding-bottom: 6px; }
+  .hero-brand-top-logo { margin-left: auto; margin-right: auto; margin-bottom: 10px; }
+  .hero-eyebrow-text { justify-content: center; }
+  .hero-main-title { align-items: center; font-size: clamp(2.2rem, 6vw, 3rem); }
+  .hero-p-hi, .hero-p-en { margin-left: auto; margin-right: auto; text-align: center; }
+  .hero-buttons-row { justify-content: center; }
+  .hero-floating-trust-card { margin-top: 16px; padding: 10px 16px; border-radius: 14px; }
+  .trust-three-cols-grid { grid-template-columns: 1fr 1fr 1fr; gap: 0; }
+  .trust-col-item { padding: 8px 10px !important; }
+  .trust-col-item::after { display: none; }
+  .trust-col-item:last-child { border-bottom: none; }
+}
+
+/* Mobile Large: 481px–640px */
 @media (max-width: 640px) {
+  .hero-full-bg-section {
+    background:
+      linear-gradient(175deg, rgba(2, 8, 24, 0.45) 0%, rgba(2, 8, 24, 0.93) 55%, rgba(2, 7, 22, 0.99) 100%),
+      url('assets/janmashtami_hero.jpg?v=20260819_03') center 15% / cover no-repeat;
+    padding: 32px 0 16px 0;
+  }
+  .hero-main-title { font-size: 2.15rem; }
+  .hero-iskcon-logo-img { height: 48px !important; }
+  .hero-p-hi { font-size: 0.93rem; }
+  .hero-p-en { display: none; }
+  .btn-pill-gold, .btn-pill-dark { width: 100%; justify-content: center; }
+  .hero-buttons-row { gap: 12px; flex-direction: column; }
+  .trust-three-cols-grid { grid-template-columns: 1fr; gap: 0; }
+  .trust-col-item { 
+    border-right: none;
+    border-bottom: 1px solid rgba(247,202,69,0.3);
+    padding: 10px 12px !important;
+  }
+  .trust-col-item:last-child { border-bottom: none; }
   .exact-impact-four-grid { grid-template-columns: 1fr; }
   .sticky-banner-flex-layout { flex-direction: column; text-align: center; }
+}
+
+/* Mobile Small: max 480px */
+@media (max-width: 480px) {
+  .hero-full-bg-section { padding: 28px 0 14px 0; }
+  .hero-main-title { font-size: 1.9rem !important; line-height: 1.15; }
+  .hero-eyebrow-text { font-size: 1rem; }
+  .hero-brand-top-logo { margin-bottom: 8px; }
+  .hero-iskcon-logo-img { height: 42px !important; }
+  .hero-p-hi { font-size: 0.88rem; line-height: 1.5; }
+  .hero-floating-trust-card { padding: 8px 12px; margin-top: 12px; border-radius: 12px; }
+  .trust-badge-wrap { width: 40px; height: 40px; }
+  .trust-ornate-badge-img { width: 40px; height: 40px; }
+  .trust-col-num { font-size: 1.1rem; }
+  .trust-col-title-bold { font-size: 0.72rem; }
+  .btn-pill-gold, .btn-pill-dark { padding: 12px 18px; font-size: 0.9rem; }
+  .btn-main-hi { font-size: 0.92rem; }
+  .btn-sub-en { font-size: 0.7rem; }
 }
 </style>
 </head>
@@ -1599,17 +1638,20 @@ body {
 <!-- HERO SECTION WITH FULL UNCLIPPED BG IMAGE -->
 <section class="hero-full-bg-section">
 
-  <!-- <div class="top-nav-right-link">
-    <a href="index.html" style="color:inherit; text-decoration:none;">मुख्य पृष्ठ (Home) ➔</a>
-  </div> -->
-
-  <div class="wrap">
+  <div class="wrap" style="display: flex; flex-direction: column; justify-content: flex-start;">
     
     <!-- Hero Main Left Content -->
     <div class="hero-content-left">
       
-      <div class="hero-eyebrow-text">इस जन्माष्टमी,</div>
-      <h1 class="hero-main-title heading-serif">श्री कृष्ण को सेवा अर्पित करें</h1>
+      <div class="hero-brand-top-logo">
+        <img src="assets/iskcon_kanpur_gold_logo.png" alt="ISKCON Kanpur" class="hero-iskcon-logo-img">
+      </div>
+      
+      <div class="hero-eyebrow-text"><span>🪶</span> <span>इस जन्माष्टमी,</span></div>
+      <h1 class="hero-main-title heading-serif">
+        <span class="hero-title-gold">श्री कृष्ण को</span>
+        <span class="hero-title-white">सेवा अर्पित करें</span>
+      </h1>
       
       <p class="hero-p-hi">
         मध्यरात्रि भोग अर्पित करें, कृष्ण के नाम पर भूखों को भोजन कराएं, और उनकी प्रिय गायों की सेवा करें — हर सेवा मंदिर में आपके नाम व गोत्र सहित अर्पित की जाती है।
@@ -1623,35 +1665,43 @@ body {
         <!-- Button 1: Solid Gold Pill -->
         <a href="#offer-form" class="btn-pill-gold">
           <div class="btn-circle-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#221200" stroke-width="2.2"><path d="M12 2C8 2 4 5 4 9c0 5 4 9 8 9s8-4 8-9c0-4-4-7-8-7z"/><path d="M12 18v4M8 22h8"/></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#221200" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2a4 4 0 0 0-4 4c0 3 4 7 4 7s4-4 4-7a4 4 0 0 0-4-4z"/>
+              <path d="M3 14s3 2 9 2 9-2 9-2"/>
+              <path d="M5 18s2.5 1.5 7 1.5 7-1.5 7-1.5"/>
+            </svg>
           </div>
-          <div>
-            <div style="font-size:1.02rem; font-weight:700; line-height:1.2;">सेवा अर्पित करें एवं दान करें</div>
-            <div style="font-size:0.78rem; font-weight:600; opacity:0.85;">Offer Seva & Donate</div>
+          <div class="btn-text-col">
+            <div class="btn-main-hi">सेवा अर्पित करें एवं दान करें</div>
+            <div class="btn-sub-en">Offer Seva & Donate</div>
           </div>
-          <span style="font-size:1.1rem; margin-left:4px;">➔</span>
+          <span class="btn-arrow-icon">➔</span>
         </a>
         
         <!-- Button 2: Dark Glass Pill -->
         <a href="#offerings" class="btn-pill-dark">
-          <div class="btn-circle-icon" style="background:rgba(255,255,255,0.12);">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F7CA45" stroke-width="2.2"><circle cx="12" cy="12" r="3"/><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/></svg>
+          <div class="btn-circle-icon dark-icon-bg">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F7CA45" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/>
+              <circle cx="12" cy="12" r="3"/>
+              <path d="M12 2v2M6.5 4.5l1.5 1.5M17.5 4.5l-1.5 1.5"/>
+            </svg>
           </div>
-          <div>
-            <div style="font-size:1rem; font-weight:700; line-height:1.2;">सेवाएं देखें</div>
-            <div style="font-size:0.78rem; color:#CBD5E1;">See the Sevas</div>
+          <div class="btn-text-col">
+            <div class="btn-main-hi" style="color:#FFFFFF;">सेवाएं देखें</div>
+            <div class="btn-sub-en" style="color:#94A3B8;">See the Sevas</div>
           </div>
-          <span style="font-size:1.1rem; margin-left:4px;">➔</span>
+          <span class="btn-arrow-icon" style="color:#F7CA45;">➔</span>
         </a>
         
       </div>
       
     </div>
 
-    <!-- IMPRESSIVE ROYAL FLOATING TRUST BANNER (EXACT REPLICA MATCHING SCREENSHOT & ELEVATED) -->
+    <!-- IMPRESSIVE ROYAL FLOATING TRUST BANNER (EXACT REPLICA MATCHING SCREENSHOT) -->
     <div class="hero-floating-trust-card">
       
-      <!-- 4 Golden Metallic L-Corner Brackets with Radial Glowing Dots -->
+      <!-- 4 Golden Metallic L-Corner Brackets -->
       <svg class="gold-l-corner corner-tl-bracket" viewBox="0 0 44 44" fill="none">
         <defs>
           <linearGradient id="gGradTL" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
@@ -1660,9 +1710,8 @@ body {
             <stop offset="100%" stop-color="#A87612"/>
           </linearGradient>
         </defs>
-        <path d="M5 26V9C5 6.8 6.8 5 9 5H26" stroke="url(#gGradTL)" stroke-width="3.5" stroke-linecap="round"/>
-        <circle cx="11" cy="11" r="3" fill="#FFEFA6"/>
-        <circle cx="11" cy="11" r="5" stroke="#F7CA45" stroke-width="1" opacity="0.7"/>
+        <path d="M5 26V9C5 6.8 6.8 5 9 5H26" stroke="url(#gGradTL)" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="10" cy="10" r="2.5" fill="#FFEFA6"/>
       </svg>
       <svg class="gold-l-corner corner-tr-bracket" viewBox="0 0 44 44" fill="none">
         <defs>
@@ -1672,9 +1721,8 @@ body {
             <stop offset="100%" stop-color="#A87612"/>
           </linearGradient>
         </defs>
-        <path d="M5 26V9C5 6.8 6.8 5 9 5H26" stroke="url(#gGradTR)" stroke-width="3.5" stroke-linecap="round"/>
-        <circle cx="11" cy="11" r="3" fill="#FFEFA6"/>
-        <circle cx="11" cy="11" r="5" stroke="#F7CA45" stroke-width="1" opacity="0.7"/>
+        <path d="M5 26V9C5 6.8 6.8 5 9 5H26" stroke="url(#gGradTR)" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="10" cy="10" r="2.5" fill="#FFEFA6"/>
       </svg>
       <svg class="gold-l-corner corner-bl-bracket" viewBox="0 0 44 44" fill="none">
         <defs>
@@ -1684,9 +1732,8 @@ body {
             <stop offset="100%" stop-color="#A87612"/>
           </linearGradient>
         </defs>
-        <path d="M5 26V9C5 6.8 6.8 5 9 5H26" stroke="url(#gGradBL)" stroke-width="3.5" stroke-linecap="round"/>
-        <circle cx="11" cy="11" r="3" fill="#FFEFA6"/>
-        <circle cx="11" cy="11" r="5" stroke="#F7CA45" stroke-width="1" opacity="0.7"/>
+        <path d="M5 26V9C5 6.8 6.8 5 9 5H26" stroke="url(#gGradBL)" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="10" cy="10" r="2.5" fill="#FFEFA6"/>
       </svg>
       <svg class="gold-l-corner corner-br-bracket" viewBox="0 0 44 44" fill="none">
         <defs>
@@ -1696,9 +1743,8 @@ body {
             <stop offset="100%" stop-color="#A87612"/>
           </linearGradient>
         </defs>
-        <path d="M5 26V9C5 6.8 6.8 5 9 5H26" stroke="url(#gGradBR)" stroke-width="3.5" stroke-linecap="round"/>
-        <circle cx="11" cy="11" r="3" fill="#FFEFA6"/>
-        <circle cx="11" cy="11" r="5" stroke="#F7CA45" stroke-width="1" opacity="0.7"/>
+        <path d="M5 26V9C5 6.8 6.8 5 9 5H26" stroke="url(#gGradBR)" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="10" cy="10" r="2.5" fill="#FFEFA6"/>
       </svg>
 
       <div class="trust-three-cols-grid">
@@ -1708,7 +1754,7 @@ body {
           <div class="trust-badge-wrap">
             <img src="assets/trust_badge_devotees.svg" alt="Devotees Ornate Gold Badge" class="trust-ornate-badge-img">
           </div>
-          <div style="min-width:0; flex:1;">
+          <div class="trust-text-block">
             <div class="trust-col-num">12,000+</div>
             <div class="trust-col-title-bold">भक्त परिवारों का विश्वास</div>
             <div class="trust-col-subtext">Trusted by 12,000+ devotee families</div>
@@ -1720,7 +1766,7 @@ body {
           <div class="trust-badge-wrap">
             <img src="assets/trust_badge_temple.svg" alt="Temple Kalash Ornate Gold Badge" class="trust-ornate-badge-img">
           </div>
-          <div style="min-width:0; flex:1;">
+          <div class="trust-text-block">
             <div class="trust-col-num">100%</div>
             <div class="trust-col-title-bold">भोग अर्पण की राशि सेवा में उपयोग होती है</div>
             <div class="trust-col-subtext">100% of bhog offerings go to seva</div>
@@ -1732,7 +1778,7 @@ body {
           <div class="trust-badge-wrap">
             <img src="assets/trust_badge_lock.svg" alt="Shield Lock Ornate Gold Badge" class="trust-ornate-badge-img">
           </div>
-          <div>
+          <div class="trust-text-block">
             <div class="trust-col-num">सुरक्षित भुगतान</div>
             <div class="trust-col-title-bold">UPI, कार्ड, नेट बैंकिंग द्वारा</div>
             <div class="trust-col-subtext">Secure payments via UPI, Cards & Net Banking</div>

@@ -2215,3 +2215,133 @@
 .exact-seva-card:hover .form-coin-icon-img {
   transform: scale(1.1) rotate(3deg);
 }
+
+
+/* ================================================================
+   GLOBAL RESPONSIVE OVERRIDES — Desktop, Tablet, Mobile
+   ================================================================ */
+
+/* ---------- 1280px Desktop Large ---------- */
+@media (max-width: 1280px) {
+  .wrap { max-width: 1100px; padding: 0 28px; }
+}
+
+/* ---------- 1024px Tablet Landscape / Small Laptop ---------- */
+@media (max-width: 1024px) {
+  .wrap { padding: 0 24px; }
+
+  /* Nav */
+  .nav-main { gap: 20px; }
+  .nav-main a { font-size: 0.9rem; }
+
+  /* Sections */
+  .section-pad { padding: 64px 0; }
+  .section-main-h2 { font-size: clamp(1.8rem, 3.5vw, 2.4rem); }
+
+  /* Stats */
+  .exact-impact-four-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .exact-stat-col { border-right: none; border-bottom: 1px solid rgba(247,202,69,0.2); padding-bottom: 18px; }
+  .exact-stat-col:nth-child(2n) { border-bottom: 1px solid rgba(247,202,69,0.2); }
+  .exact-stat-col:nth-last-child(-n+2) { border-bottom: none; }
+
+  /* Cards */
+  .cards-three-column-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
+
+  /* Form */
+  .form-outer-card-box { grid-template-columns: 1fr; }
+  .form-sub-three-columns { grid-template-columns: 1fr 1fr; gap: 16px; }
+}
+
+/* ---------- 860px Tablet Portrait ---------- */
+@media (max-width: 860px) {
+  .wrap { padding: 0 20px; }
+
+  /* Nav */
+  .site-header-row { flex-wrap: wrap; gap: 12px; }
+  .nav-main { flex-wrap: wrap; gap: 12px 16px; justify-content: center; }
+  .nav-main a { font-size: 0.88rem; }
+  .header-cta-btn { padding: 9px 18px; font-size: 0.88rem; }
+
+  /* Sections */
+  .section-pad { padding: 52px 0; }
+  .section-main-h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); }
+  .section-subh { font-size: 0.95rem; }
+  .ornament-pill-badge { font-size: 0.85rem; padding: 7px 18px; }
+
+  /* Cards */
+  .cards-three-column-grid { grid-template-columns: 1fr; gap: 18px; }
+  .seva-grid { grid-template-columns: repeat(2, 1fr) !important; }
+
+  /* Stats */
+  .exact-impact-four-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+
+  /* Offerings */
+  .section-desc-ribbon { font-size: 0.88rem; }
+
+  /* Timings */
+  .timings-panel { grid-template-columns: 1fr !important; padding: 28px 20px; }
+
+  /* Contact */
+  .contact-panel { grid-template-columns: 1fr !important; }
+
+  /* YouTube */
+  .youtube-grid { grid-template-columns: 1fr !important; }
+
+  /* Sticky banner */
+  .sticky-banner-flex-layout { flex-direction: column; gap: 10px; text-align: center; }
+
+  /* Trust card — already handled in index.html */
+}
+
+/* ---------- 640px Mobile Large ---------- */
+@media (max-width: 640px) {
+  .wrap { padding: 0 16px; }
+
+  /* Sections */
+  .section-pad { padding: 44px 0; }
+  .section-main-h2 { font-size: clamp(1.45rem, 5vw, 1.9rem); }
+  .section-subh { font-size: 0.9rem; max-width: 100%; }
+
+  /* Cards */
+  .cards-three-column-grid { grid-template-columns: 1fr; gap: 14px; }
+  .seva-grid { grid-template-columns: 1fr !important; }
+  .exact-impact-four-grid { grid-template-columns: 1fr; gap: 12px; }
+  .exact-stat-col { border-bottom: 1px solid rgba(247,202,69,0.2); padding: 14px 0; }
+
+  /* Form */
+  .form-sub-three-columns { grid-template-columns: 1fr; }
+  .amount-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* Steps */
+  .form-steps-row { flex-direction: column; gap: 10px; }
+
+  /* Badge */
+  .ornament-pill-badge { font-size: 0.8rem; padding: 6px 16px; }
+
+  /* Header */
+  .nav-main { display: none; }
+  .header-cta-btn { padding: 8px 16px; font-size: 0.84rem; }
+}
+
+/* ---------- 480px Mobile Small ---------- */
+@media (max-width: 480px) {
+  .wrap { padding: 0 14px; }
+  .section-main-h2 { font-size: 1.4rem; }
+  .cards-three-column-grid { gap: 12px; }
+  .amount-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .seva-grid { grid-template-columns: 1fr !important; }
+  .hero-main-title { font-size: 2.1rem !important; }
+  .btn-pill-gold, .btn-pill-dark { width: 100%; justify-content: center; padding: 13px 20px; }
+  .hero-buttons-row { gap: 12px; }
+  .trust-three-cols-grid { grid-template-columns: 1fr; gap: 0; }
+  .ornament-pill-badge { font-size: 0.78rem; }
+}
+
+/* ---------- 380px Mobile XSmall ---------- */
+@media (max-width: 380px) {
+  .hero-main-title { font-size: 1.85rem !important; }
+  .hero-eyebrow-text { font-size: 1rem; }
+  .hero-p-hi { font-size: 0.9rem; }
+  .btn-main-hi { font-size: 0.9rem; }
+  .hero-iskcon-logo-img { height: 42px !important; }
+}
