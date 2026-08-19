@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="iskcon-api-base" content="https://iskcon-k-tzoo.vercel.app/api">
-<title>इस जन्माष्टमी, श्री कृष्ण को सेवा अर्पित करें | ISKCON Kanpur</title>
-<meta name="description" content="इस जन्माष्टमी श्री कृष्ण के लिए मिश्री माखन भोग, अन्न दान प्रसादम् और गौ सेवा अर्पित करें। ISKCON Kanpur.">
+<title>Sri Krishna Janmashtami Seva | ISKCON Kanpur</title>
+<meta name="description" content="Offer Midnight Bhog, Anna Daan Prasadam, and Gau Seva this Janmashtami at ISKCON Kanpur. Every seva performed with your name & gotra.">
 <meta name="theme-color" content="#04122B">
 <link rel="icon" href="assets/image-01a94a.png?v=20260818" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com/">
@@ -164,26 +164,15 @@ body {
     drop-shadow(0 0 30px rgba(255, 255, 255, 0.4));
 }
 
-.hero-p-hi {
-  font-size: clamp(1rem, 1.2vw, 1.12rem);
-  line-height: 1.6;
-  color: #FFFFFF;
-  margin-bottom: 8px;
-  font-weight: 500;
-  font-family: 'Hind', 'Noto Serif Devanagari', sans-serif;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.95), 0 1px 3px rgba(0,0,0,0.9);
-  max-width: 540px;
-}
-
-.hero-p-en {
-  font-size: clamp(0.82rem, 0.98vw, 0.90rem);
-  line-height: 1.5;
-  color: #CBD5E1;
-  margin-bottom: 20px;
-  font-family: 'Karla', sans-serif;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.95);
-  max-width: 520px;
-  opacity: 0.95;
+.hero-main-desc {
+  font-size: clamp(1.02rem, 1.25vw, 1.18rem);
+  line-height: 1.65;
+  color: #F1F5F9;
+  margin-bottom: 24px;
+  font-weight: 400;
+  font-family: 'Hind', sans-serif;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.95), 0 1px 3px rgba(0,0,0,0.9);
+  max-width: 560px;
 }
 
 /* Hero Buttons */
@@ -274,6 +263,14 @@ body {
   display: flex;
   flex-direction: column;
   text-align: left;
+}
+
+.btn-label-text {
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  line-height: 1.2;
+  white-space: nowrap;
 }
 
 .btn-main-hi {
@@ -1100,401 +1097,629 @@ body {
   padding: 45px 0 80px 0;
 }
 
-.form-outer-card-box {
+/* ============================================================
+   TIERED DONATION & SEVA SECTION (MATCHING ISKCON KANPUR THEME)
+   ============================================================ */
+.seva-tier-section-wrap {
+  background: #FBF7F0;
+  padding: 65px 0 75px 0;
+  position: relative;
+  border-bottom: 2px solid #F1E5D5;
+}
+
+/* Top Enclosed Box */
+.seva-top-enclosed-box {
+  border: 2.5px solid #0B2545;
+  border-radius: 28px;
+  position: relative;
+  padding: 48px 24px 28px 24px;
+  margin-bottom: 44px;
   background: #FFFFFF;
-  border-radius: 26px;
-  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.09), 0 0 30px rgba(247, 202, 69, 0.15);
-  border: 2px solid #EADBCE;
-  overflow: hidden;
+  box-shadow: 0 10px 35px rgba(4, 18, 43, 0.06);
+}
+
+.seva-top-pill-badge {
+  position: absolute;
+  top: -26px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #04122B;
+  color: #FFFFFF;
+  border: 3.5px solid #F7CA45;
+  border-radius: 40px;
+  padding: 10px 44px;
+  font-weight: 800;
+  font-size: clamp(1.2rem, 2.2vw, 1.55rem);
+  font-family: 'Playfair Display', 'Rozha One', serif;
+  box-shadow: 0 6px 20px rgba(4, 18, 43, 0.35);
+  white-space: nowrap;
+  letter-spacing: 0.5px;
+}
+
+.seva-top-cards-grid {
   display: grid;
-  grid-template-columns: 0.34fr 0.66fr;
-  transition: border-color 0.35s ease, box-shadow 0.35s ease;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  justify-items: center;
 }
 
-.form-outer-card-box:hover {
-  border-color: #F7CA45;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12), 0 0 40px rgba(247, 202, 69, 0.28);
+/* Last 3 cards center on second row */
+.seva-top-cards-grid .seva-tier-card:nth-child(5),
+.seva-top-cards-grid .seva-tier-card:nth-child(6),
+.seva-top-cards-grid .seva-tier-card:nth-child(7) {
+  width: 100%;
 }
 
-.form-left-info-panel {
-  background: linear-gradient(180deg, #FFFDF8 0%, #FFF8EA 100%);
-  padding: 38px 28px;
-  border-right: 1px solid #F0E2D3;
+/* Center the last row of 3 */
+@supports (grid-template-rows: auto) {
+  .seva-top-cards-grid {
+    grid-template-columns: repeat(8, 1fr);
+  }
+  .seva-top-cards-grid .seva-tier-card:nth-child(1) { grid-column: span 2; }
+  .seva-top-cards-grid .seva-tier-card:nth-child(2) { grid-column: span 2; }
+  .seva-top-cards-grid .seva-tier-card:nth-child(3) { grid-column: span 2; }
+  .seva-top-cards-grid .seva-tier-card:nth-child(4) { grid-column: span 2; }
+  .seva-top-cards-grid .seva-tier-card:nth-child(5) { grid-column: 2 / span 2; }
+  .seva-top-cards-grid .seva-tier-card:nth-child(6) { grid-column: span 2; }
+  .seva-top-cards-grid .seva-tier-card:nth-child(7) { grid-column: span 2; }
+}
+
+.seva-tier-card {
+  background: linear-gradient(180deg, #0B2545 0%, #030F24 100%);
+  border: 1.5px solid #E5C88A;
+  border-radius: 18px;
+  position: relative;
+  padding: 22px 14px 24px 14px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.16);
   display: flex;
   flex-direction: column;
-}
-
-.info-title-hi {
-  font-size: 1.7rem;
-  font-weight: 800;
-  color: #261503;
-  margin-bottom: 2px;
-  font-family: 'Noto Serif Devanagari', serif;
-}
-
-.info-title-en {
-  font-size: 0.96rem;
-  font-weight: 700;
-  color: #A87612;
-  margin-bottom: 12px;
-}
-
-.info-sub-desc-p {
-  font-size: 0.96rem;
-  color: #594838;
-  line-height: 1.55;
-  margin-bottom: 20px;
-}
-
-.info-illustration-center {
-  text-align: center;
-  margin: auto 0;
-  padding: 16px 0;
-}
-
-.info-illustration-center img {
-  max-width: 250px;
-  width: 100%;
-  margin: 0 auto;
-  border-radius: 20px;
-  border: 2.5px solid #F7CA45;
-  box-shadow: 
-    0 12px 35px rgba(0, 0, 0, 0.14), 
-    0 0 25px rgba(247, 202, 69, 0.4);
-  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
-}
-
-.info-illustration-center img:hover {
-  transform: scale(1.05) rotate(1deg);
-  box-shadow: 
-    0 16px 45px rgba(0, 0, 0, 0.18), 
-    0 0 35px rgba(247, 202, 69, 0.6);
-}
-
-.info-bottom-guarantee-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  margin-top: 20px;
-  padding-top: 18px;
-  border-top: 1px solid #F0E2D3;
-  text-align: center;
-}
-
-.guarantee-item-box {
-  background: #FFFFFF;
-  border: 1.5px solid #F3E3C3;
-  border-radius: 12px;
-  padding: 10px 6px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.03);
-  transition: transform 0.25s ease;
-}
-
-.guarantee-item-box:hover {
-  transform: translateY(-2px);
-  border-color: #F7CA45;
-}
-
-.guarantee-icon-wrap {
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  background: #041836;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 6px auto;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-}
-
-.guarantee-title {
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: #2D1A00;
-}
-
-.guarantee-sub {
-  font-size: 0.72rem;
-  color: #705B47;
-}
-
-.form-right-builder-panel {
-  padding: 32px 28px;
-  background: #FFFFFF;
-}
-
-.stepper-header-flex-bar {
-  display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 2px solid #F1E5D5;
-  padding-bottom: 16px;
-  margin-bottom: 24px;
-  gap: 8px;
-  flex-wrap: wrap;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
 }
 
-.step-node-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: clamp(0.78rem, 1.2vw, 0.95rem);
+.seva-tier-card:hover {
+  transform: translateY(-5px);
+  border-color: #F7CA45;
+  box-shadow: 0 12px 30px rgba(247, 202, 69, 0.35), 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.seva-card-sub-label {
+  font-size: 0.8rem;
   font-weight: 700;
-  color: #0B2545;
-  white-space: nowrap;
-}
-
-.step-number-circle {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #FFE89C 0%, #F7CA45 100%);
-  color: #221200;
+  color: #FFE8A3;
+  text-transform: none;
+  letter-spacing: 0.3px;
+  line-height: 1.35;
+  margin-bottom: 12px;
+  min-height: 38px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.9rem;
-  font-weight: 800;
-  box-shadow: 0 3px 10px rgba(247, 202, 69, 0.4);
-  border: 1px solid #FFEFA6;
-  flex-shrink: 0;
 }
 
-.form-sub-three-columns {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1.05fr;
-  gap: 22px;
+.seva-card-amount-val {
+  font-size: clamp(1.55rem, 2.2vw, 1.95rem);
+  font-weight: 800;
+  color: #FFFFFF;
+  font-family: 'Space Grotesk', sans-serif;
+  margin-bottom: 16px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+}
+
+.seva-card-donate-btn {
+  background: linear-gradient(180deg, #FFF6C4 0%, #FFDF6B 25%, #F7BC18 60%, #DF8200 90%, #B86000 100%);
+  color: #120500;
+  font-weight: 800;
+  font-size: 0.86rem;
+  padding: 10px 24px;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 248, 200, 0.9);
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  box-shadow: 0 4px 14px rgba(247, 180, 20, 0.55);
+  transition: all 0.25s ease;
+  width: 90%;
+  font-family: inherit;
+}
+
+.seva-card-donate-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(247, 190, 30, 0.75);
+}
+
+/* Bottom Table Box */
+.seva-bottom-table-box {
+  border: 2.5px solid #0B2545;
+  border-radius: 24px;
+  padding: 36px 32px 28px 32px;
+  background: #FFFFFF;
+  box-shadow: 0 10px 35px rgba(4, 18, 43, 0.05);
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.seva-table-rows-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
   margin-bottom: 28px;
 }
 
-.sub-col-title-lbl {
-  font-size: 0.98rem;
+.seva-table-row-item {
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr 0.65fr;
+  gap: 12px;
+  align-items: stretch;
+}
+
+.seva-row-col-label {
+  background: #04122B;
+  color: #FFE8A3;
   font-weight: 700;
-  color: #0B2545;
-  margin-bottom: 14px;
-}
-
-.exact-seva-card {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 12px 42px 12px 14px;
-  border-radius: 18px;
-  margin-bottom: 12px;
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-  background: #FFFFFF;
-  border: 1.5px solid #E2E8F0;
-}
-
-.exact-seva-card:hover {
-  border-color: #F7CA45;
-  background: #FFFDF8;
-  transform: translateY(-2px);
-}
-
-.exact-seva-card.active {
-  border: 2px solid #F7CA45;
-  background: linear-gradient(135deg, #FFFDF7 0%, #FFF8EA 100%);
-  box-shadow: 0 6px 20px rgba(247, 202, 69, 0.25);
-}
-
-.form-coin-icon-img {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  object-fit: contain;
-  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.15));
-  flex-shrink: 0;
-  transition: transform 0.3s ease;
-}
-
-.exact-seva-card:hover .form-coin-icon-img {
-  transform: scale(1.1) rotate(3deg);
-}
-
-.exact-seva-icon-circle {
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
+  font-size: 0.84rem;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
-}
-
-.bg-circle-butter { background: #FFF3D6; border: 1px solid #FCE4A6; }
-.bg-circle-thali { background: #E8F5E9; border: 1px solid #C8E6C9; }
-.bg-circle-goshala { background: #EFEBE9; border: 1px solid #D7CCC8; }
-
-.exact-seva-title-hi {
-  font-size: 1.02rem;
-  font-weight: 700;
-  color: #1F1100;
-  line-height: 1.2;
-}
-
-.exact-seva-title-en {
-  font-size: 0.8rem;
-  color: #64748B;
-  font-weight: 500;
-}
-
-.card-top-radio-dot {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 14px;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  border: 2px solid #CBD5E1;
-  background: #FFFFFF;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.exact-seva-card.active .card-top-radio-dot {
-  border-color: #D9A229;
-}
-
-.exact-seva-card.active .card-top-radio-dot::after {
-  content: '';
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: #D9A229;
-}
-
-.exact-amt-card {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 10px;
   padding: 12px 14px;
-  border-radius: 14px;
-  margin-bottom: 10px;
+  text-transform: none;
+  letter-spacing: 0.2px;
+  text-align: center;
+  line-height: 1.3;
+  border: 1px solid rgba(247, 202, 69, 0.3);
+}
+
+.seva-row-col-amount {
+  background: linear-gradient(180deg, #D4902B 0%, #BA771E 100%);
+  color: #FFFFFF;
+  font-weight: 800;
+  font-size: 1.05rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 14px;
+  font-family: 'Space Grotesk', sans-serif;
+  box-shadow: 0 2px 6px rgba(186, 119, 30, 0.25);
+  letter-spacing: 0.5px;
+}
+
+.seva-row-col-btn {
+  background: linear-gradient(180deg, #C5292A 0%, #8E1B1C 100%);
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 0.88rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 14px;
+  border: none;
   cursor: pointer;
   transition: all 0.2s ease;
-  background: #FAFAFA;
-  border: 1.5px solid #E2E8F0;
+  box-shadow: 0 3px 10px rgba(197, 41, 42, 0.3);
+  font-family: inherit;
 }
 
-.exact-amt-card:hover {
-  border-color: #D9A229;
-  background: #FFFDF8;
+.seva-row-col-btn:hover {
+  background: linear-gradient(180deg, #DE3133 0%, #6E1213 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 14px rgba(197, 41, 42, 0.45);
 }
 
-.exact-amt-card.active {
-  border: 2px solid #0B2545;
-  background: #FFFDF6;
-  box-shadow: 0 2px 10px rgba(11, 37, 69, 0.12);
+/* Bottom Action Area */
+.seva-table-bottom-actions {
+  text-align: center;
 }
 
-.exact-amt-val-text {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #0B2545;
-  line-height: 1.1;
-}
-
-.exact-amt-sub-text {
-  font-size: 0.74rem;
-  color: #64748B;
-}
-
-.popular-badge-tag {
-  position: absolute;
-  top: -9px;
-  right: 12px;
-  background: #C5292A;
-  color: #FFFFFF;
-  font-size: 0.65rem;
-  font-weight: 700;
-  padding: 2px 8px;
-  border-radius: 8px;
-}
-
-.form-input-group {
-  margin-bottom: 12px;
-}
-
-.form-label-title {
-  display: block;
-  font-size: 0.85rem;
+.seva-actions-sub-text {
+  font-size: 0.9rem;
   font-weight: 600;
-  color: #334155;
+  color: #04122B;
+  margin-bottom: 8px;
+}
+
+.seva-contribute-cta-btn {
+  background: linear-gradient(180deg, #FFF6C4 0%, #FFDF6B 25%, #F7BC18 60%, #DF8200 90%, #B86000 100%);
+  color: #120500;
+  border: 1.5px solid rgba(255, 248, 200, 0.95);
+  border-radius: 35px;
+  padding: 14px 46px;
+  font-weight: 800;
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: 0 6px 22px rgba(247, 180, 20, 0.6);
+  margin: 10px auto 16px auto;
+  display: inline-block;
+  transition: all 0.25s ease;
+  font-family: inherit;
+}
+
+.seva-contribute-cta-btn:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 28px rgba(247, 190, 30, 0.8);
+}
+
+.seva-csr-query-note {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #04122B;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
   margin-bottom: 4px;
 }
 
-.form-text-input {
-  width: 100%;
-  padding: 10px 14px;
-  border: 1.5px solid #CBD5E1;
-  border-radius: 8px;
+.seva-csr-email-link {
   font-size: 0.9rem;
-  font-family: inherit;
-  outline: none;
+  font-weight: 800;
+  color: #BA771E;
+  text-decoration: none;
+  letter-spacing: 0.5px;
 }
 
-.form-text-input:focus {
-  border-color: #0B2545;
+.seva-csr-email-link:hover {
+  color: #04122B;
+  text-decoration: underline;
 }
 
-.phone-input-flex-row {
-  display: flex;
-}
-
-.phone-code-prefix {
-  background: #F1F5F9;
-  border: 1.5px solid #CBD5E1;
-  border-right: none;
-  border-radius: 8px 0 0 8px;
-  padding: 10px 12px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #475569;
-}
-
-.phone-input-flex-row input {
-  border-radius: 0 8px 8px 0;
-}
-
-.full-red-submit-btn {
-  width: 100%;
-  background: linear-gradient(180deg, #D32F2F 0%, #C5292A 100%);
-  color: #FFFFFF;
-  font-size: 1.12rem;
-  font-weight: 700;
-  padding: 16px;
-  border-radius: 12px;
-  border: none;
-  cursor: pointer;
+/* ============================================================
+   CHECKOUT DETAILS MODAL (RAZORPAY DIRECT POPUP)
+   ============================================================ */
+.checkout-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 12, 28, 0.78);
+  backdrop-filter: blur(8px);
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  box-shadow: 0 6px 20px rgba(197, 41, 42, 0.35);
-  transition: all 0.25s ease;
+  z-index: 2000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  padding: 20px;
 }
 
-.full-red-submit-btn:hover {
-  background: linear-gradient(180deg, #E53935 0%, #B71C1C 100%);
-  transform: translateY(-2px);
+.checkout-modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
 }
 
-.form-footer-guarantee-note {
-  text-align: center;
-  margin-top: 14px;
+.checkout-modal-card {
+  background: #FFFFFF;
+  border-radius: 24px;
+  max-width: 520px;
+  width: 100%;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+  border: 2px solid #F7CA45;
+  overflow: hidden;
+  transform: scale(0.92) translateY(20px);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.checkout-modal-overlay.active .checkout-modal-card {
+  transform: scale(1) translateY(0);
+}
+
+.checkout-modal-header {
+  background: linear-gradient(135deg, #4A0818 0%, #2B020D 100%);
+  color: #FFFFFF;
+  padding: 20px 24px;
+  position: relative;
+  border-bottom: 2px solid #F7CA45;
+}
+
+.checkout-modal-close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(255,255,255,0.15);
+  border: none;
+  color: #FFFFFF;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.checkout-modal-close-btn:hover {
+  background: rgba(255,255,255,0.3);
+}
+
+.modal-seva-title-text {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #FFE8A3;
+  margin-bottom: 4px;
+}
+
+.modal-amount-display-val {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.checkout-modal-body {
+  padding: 24px;
+}
+
+.modal-form-group {
+  margin-bottom: 14px;
+}
+
+.modal-field-label {
+  display: block;
   font-size: 0.82rem;
-  color: #64748B;
-  line-height: 1.4;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 5px;
 }
 
-/* STICKY BOTTOM BANNER */
+.modal-text-input {
+  width: 100%;
+  background: #F8FAFC;
+  border: 1.5px solid #CBD5E1;
+  border-radius: 10px;
+  padding: 11px 14px;
+  font-size: 0.92rem;
+  color: #0F172A;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.modal-text-input:focus {
+  border-color: #BA771E;
+  background: #FFFFFF;
+}
+
+.modal-phone-row {
+  display: flex;
+}
+
+.modal-phone-code {
+  background: #E2E8F0;
+  border: 1.5px solid #CBD5E1;
+  border-right: none;
+  border-radius: 10px 0 0 10px;
+  padding: 11px 12px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #475569;
+}
+
+.modal-phone-row input {
+  border-radius: 0 10px 10px 0;
+}
+
+.modal-submit-pay-btn {
+  width: 100%;
+  background: linear-gradient(180deg, #D4902B 0%, #BA771E 100%);
+  color: #FFFFFF;
+  font-size: 1.08rem;
+  font-weight: 800;
+  padding: 15px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(186, 119, 30, 0.4);
+  transition: all 0.25s ease;
+  margin-top: 10px;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.modal-submit-pay-btn:hover {
+  background: linear-gradient(180deg, #E29E38 0%, #AA6B17 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(186, 119, 30, 0.5);
+}
+
+.modal-security-note {
+  text-align: center;
+  font-size: 0.75rem;
+  color: #64748B;
+  margin-top: 12px;
+}
+
+/* ============================================================
+   RESPONSIVE QUERIES FOR SEVA TIERS & TABLE
+   ============================================================ */
+
+/* ── DESKTOP LARGE (1200px+) ── */
+@media (min-width: 1200px) {
+  .seva-top-cards-grid {
+    grid-template-columns: repeat(8, 1fr);
+  }
+  .seva-tier-section-wrap .wrap {
+    max-width: 1160px;
+    margin: 0 auto;
+  }
+}
+
+/* ── DESKTOP (901px – 1199px): 4 cards per row ── */
+@media (min-width: 901px) and (max-width: 1199px) {
+  .seva-top-cards-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  .seva-top-cards-grid .seva-tier-card:nth-child(1),
+  .seva-top-cards-grid .seva-tier-card:nth-child(2),
+  .seva-top-cards-grid .seva-tier-card:nth-child(3),
+  .seva-top-cards-grid .seva-tier-card:nth-child(4),
+  .seva-top-cards-grid .seva-tier-card:nth-child(5),
+  .seva-top-cards-grid .seva-tier-card:nth-child(6),
+  .seva-top-cards-grid .seva-tier-card:nth-child(7) {
+    grid-column: span 1;
+  }
+}
+
+/* ── TABLET (601px – 900px): 2 cards per row ── */
+@media (max-width: 900px) {
+  .seva-tier-section-wrap {
+    padding: 50px 0 60px 0;
+  }
+  .seva-top-enclosed-box {
+    padding: 44px 18px 24px 18px;
+    border-radius: 20px;
+  }
+  .seva-top-cards-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 14px;
+  }
+  .seva-top-cards-grid .seva-tier-card {
+    grid-column: span 1 !important;
+  }
+  .seva-top-pill-badge {
+    font-size: 1.1rem;
+    padding: 9px 28px;
+    top: -22px;
+  }
+  .seva-bottom-table-box {
+    padding: 28px 18px 22px 18px;
+    max-width: 100%;
+    border-radius: 18px;
+  }
+  .seva-table-row-item {
+    grid-template-columns: 1.2fr 0.8fr 0.7fr;
+    gap: 10px;
+  }
+  .seva-row-col-label {
+    font-size: 0.78rem;
+    padding: 10px 10px;
+  }
+  .seva-row-col-amount {
+    font-size: 0.95rem;
+    padding: 10px 10px;
+  }
+  .seva-row-col-btn {
+    font-size: 0.82rem;
+    padding: 10px 10px;
+  }
+}
+
+/* ── MOBILE (max 600px): 1 card per row, stacked table ── */
+@media (max-width: 600px) {
+  .seva-tier-section-wrap {
+    padding: 40px 0 50px 0;
+  }
+  .seva-top-enclosed-box {
+    padding: 42px 12px 20px 12px;
+    border-radius: 16px;
+    margin-bottom: 28px;
+  }
+  .seva-top-pill-badge {
+    padding: 8px 20px;
+    font-size: 1rem;
+    top: -20px;
+    white-space: normal;
+    text-align: center;
+    width: 80%;
+    line-height: 1.3;
+  }
+  .seva-top-cards-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px;
+  }
+  .seva-top-cards-grid .seva-tier-card {
+    grid-column: span 1 !important;
+    padding: 18px 10px 20px 10px;
+  }
+  .seva-card-sub-label {
+    font-size: 0.72rem;
+    min-height: 32px;
+  }
+  .seva-card-amount-val {
+    font-size: 1.35rem;
+  }
+  .seva-card-donate-btn {
+    font-size: 0.78rem;
+    padding: 9px 14px;
+    width: 100%;
+  }
+  /* Bottom Table: Stack each row as card */
+  .seva-bottom-table-box {
+    padding: 22px 12px 18px 12px;
+    max-width: 100%;
+    border-radius: 16px;
+  }
+  .seva-table-rows-list {
+    gap: 10px;
+  }
+  .seva-table-row-item {
+    grid-template-columns: 1fr;
+    gap: 0;
+    background: #F4F0E8;
+    border-radius: 12px;
+    padding: 12px;
+    border: 1px solid rgba(247, 202, 69, 0.3);
+    overflow: hidden;
+  }
+  .seva-row-col-label {
+    background: #04122B;
+    color: #FFE8A3;
+    border-radius: 8px 8px 0 0;
+    font-size: 0.8rem;
+    padding: 10px 12px;
+    text-align: center;
+  }
+  .seva-row-col-amount {
+    background: linear-gradient(90deg, #D4902B 0%, #BA771E 100%);
+    border-radius: 0;
+    font-size: 1.1rem;
+    padding: 10px 12px;
+    justify-content: center;
+  }
+  .seva-row-col-btn {
+    border-radius: 0 0 8px 8px;
+    padding: 11px 12px;
+    font-size: 0.88rem;
+    justify-content: center;
+  }
+  .seva-actions-sub-text {
+    font-size: 0.82rem;
+  }
+  .seva-contribute-cta-btn {
+    padding: 12px 28px;
+    font-size: 1rem;
+    width: 100%;
+    text-align: center;
+  }
+  .seva-csr-query-note {
+    font-size: 0.72rem;
+  }
+  .seva-csr-email-link {
+    font-size: 0.85rem;
+  }
+}
+
+/* ── VERY SMALL MOBILE (max 380px) ── */
+@media (max-width: 380px) {
+  .seva-top-cards-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .seva-top-pill-badge {
+    font-size: 0.9rem;
+    padding: 7px 16px;
+    width: 85%;
+  }
+}
+
+/* STICKY BOTTOM BANNER (EXACT SCREENSHOT MATCH) */
 .bottom-sticky-banner-wrap {
   position: fixed;
   bottom: 0;
@@ -1503,7 +1728,7 @@ body {
   background: linear-gradient(90deg, #FFFDF6 0%, #FFF5E0 100%);
   border-top: 2px solid var(--jm-gold-primary);
   padding: 10px 0;
-  z-index: 100;
+  z-index: 1000;
   box-shadow: 0 -4px 15px rgba(0,0,0,0.12);
 }
 
@@ -1517,10 +1742,26 @@ body {
 .sticky-msg-block {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 0.95rem;
-  font-weight: 600;
+  gap: 12px;
+  font-size: 0.96rem;
+  font-weight: 700;
   color: #2D1A00;
+}
+
+.sticky-msg-block span.sticky-clock-icon {
+  font-size: 1.35rem;
+}
+
+.sticky-msg-title {
+  font-size: 0.98rem;
+  font-weight: 800;
+  color: #1F1100;
+}
+
+.sticky-msg-sub {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #594433;
 }
 
 .sticky-action-button {
@@ -1528,10 +1769,76 @@ body {
   color: #FFFFFF;
   font-weight: 700;
   font-size: 0.92rem;
-  padding: 9px 20px;
-  border-radius: 6px;
+  padding: 10px 22px;
+  border-radius: 8px;
   text-decoration: none;
   white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(11, 60, 93, 0.3);
+  transition: all 0.25s ease;
+}
+
+.sticky-action-button:hover {
+  background: #08293F;
+  transform: translateY(-1px);
+}
+
+/* Floating WhatsApp Button */
+.floating-whatsapp-btn {
+  position: fixed;
+  bottom: 74px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+  z-index: 1001;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.floating-whatsapp-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
+}
+
+@media (max-width: 900px) {
+  .clean-donation-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .clean-form-card {
+    padding: 26px 22px;
+  }
+  .sticky-msg-sub {
+    display: none;
+  }
+  .sticky-action-button {
+    padding: 8px 14px;
+    font-size: 0.82rem;
+  }
+}
+
+@media (max-width: 540px) {
+  .clean-features-2x2-grid {
+    grid-template-columns: 1fr;
+  }
+  .clean-fields-2col-row {
+    grid-template-columns: 1fr;
+  }
+  .clean-amount-pills-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .bottom-sticky-banner-wrap {
+    padding: 8px 0;
+  }
+  .sticky-msg-title {
+    font-size: 0.84rem;
+  }
 }
 
 /* ============================================================
@@ -1621,7 +1928,7 @@ body {
   .hero-brand-top-logo { margin: 0 auto 14px auto; }
   .hero-eyebrow-text { justify-content: center; }
   .hero-main-title { align-items: center; font-size: clamp(2.2rem, 6vw, 3rem); }
-  .hero-p-hi, .hero-p-en { margin-left: auto; margin-right: auto; text-align: center; }
+  .hero-main-desc { margin-left: auto; margin-right: auto; text-align: center; }
   .hero-buttons-row { justify-content: center; }
   .hero-floating-trust-card { margin-top: 16px; padding: 10px 16px; border-radius: 14px; }
   .trust-three-cols-grid { grid-template-columns: 1fr 1fr 1fr; gap: 0; }
@@ -1640,20 +1947,19 @@ body {
   }
   .hero-brand-top-logo { margin: 0 auto 12px auto; }
   .hero-iskcon-logo-img { height: 50px !important; }
-  .hero-eyebrow-text { font-size: 1.25rem; font-weight: 800; margin-bottom: 6px; }
-  .hero-main-title { font-size: 2.35rem !important; line-height: 1.15; margin-bottom: 12px; }
-  .hero-p-hi { 
-    font-size: 1.02rem; 
-    line-height: 1.65; 
-    font-weight: 600; 
-    color: #FFFFFF;
+  .hero-eyebrow-text { font-size: 0.88rem; font-weight: 700; margin-bottom: 8px; }
+  .hero-main-title { font-size: 2.35rem !important; line-height: 1.15; margin-bottom: 14px; }
+  .hero-main-desc { 
+    font-size: 1rem; 
+    line-height: 1.6; 
+    color: #F1F5F9;
     text-shadow: 0 2px 10px rgba(0,0,0,1), 0 0 25px rgba(0,0,0,0.9);
-    margin-bottom: 16px;
+    margin-bottom: 18px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
   }
-  .hero-p-en { display: none; }
   .btn-pill-gold, .btn-pill-dark { width: 100%; justify-content: center; padding: 14px 22px; }
-  .btn-main-hi { font-size: 1.02rem; font-weight: 800; }
-  .btn-sub-en { font-size: 0.78rem; }
   .hero-buttons-row { gap: 12px; flex-direction: column; width: 100%; }
   .trust-three-cols-grid { grid-template-columns: 1fr; gap: 0; }
   .trust-col-item { 
@@ -1664,14 +1970,6 @@ body {
   .trust-col-item:last-child { border-bottom: none; }
   .exact-impact-four-grid { grid-template-columns: 1fr; }
   .sticky-banner-flex-layout { flex-direction: column; text-align: center; }
-  
-  .form-right-builder-panel { padding: 20px 14px; }
-  .exact-seva-card { padding: 12px 40px 12px 12px; gap: 12px; }
-  .form-coin-icon-img { width: 38px; height: 38px; }
-  .exact-seva-title-hi { font-size: 1rem; font-weight: 700; }
-  .exact-amt-card { padding: 11px 12px; }
-  .exact-amt-val-text { font-size: 1.05rem; }
-  .full-red-submit-btn { padding: 14px 12px; font-size: 0.98rem; }
 }
 
 /* Mobile Small: max 480px */
@@ -1684,15 +1982,17 @@ body {
   }
   .hero-brand-top-logo { margin: 0 auto 10px auto; }
   .hero-iskcon-logo-img { height: 44px !important; }
-  .hero-eyebrow-text { font-size: 1.18rem; font-weight: 800; margin-bottom: 6px; }
+  .hero-eyebrow-text { font-size: 0.82rem; font-weight: 700; margin-bottom: 8px; }
   .hero-main-title { font-size: 2.15rem !important; line-height: 1.16; margin-bottom: 12px; }
-  .hero-p-hi { 
-    font-size: 0.96rem; 
-    line-height: 1.6; 
-    font-weight: 600; 
-    color: #FFFFFF;
+  .hero-main-desc { 
+    font-size: 0.95rem; 
+    line-height: 1.55; 
+    color: #F1F5F9;
     text-shadow: 0 2px 10px rgba(0,0,0,1), 0 0 25px rgba(0,0,0,0.9);
-    margin-bottom: 14px;
+    margin-bottom: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
   }
   .hero-floating-trust-card { padding: 10px 14px; margin-top: 14px; border-radius: 14px; }
   .trust-badge-wrap { width: 42px; height: 42px; }
@@ -1779,10 +2079,7 @@ body {
         <span class="hero-title-white" id="heroTitleLine2">सेवा अर्पित करें</span>
       </h1>
       
-      <p class="hero-p-hi" id="heroDescHi">
-        मध्यरात्रि भोग अर्पित करें, कृष्ण के नाम पर भूखों को भोजन कराएं, और उनकी प्रिय गायों की सेवा करें — हर सेवा मंदिर में आपके नाम व गोत्र सहित अर्पित की जाती है।
-      </p>
-      <p class="hero-p-en" id="heroDescEn">
+      <p class="hero-main-desc" id="heroDescEn">
         This Janmashtami, sponsor the midnight bhog, feed the hungry in Krishna's name, and care for the cows he loved — every seva is offered with your name and gotra at the temple.
       </p>
       
@@ -1797,10 +2094,7 @@ body {
               <path d="M5 18s2.5 1.5 7 1.5 7-1.5 7-1.5"/>
             </svg>
           </div>
-          <div class="btn-text-col">
-            <div class="btn-main-hi" id="heroBtn1Hi">सेवा अर्पित करें एवं दान करें</div>
-            <div class="btn-sub-en" id="heroBtn1En">Offer Seva & Donate</div>
-          </div>
+          <span class="btn-label-text" id="heroBtn1Text">Offer Seva & Donate</span>
           <span class="btn-arrow-icon">➔</span>
         </a>
         
@@ -1813,10 +2107,7 @@ body {
               <path d="M12 2v2M6.5 4.5l1.5 1.5M17.5 4.5l-1.5 1.5"/>
             </svg>
           </div>
-          <div class="btn-text-col">
-            <div class="btn-main-hi" id="heroBtn2Hi" style="color:#FFFFFF;">सेवाएं देखें</div>
-            <div class="btn-sub-en" id="heroBtn2En" style="color:#94A3B8;">See the Sevas</div>
-          </div>
+          <span class="btn-label-text" id="heroBtn2Text" style="color:#FFFFFF;">See the Sevas</span>
           <span class="btn-arrow-icon" style="color:#F7CA45;">➔</span>
         </a>
         
@@ -1882,8 +2173,8 @@ body {
           </div>
           <div class="trust-text-block">
             <div class="trust-col-num">12,000+</div>
-            <div class="trust-col-title-bold" id="trustCol1Title">भक्त परिवारों का विश्वास</div>
-            <div class="trust-col-subtext" id="trustCol1Sub">Trusted by 12,000+ devotee families</div>
+            <div class="trust-col-title-bold" id="trustCol1Title">Trusted by Devotee Families</div>
+            <div class="trust-col-subtext" id="trustCol1Sub">12,000+ families offered seva at ISKCON Kanpur</div>
           </div>
         </div>
         
@@ -1894,8 +2185,8 @@ body {
           </div>
           <div class="trust-text-block">
             <div class="trust-col-num">100%</div>
-            <div class="trust-col-title-bold" id="trustCol2Title">भोग अर्पण की राशि सेवा में उपयोग होती है</div>
-            <div class="trust-col-subtext" id="trustCol2Sub">100% of bhog offerings go to seva</div>
+            <div class="trust-col-title-bold" id="trustCol2Title">100% Goes to Seva</div>
+            <div class="trust-col-subtext" id="trustCol2Sub">Every rupee offered is used directly for this festival</div>
           </div>
         </div>
         
@@ -1905,15 +2196,175 @@ body {
             <img src="assets/trust_badge_lock.svg" alt="Shield Lock Ornate Gold Badge" class="trust-ornate-badge-img">
           </div>
           <div class="trust-text-block">
-            <div class="trust-col-num" id="trustCol3Num">सुरक्षित भुगतान</div>
-            <div class="trust-col-title-bold" id="trustCol3Title">UPI, कार्ड, नेट बैंकिंग द्वारा</div>
-            <div class="trust-col-subtext" id="trustCol3Sub">Secure payments via UPI, Cards & Net Banking</div>
+            <div class="trust-col-num" id="trustCol3Num">100% Secure</div>
+            <div class="trust-col-title-bold" id="trustCol3Title">UPI, Cards & Net Banking</div>
+            <div class="trust-col-subtext" id="trustCol3Sub">Instant 80G tax exemption receipt via email</div>
           </div>
         </div>
         
       </div>
     </div>
 
+  </div>
+</section>
+
+<!-- TIERED DONATION & PRASADAM SECTION (JUST BELOW HERO SECTION) -->
+<section id="offer-form" class="seva-tier-section-wrap">
+  <div class="wrap">
+    
+    <!-- Top Enclosed Box with Capsule Badge -->
+    <div class="seva-top-enclosed-box">
+      <div class="seva-top-pill-badge">Donate Prasadam & Seva</div>
+      
+      <!-- 4 Top Cards Grid -->
+      <div class="seva-top-cards-grid">
+        
+        <!-- Card 1: 20 People -->
+        <div class="seva-tier-card">
+          <div class="seva-card-sub-label">Donate prasadam for 20 people</div>
+          <div class="seva-card-amount-val">₹ 1,100</div>
+          <button type="button" class="seva-card-donate-btn" onclick="openRazorpayDonation('Donate prasadam for 20 people', 1100)">
+            Donate Now
+          </button>
+        </div>
+        
+        <!-- Card 2: 50 People -->
+        <div class="seva-tier-card">
+          <div class="seva-card-sub-label">Donate prasadam for 50 people</div>
+          <div class="seva-card-amount-val">₹ 2,100</div>
+          <button type="button" class="seva-card-donate-btn" onclick="openRazorpayDonation('Donate prasadam for 50 people', 2100)">
+            Donate Now
+          </button>
+        </div>
+        
+        <!-- Card 3: 100 People -->
+        <div class="seva-tier-card">
+          <div class="seva-card-sub-label">Donate prasadam for 100 people</div>
+          <div class="seva-card-amount-val">₹ 3,100</div>
+          <button type="button" class="seva-card-donate-btn" onclick="openRazorpayDonation('Donate prasadam for 100 people', 3100)">
+            Donate Now
+          </button>
+        </div>
+        
+        <!-- Card 4: 250 People -->
+        <div class="seva-tier-card">
+          <div class="seva-card-sub-label">Donate prasadam for 250 people</div>
+          <div class="seva-card-amount-val">₹ 5,100</div>
+          <button type="button" class="seva-card-donate-btn" onclick="openRazorpayDonation('Donate prasadam for 250 people', 5100)">
+            Donate Now
+          </button>
+        </div>
+
+        <!-- Card 5: 500 People -->
+        <div class="seva-tier-card">
+          <div class="seva-card-sub-label">Donate prasadam for 500 people</div>
+          <div class="seva-card-amount-val">₹ 8,100</div>
+          <button type="button" class="seva-card-donate-btn" onclick="openRazorpayDonation('Donate prasadam for 500 people', 8100)">
+            Donate Now
+          </button>
+        </div>
+
+        <!-- Card 6: 1000 People -->
+        <div class="seva-tier-card">
+          <div class="seva-card-sub-label">Donate prasadam for 1,000 people</div>
+          <div class="seva-card-amount-val">₹ 11,000</div>
+          <button type="button" class="seva-card-donate-btn" onclick="openRazorpayDonation('Donate prasadam for 1,000 people', 11000)">
+            Donate Now
+          </button>
+        </div>
+
+        <!-- Card 7: 2000 People -->
+        <div class="seva-tier-card">
+          <div class="seva-card-sub-label">Donate prasadam for 2,000 people</div>
+          <div class="seva-card-amount-val">₹ 25,000</div>
+          <button type="button" class="seva-card-donate-btn" onclick="openRazorpayDonation('Donate prasadam for 2,000 people', 25000)">
+            Donate Now
+          </button>
+        </div>
+        
+      </div>
+    </div>
+    
+    <!-- Bottom Enclosed Box: Large Seva Table -->
+    <div class="seva-bottom-table-box">
+      <div class="seva-table-rows-list">
+        
+        <!-- Row 1: 20 People -->
+        <div class="seva-table-row-item">
+          <div class="seva-row-col-label">Donate prasadam for 20 people</div>
+          <div class="seva-row-col-amount">₹ 1,100</div>
+          <button type="button" class="seva-row-col-btn" onclick="openRazorpayDonation('Donate prasadam for 20 people', 1100)">
+            Donate Now
+          </button>
+        </div>
+        
+        <!-- Row 2: 50 People -->
+        <div class="seva-table-row-item">
+          <div class="seva-row-col-label">Donate prasadam for 50 people</div>
+          <div class="seva-row-col-amount">₹ 2,100</div>
+          <button type="button" class="seva-row-col-btn" onclick="openRazorpayDonation('Donate prasadam for 50 people', 2100)">
+            Donate Now
+          </button>
+        </div>
+        
+        <!-- Row 3: 100 People -->
+        <div class="seva-table-row-item">
+          <div class="seva-row-col-label">Donate prasadam for 100 people</div>
+          <div class="seva-row-col-amount">₹ 3,100</div>
+          <button type="button" class="seva-row-col-btn" onclick="openRazorpayDonation('Donate prasadam for 100 people', 3100)">
+            Donate Now
+          </button>
+        </div>
+        
+        <!-- Row 4: 250 People -->
+        <div class="seva-table-row-item">
+          <div class="seva-row-col-label">Donate prasadam for 250 people</div>
+          <div class="seva-row-col-amount">₹ 5,100</div>
+          <button type="button" class="seva-row-col-btn" onclick="openRazorpayDonation('Donate prasadam for 250 people', 5100)">
+            Donate Now
+          </button>
+        </div>
+        
+        <!-- Row 5: 500 People -->
+        <div class="seva-table-row-item">
+          <div class="seva-row-col-label">Donate prasadam for 500 people</div>
+          <div class="seva-row-col-amount">₹ 8,100</div>
+          <button type="button" class="seva-row-col-btn" onclick="openRazorpayDonation('Donate prasadam for 500 people', 8100)">
+            Donate Now
+          </button>
+        </div>
+        
+        <!-- Row 6: 1000 People -->
+        <div class="seva-table-row-item">
+          <div class="seva-row-col-label">Donate prasadam for 1,000 people</div>
+          <div class="seva-row-col-amount">₹ 11,000</div>
+          <button type="button" class="seva-row-col-btn" onclick="openRazorpayDonation('Donate prasadam for 1,000 people', 11000)">
+            Donate Now
+          </button>
+        </div>
+        
+        <!-- Row 7: 2000 People -->
+        <div class="seva-table-row-item">
+          <div class="seva-row-col-label">Donate prasadam for 2,000 people</div>
+          <div class="seva-row-col-amount">₹ 25,000</div>
+          <button type="button" class="seva-row-col-btn" onclick="openRazorpayDonation('Donate prasadam for 2,000 people', 25000)">
+            Donate Now
+          </button>
+        </div>
+        
+      </div>
+      
+      <!-- Bottom Actions & Custom / International -->
+      <div class="seva-table-bottom-actions">
+        <div class="seva-actions-sub-text">For custom offering or international transactions</div>
+        <button type="button" class="seva-contribute-cta-btn" onclick="openCustomDonation()">
+          Contribute Now
+        </button>
+        <div class="seva-csr-query-note">For Corporate / CSR & Direct Festival Enquiries</div>
+        <a href="mailto:kanpur@iskcon.org" class="seva-csr-email-link">kanpur@iskcon.org</a>
+      </div>
+    </div>
+    
   </div>
 </section>
 
@@ -1930,11 +2381,11 @@ body {
     </div>
     
     <div class="section-head-title-block">
-      <h2 class="section-main-h2" id="offeringMainH2">इस जन्माष्टमी कृष्ण की सेवा के <span class="highlight-red">तीन माध्यम</span></h2>
-      <div class="section-sub-h2" id="offeringSubH2">Three ways to serve Krishna this Janmashtami</div>
+      <h2 class="section-main-h2" id="offeringMainH2">Three Sacred Ways to Serve Krishna <span class="highlight-red">This Janmashtami</span></h2>
+      <div class="section-sub-h2" id="offeringSubH2">Choose your personal offering for Sri Sri Radha Madhava at ISKCON Kanpur</div>
       <div class="section-desc-ribbon">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F7CA45" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/><circle cx="12" cy="12" r="3" fill="#F7CA45"/></svg>
-        <span id="offeringDescRibbon">आपकी अर्पित की गई हर राशि उसी दिन भोग तैयार करने, प्रसादम् वितरण और गौशाला की गौ सेवा में उपयोग होती है।</span>
+        <span id="offeringDescRibbon">Every rupee you offer is utilized on the same day for fresh bhog preparation, prasadam distribution & goshala seva at ISKCON Kanpur temple.</span>
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F7CA45" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/><circle cx="12" cy="12" r="3" fill="#F7CA45"/></svg>
       </div>
     </div>
@@ -1956,21 +2407,18 @@ body {
           <img src="assets/mishri_makhan.jpg" alt="Mishri Makhan Bhog">
         </div>
         <div class="card-body-text-box">
-          <h3 class="card-title-hi">मिश्री माखन भोग</h3>
-          <div class="card-title-en">Mishri Makhan Bhog</div>
-          <p class="card-p-hi">
-            श्री कृष्ण के प्रिय हाथ से मथे माखन और मिश्री का भोग मध्यरात्रि आरती में अर्पित करें।
-          </p>
+          <h3 class="card-title-hi">Mishri Makhan Bhog</h3>
+          <div class="card-title-en">Sacred Midnight Bhog Offering</div>
           <p class="card-p-en">
-            Offer Krishna's favourite hand-churned butter and sugar-crystal bhog at the midnight aarti.
+            Offer Krishna's favourite hand-churned butter & sugar-crystal bhog at the midnight aarti — performed in your name and gotra at the temple.
           </p>
           <div class="card-bottom-pill-box pill-gold-theme">
             <div class="pill-icon-circle">
               <img src="assets/coin_mandala_blue.png" alt="Mandala Coin" class="pill-coin-img">
             </div>
             <div class="pill-text-block">
-              <div class="pill-main-hi">मध्यरात्रि आरती अर्पण</div>
-              <div class="pill-sub-en">Midnight Aarti Offering</div>
+              <div class="pill-main-hi">Midnight Aarti Offering</div>
+              <div class="pill-sub-en">Performed in your name</div>
             </div>
           </div>
         </div>
@@ -1991,21 +2439,18 @@ body {
           <img src="assets/annadaan_thali.jpg" alt="Anna Daan Prasadam">
         </div>
         <div class="card-body-text-box">
-          <h3 class="card-title-hi">अन्न दान प्रसादम्</h3>
-          <div class="card-title-en">Anna Daan Prasadam</div>
-          <p class="card-p-hi">
-            भक्तों और जरूरतमंदों के लिए संपूर्ण प्रसादम् भोजन प्रायोजित करें, जो पूरे उत्सव में मंदिर की रसोई से ताजा परोसा जाता है।
-          </p>
+          <h3 class="card-title-hi">Anna Daan Prasadam</h3>
+          <div class="card-title-en">Food For Life Prasadam Seva</div>
           <p class="card-p-en">
-            Sponsor a full prasadam meal for devotees and the underprivileged, served fresh through the festival.
+            Sponsor a complete sacred prasadam meal for devotees and the underprivileged, cooked fresh in the temple kitchen throughout Janmashtami festival.
           </p>
           <div class="card-bottom-pill-box pill-green-theme">
             <div class="pill-icon-circle">
               <img src="assets/coin_devotees_green.png" alt="Devotees Coin" class="pill-coin-img">
             </div>
             <div class="pill-text-block">
-              <div class="pill-main-hi"><strong class="price-highlight-text">₹100</strong> में 1 व्यक्ति का भोजन</div>
-              <div class="pill-sub-en">Feeds 1 person per ₹100</div>
+              <div class="pill-main-hi"><strong class="price-highlight-text">₹100</strong> feeds 1 person</div>
+              <div class="pill-sub-en">Fresh temple kitchen meals</div>
             </div>
           </div>
         </div>
@@ -2026,21 +2471,18 @@ body {
           <img src="assets/goshala_cow.jpg" alt="Gau Seva">
         </div>
         <div class="card-body-text-box">
-          <h3 class="card-title-hi">गौ सेवा</h3>
-          <div class="card-title-en">Gau Seva</div>
-          <p class="card-p-hi">
-            गौशाला की गायों के दैनिक चारे, देखभाल और आश्रय में सहयोग करें — जो वृंदावन के नित्य गोपाल कृष्ण को अत्यंत प्रिय हैं।
-          </p>
+          <h3 class="card-title-hi">Gau Seva — Care for Holy Cows</h3>
+          <div class="card-title-en">Goshala Cow Protection</div>
           <p class="card-p-en">
-            Support the daily feed, care and shelter of the goshala's cows — dear to Krishna, the cowherd of Vrindavan.
+            Support the daily feed, care and shelter of the ISKCON Kanpur goshala's cows — beloved by Lord Krishna, the eternal cowherd of Vrindavan.
           </p>
           <div class="card-bottom-pill-box pill-brown-theme">
             <div class="pill-icon-circle">
               <img src="assets/coin_goshala_brown.png" alt="Goshala Cow Coin" class="pill-coin-img">
             </div>
             <div class="pill-text-block">
-              <div class="pill-main-hi">गौशाला की देख-रेख</div>
-              <div class="pill-sub-en">Care for the Goshala</div>
+              <div class="pill-main-hi">Care for the Goshala</div>
+              <div class="pill-sub-en">Daily feed & shelter support</div>
             </div>
           </div>
         </div>
@@ -2057,8 +2499,8 @@ body {
 
     <!-- Section Header -->
     <div class="impact-section-header">
-      <div class="impact-section-eyebrow">हमारी सेवा का प्रमाण · Proof of Our Seva</div>
-      <div class="impact-section-title">जन्माष्टमी <span class="gold-word">प्रभाव</span> की झलक</div>
+      <div class="impact-section-eyebrow">Our Seva, By the Numbers · ISKCON Kanpur</div>
+      <div class="impact-section-title">Janmashtami <span class="gold-word">Impact</span> — A Glimpse</div>
     </div>
 
     <div class="exact-impact-card-box">
@@ -2150,8 +2592,8 @@ body {
           </div>
           <div class="exact-stat-big-num" data-target="18400" data-suffix="+">18,400+</div>
           <div class="stat-divider-line"></div>
-          <div class="exact-stat-hi-lbl">परोसे गए प्रसादम् भोजन</div>
-          <div class="exact-stat-en-lbl">Prasadam meals served last Janmashtami</div>
+          <div class="exact-stat-hi-lbl">Prasadam Meals Served</div>
+          <div class="exact-stat-en-lbl">Last Janmashtami — served fresh at temple</div>
         </div>
 
         <!-- ===== COL 2: Goshala Cows — Sacred Cow Icon ===== -->
@@ -2200,8 +2642,8 @@ body {
           </div>
           <div class="exact-stat-big-num" data-target="64" data-suffix="">64</div>
           <div class="stat-divider-line"></div>
-          <div class="exact-stat-hi-lbl">गौशाला में सेवित गायें</div>
-          <div class="exact-stat-en-lbl">Cows cared for at the goshala</div>
+          <div class="exact-stat-hi-lbl">Sacred Cows Cared For</div>
+          <div class="exact-stat-en-lbl">At the ISKCON Kanpur Goshala</div>
         </div>
 
         <!-- ===== COL 3: Devotee Families — Lotus Hands Icon ===== -->
@@ -2247,8 +2689,8 @@ body {
           </div>
           <div class="exact-stat-big-num" data-target="12000" data-suffix="+">12,000+</div>
           <div class="stat-divider-line"></div>
-          <div class="exact-stat-hi-lbl">भक्त परिवारों का विश्वास</div>
-          <div class="exact-stat-en-lbl">Devotee families trust us</div>
+          <div class="exact-stat-hi-lbl">Devotee Families Trust Us</div>
+          <div class="exact-stat-en-lbl">Offering seva at ISKCON Kanpur year after year</div>
         </div>
 
         <!-- ===== COL 4: 100% Transparency — Shield + Om Icon ===== -->
@@ -2290,8 +2732,8 @@ body {
           </div>
           <div class="exact-stat-big-num" data-target="100" data-suffix="%">100%</div>
           <div class="stat-divider-line"></div>
-          <div class="exact-stat-hi-lbl">राशि इसी उत्सव सेवा में</div>
-          <div class="exact-stat-en-lbl">Of your offering used for this festival's seva</div>
+          <div class="exact-stat-hi-lbl">Goes to Festival Seva</div>
+          <div class="exact-stat-en-lbl">Every rupee used for this festival only</div>
         </div>
 
       </div>
@@ -2337,304 +2779,257 @@ body {
 })();
 </script>
 
-<!-- INTERACTIVE DONATION FORM SECTION -->
-<section id="offer-form" class="donation-form-section-wrap">
-  <div class="wrap">
+<!-- RAZORPAY CHECKOUT MODAL POPUP -->
+<div class="checkout-modal-overlay" id="donationCheckoutModal" onclick="if(event.target === this) closeRazorpayModal();">
+  <div class="checkout-modal-card">
     
-    <div class="ornament-header-wrap">
-      <div class="ornament-pill-badge">
-        <span>❖</span> अपनी सेवा अर्पित करें · Offer your seva <span>❖</span>
-      </div>
+    <!-- Modal Header -->
+    <div class="checkout-modal-header">
+      <button type="button" class="checkout-modal-close-btn" onclick="closeRazorpayModal()">✕</button>
+      <div class="modal-seva-title-text" id="modalSevaTitle">Donate Prasadam for 50 People</div>
+      <div class="modal-amount-display-val" id="modalAmountDisplay">₹1,250</div>
     </div>
     
-    <div class="form-outer-card-box">
-      
-      <!-- Left Info Panel -->
-      <div class="form-left-info-panel">
-        <h3 class="info-title-hi" id="formInfoTitleHi">अपना जन्माष्टमी अर्पण करें</h3>
-        <div class="info-title-en" id="formInfoTitleEn">Make your Janmashtami offering</div>
-        <p class="info-sub-desc-p" id="formInfoDesc">
-          एक सेवा चुनें, राशि चुनें, और मंदिर में लिए गए आपके नाम सहित प्रसादम् आशीर्वाद प्राप्त करें।
-        </p>
+    <!-- Modal Form Body -->
+    <div class="checkout-modal-body">
+      <form id="razorpayDonorForm" onsubmit="event.preventDefault(); initiateRazorpayPayment();">
         
-        <div class="info-illustration-center">
-          <img src="assets/little_krishna_cow.png" alt="Little Krishna with Cow">
+        <!-- Custom Amount (shown only when custom clicked) -->
+        <div class="modal-form-group" id="modalCustomAmountGroup" style="display:none;">
+          <label class="modal-field-label">Enter Custom Amount (₹) <span style="color:#C5292A;">*</span></label>
+          <input type="number" id="modalCustomAmountInput" class="modal-text-input" min="1" placeholder="e.g. 5100" oninput="updateCustomModalAmount(this.value)">
         </div>
         
-        <div class="info-bottom-guarantee-grid">
-          <div class="guarantee-item-box">
-            <div class="guarantee-icon-wrap">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F7CA45" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4" stroke="#FFF" stroke-width="2"/></svg>
-            </div>
-            <div class="guarantee-title" id="guar1Title">सुरक्षित</div>
-            <div class="guarantee-sub" id="guar1Sub">256-Bit SSL</div>
-          </div>
-          <div class="guarantee-item-box">
-            <div class="guarantee-icon-wrap">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F7CA45" stroke-width="2.2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
-            </div>
-            <div class="guarantee-title" id="guar2Title">तेज भुगतान</div>
-            <div class="guarantee-sub" id="guar2Sub">UPI, Cards</div>
-          </div>
-          <div class="guarantee-item-box">
-            <div class="guarantee-icon-wrap">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F7CA45" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            </div>
-            <div class="guarantee-title" id="guar3Title">कर-छूट रसीद</div>
-            <div class="guarantee-sub" id="guar3Sub">24 घंटे में</div>
-          </div>
+        <!-- Full Name -->
+        <div class="modal-form-group">
+          <label class="modal-field-label">Full Name <span style="color:#C5292A;">*</span></label>
+          <input type="text" id="modalDonorName" class="modal-text-input" placeholder="Your full name" required>
         </div>
-      </div>
-      
-      <!-- Right Form Panel -->
-      <div class="form-right-builder-panel">
         
-        <!-- Stepper Header Bar -->
-        <div class="stepper-header-flex-bar">
-          <div class="step-node-item">
-            <div class="step-number-circle">1</div>
-            <div>
-              <div id="step1Header">सेवा चुनें</div>
-              <div style="font-size:0.74rem; color:#64748B; font-weight:400;" id="step1HeaderSub">Select seva</div>
-            </div>
-          </div>
-          
-          <div style="flex:1; height:2px; background:#E2E8F0; margin:0 10px;"></div>
-          
-          <div class="step-node-item">
-            <div class="step-number-circle">2</div>
-            <div>
-              <div id="step2Header">राशि चुनें (₹)</div>
-              <div style="font-size:0.74rem; color:#64748B; font-weight:400;" id="step2HeaderSub">Select amount</div>
-            </div>
-          </div>
-          
-          <div style="flex:1; height:2px; background:#E2E8F0; margin:0 10px;"></div>
-          
-          <div class="step-node-item">
-            <div class="step-number-circle">3</div>
-            <div>
-              <div id="step3Header">आपका विवरण</div>
-              <div style="font-size:0.74rem; color:#64748B; font-weight:400;" id="step3HeaderSub">Your details</div>
-            </div>
+        <!-- Phone Number -->
+        <div class="modal-form-group">
+          <label class="modal-field-label">Phone Number (WhatsApp) <span style="color:#C5292A;">*</span></label>
+          <div class="modal-phone-row">
+            <span class="modal-phone-code">+91</span>
+            <input type="tel" id="modalDonorPhone" class="modal-text-input" placeholder="98XXXXXXXX" maxlength="10" required>
           </div>
         </div>
         
-        <form id="croppedMatchForm" onsubmit="event.preventDefault(); submitFinalForm();">
-          
-          <div class="form-sub-three-columns">
-            
-            <!-- Col 1: Seva Radio Cards -->
-            <div>
-              <div class="sub-col-title-lbl" id="step1Lbl">1. सेवा चुनें</div>
-              
-              <div class="exact-seva-card active" onclick="chooseExactSeva(this, 'मishri', 'मिश्री माखन भोग', 'Mishri Makhan Bhog')">
-                <div class="card-top-radio-dot"></div>
-                <img src="assets/coin_mandala_blue.png" alt="Mishri Makhan Bhog Coin" class="form-coin-icon-img">
-                <div>
-                  <div class="exact-seva-title-hi" id="cardSeva1TitleHi">मिश्री माखन भोग</div>
-                  <div class="exact-seva-title-en" id="cardSeva1TitleEn">Mishri Makhan Bhog</div>
-                </div>
-              </div>
-              
-              <div class="exact-seva-card" onclick="chooseExactSeva(this, 'anna', 'अन्न दान प्रसादम्', 'Anna Daan Prasadam')">
-                <div class="card-top-radio-dot"></div>
-                <img src="assets/coin_devotees_green.png" alt="Anna Daan Prasadam Coin" class="form-coin-icon-img">
-                <div>
-                  <div class="exact-seva-title-hi" id="cardSeva2TitleHi">अन्न दान प्रसादम्</div>
-                  <div class="exact-seva-title-en" id="cardSeva2TitleEn">Anna Daan Prasadam</div>
-                </div>
-              </div>
-              
-              <div class="exact-seva-card" onclick="chooseExactSeva(this, 'gau', 'गौ सेवा', 'Gau Seva')">
-                <div class="card-top-radio-dot"></div>
-                <img src="assets/coin_goshala_brown.png" alt="Gau Seva Coin" class="form-coin-icon-img">
-                <div>
-                  <div class="exact-seva-title-hi" id="cardSeva3TitleHi">गौ सेवा</div>
-                  <div class="exact-seva-title-en" id="cardSeva3TitleEn">Gau Seva</div>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Col 2: Amount Options -->
-            <div>
-              <div class="sub-col-title-lbl" id="step2Lbl">2. राशि चुनें (₹)</div>
-              
-              <div class="exact-amt-card" onclick="chooseExactAmount(this, 1100)">
-                <input type="radio" name="exactAmtRadio" style="accent-color:#0B2545;">
-                <div>
-                  <div class="exact-amt-val-text">₹1,100</div>
-                  <div class="exact-amt-sub-text" id="amtOpt1Sub">शुभ अर्पण - Shubh Arambh</div>
-                </div>
-              </div>
-              
-              <div class="exact-amt-card" onclick="chooseExactAmount(this, 2100)">
-                <input type="radio" name="exactAmtRadio" style="accent-color:#0B2545;">
-                <div>
-                  <div class="exact-amt-val-text">₹2,100</div>
-                  <div class="exact-amt-sub-text" id="amtOpt2Sub">विशेष सेवा - Vishesh Seva</div>
-                </div>
-              </div>
-              
-              <div class="exact-amt-card active" onclick="chooseExactAmount(this, 3100)">
-                <span class="popular-badge-tag" id="amtPopularBadge">सर्वाधिक लोकप्रिय</span>
-                <input type="radio" name="exactAmtRadio" checked style="accent-color:#0B2545;">
-                <div>
-                  <div class="exact-amt-val-text">₹3,100</div>
-                  <div class="exact-amt-sub-text" id="amtOpt3Sub">विशेष सेवा - Vishesh Seva</div>
-                </div>
-              </div>
-              
-              <div class="exact-amt-card" onclick="chooseExactAmount(this, 5100)">
-                <input type="radio" name="exactAmtRadio" style="accent-color:#0B2545;">
-                <div>
-                  <div class="exact-amt-val-text">₹5,100</div>
-                  <div class="exact-amt-sub-text" id="amtOpt4Sub">भोग प्रायोजक - Bhog Sponsor</div>
-                </div>
-              </div>
-              
-              <div class="exact-amt-card" onclick="chooseExactAmount(this, 11100)">
-                <input type="radio" name="exactAmtRadio" style="accent-color:#0B2545;">
-                <div>
-                  <div class="exact-amt-val-text">₹11,100</div>
-                  <div class="exact-amt-sub-text" id="amtOpt5Sub">महासेवा - Mahaseva</div>
-                </div>
-              </div>
-              
-              <div class="exact-amt-card" onclick="chooseExactAmount(this, 0)">
-                <input type="radio" name="exactAmtRadio" style="accent-color:#0B2545;">
-                <div>
-                  <div class="exact-amt-val-text" style="font-size:0.92rem;" id="amtOptCustomText">अन्य राशि दर्ज करें</div>
-                  <div class="exact-amt-sub-text" id="amtOptCustomSub">Other amount</div>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Col 3: Form Inputs -->
-            <div>
-              <div class="sub-col-title-lbl" id="step3Lbl">3. आपका विवरण</div>
-              
-              <div class="form-input-group">
-                <label class="form-label-title" id="lblName">नाम (Name) <span style="color:#C5292A;">*</span></label>
-                <input type="text" id="finalName" class="form-text-input" placeholder="आपका पूरा नाम" required>
-              </div>
-              
-              <div class="form-input-group">
-                <label class="form-label-title" id="lblGotra">गोत्र (Gotra)</label>
-                <input type="text" id="finalGotra" class="form-text-input" placeholder="अपना गोत्र लिखें">
-              </div>
-              
-              <div class="form-input-group">
-                <label class="form-label-title" id="lblMobile">मोबाइल नंबर (Mobile) <span style="color:#C5292A;">*</span></label>
-                <div class="phone-input-flex-row">
-                  <span class="phone-code-prefix">+91</span>
-                  <input type="tel" id="finalPhone" class="form-text-input" placeholder="XXXXX XXXXX" required pattern="[0-9]{10}">
-                </div>
-              </div>
-              
-              <div class="form-input-group">
-                <label class="form-label-title" id="lblEmail">ईमेल (Email) <span style="color:#C5292A;">*</span></label>
-                <input type="email" id="finalEmail" class="form-text-input" placeholder="youremail@example.com" required>
-              </div>
-            </div>
-            
-          </div>
-          
-          <button type="submit" class="full-red-submit-btn">
-            <span>🔒</span>
-            <span id="finalBtnSpan">₹3,100 अर्पित करने हेतु आगे बढ़ें — मिश्री माखन भोग</span>
-            <span>➔</span>
-          </button>
-          
-          <div class="form-footer-guarantee-note" id="formGuarNote">
-            सुरक्षित भुगतान UPI, कार्ड एवं नेट बैंकिंग द्वारा। कर-छूट रसीद 24 घंटे में आपके ईमेल पर भेजी जाएगी।<br>
-            <span style="font-size:0.75rem; color:#94A3B8;">Secure payment via UPI, cards & net banking. Tax-exemption receipt sent within 24 hours.</span>
-          </div>
-          
-        </form>
+        <!-- Email Address -->
+        <div class="modal-form-group">
+          <label class="modal-field-label">Email Address <span style="color:#C5292A;">*</span></label>
+          <input type="email" id="modalDonorEmail" class="modal-text-input" placeholder="you@example.com" required>
+        </div>
         
-      </div>
-      
+        <!-- Gotra & Dedication (Optional) -->
+        <div class="modal-form-group">
+          <label class="modal-field-label">Gotra / Dedication <span style="color:#64748B; font-weight:400;">(optional for sankalp)</span></label>
+          <input type="text" id="modalDonorGotra" class="modal-text-input" placeholder="Your Gotra or in memory of..">
+        </div>
+        
+        <!-- Submit Button -->
+        <button type="submit" class="modal-submit-pay-btn" id="modalSubmitPayBtn">
+          <span>Proceed to Pay</span>
+          <span id="modalBtnAmountText">₹1,250</span>
+          <span>➔</span>
+        </button>
+        
+        <div class="modal-security-note">
+          🔒 100% Safe & Encrypted • Instant 80G Tax Exemption Receipt
+        </div>
+        
+      </form>
     </div>
+    
   </div>
-</section>
+</div>
 
-<!-- STICKY BOTTOM BANNER -->
+<!-- STICKY BOTTOM BANNER (RESTORED EXACT REPLICA) -->
 <div class="bottom-sticky-banner-wrap">
   <div class="wrap">
     <div class="sticky-banner-flex-layout">
       <div class="sticky-msg-block">
-        <span style="font-size:1.3rem;">⏰</span>
+        <span class="sticky-clock-icon">⏰</span>
         <div>
-          <strong id="stickyMsgTitle">जन्माष्टमी महोत्सव नज़दीक है!</strong><br>
-          <span id="stickyMsgSub" style="font-size:0.82rem; color:#594433;">भोग, प्रसादम् और गौ सेवा की तैयारियां चल रही हैं। अभी अपनी सेवा अर्पित करें।</span>
+          <div class="sticky-msg-title" id="stickyMsgTitle">Janmashtami Festival is Almost Here!</div>
+          <div class="sticky-msg-sub" id="stickyMsgSub">Bhog, prasadam & goshala preparations are underway. Offer your seva now.</div>
         </div>
       </div>
-      <a href="#offer-form" class="sticky-action-button" id="stickyBtnText">अभी सेवा अर्पित करें / Offer Seva Now</a>
+      <a href="#offer-form" class="sticky-action-button" id="stickyBtnText">Offer Seva Now</a>
     </div>
   </div>
 </div>
 
+<!-- Floating WhatsApp Action Button -->
+<a href="https://wa.me/919876543210?text=Hare%20Krishna!%20I%20want%20to%20know%20more%20about%20Janmashtami%20Seva%20at%20ISKCON%20Kanpur." target="_blank" class="floating-whatsapp-btn" title="Contact us on WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="#FFFFFF">
+    <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.187-2.59-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.861.174.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.144.39-.086s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.159.57 4.187 1.564 5.946l-1.66 6.066 6.223-1.632c1.702.928 3.651 1.454 5.873 1.454 6.627 0 12-5.373 12-12 0-6.627-5.373-12-12-12z"/>
+  </svg>
+</a>
+
+<!-- RAZORPAY SCRIPT LOADER & CHECKOUT CONTROLLER -->
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <script>
 // ============================================================
-// SEVA SELECTION, AMOUNT MANAGEMENT & FORM SUBMISSION
+// RAZORPAY CHECKOUT & DONATION MODAL LOGIC
 // ============================================================
-let selSevaTitle = 'मिश्री माखन भोग';
-let selAmtValue = 3100;
+let activeSevaName = 'Donate Prasadam for 50 People';
+let activeSevaAmount = 1250;
+let isCustomAmountMode = false;
 
-function chooseExactSeva(cardEl, key, nameHi, nameEn) {
-  document.querySelectorAll('.exact-seva-card').forEach(c => c.classList.remove('active'));
-  cardEl.classList.add('active');
-  selSevaTitle = nameHi;
-  updateFinalButton();
+function openRazorpayDonation(sevaName, amount) {
+  activeSevaName = sevaName;
+  activeSevaAmount = amount;
+  isCustomAmountMode = false;
+  
+  document.getElementById('modalSevaTitle').textContent = sevaName;
+  document.getElementById('modalAmountDisplay').textContent = `₹${amount.toLocaleString('en-IN')}`;
+  document.getElementById('modalBtnAmountText').textContent = `₹${amount.toLocaleString('en-IN')}`;
+  document.getElementById('modalCustomAmountGroup').style.display = 'none';
+  
+  const modal = document.getElementById('donationCheckoutModal');
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
 }
 
-function chooseExactAmount(cardEl, val) {
-  document.querySelectorAll('.exact-amt-card').forEach(c => {
-    c.classList.remove('active');
-    const radio = c.querySelector('input[type="radio"]');
-    if (radio) radio.checked = false;
-  });
-  cardEl.classList.add('active');
-  const activeRadio = cardEl.querySelector('input[type="radio"]');
-  if (activeRadio) activeRadio.checked = true;
+function openCustomDonation() {
+  activeSevaName = 'Custom Seva Contribution';
+  activeSevaAmount = 2100;
+  isCustomAmountMode = true;
+  
+  document.getElementById('modalSevaTitle').textContent = activeSevaName;
+  document.getElementById('modalAmountDisplay').textContent = '₹2,100';
+  document.getElementById('modalBtnAmountText').textContent = '₹2,100';
+  
+  const customGroup = document.getElementById('modalCustomAmountGroup');
+  customGroup.style.display = 'block';
+  document.getElementById('modalCustomAmountInput').value = '2100';
+  
+  const modal = document.getElementById('donationCheckoutModal');
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
 
-  if (val === 0) {
-    const customVal = prompt('कृपया अपनी इच्छानुसार राशि दर्ज करें (₹):', '2100');
-    if (customVal && !isNaN(customVal) && Number(customVal) > 0) {
-      selAmtValue = Number(customVal);
-    }
+function updateCustomModalAmount(val) {
+  const parsed = parseInt(val, 10);
+  if (!isNaN(parsed) && parsed > 0) {
+    activeSevaAmount = parsed;
+    document.getElementById('modalAmountDisplay').textContent = `₹${parsed.toLocaleString('en-IN')}`;
+    document.getElementById('modalBtnAmountText').textContent = `₹${parsed.toLocaleString('en-IN')}`;
   } else {
-    selAmtValue = val;
+    activeSevaAmount = 0;
+    document.getElementById('modalAmountDisplay').textContent = '₹0';
+    document.getElementById('modalBtnAmountText').textContent = '₹0';
   }
-  updateFinalButton();
 }
 
-function updateFinalButton() {
-  const span = document.getElementById('finalBtnSpan');
-  if (!span) return;
-  const formattedAmt = `₹${selAmtValue.toLocaleString('en-IN')}`;
-  span.textContent = `${formattedAmt} अर्पित करने हेतु आगे बढ़ें — ${selSevaTitle}`;
+function closeRazorpayModal() {
+  const modal = document.getElementById('donationCheckoutModal');
+  modal.classList.remove('active');
+  document.body.style.overflow = '';
 }
 
-function submitFinalForm() {
-  const name = document.getElementById('finalName').value.trim();
-  const gotra = document.getElementById('finalGotra').value.trim();
-  const phone = document.getElementById('finalPhone').value.trim();
-  const email = document.getElementById('finalEmail').value.trim();
-
+async function initiateRazorpayPayment() {
+  const name = document.getElementById('modalDonorName').value.trim();
+  const phone = document.getElementById('modalDonorPhone').value.trim();
+  const email = document.getElementById('modalDonorEmail').value.trim();
+  const gotra = document.getElementById('modalDonorGotra').value.trim();
+  
   if (!name || !phone || !email) {
-    alert('कृपया नाम, मोबाइल नंबर और ईमेल भरें।');
+    alert('Please enter your full name, phone number, and email.');
     return;
   }
-
-  alert(`धन्यवाद ${name}! आपकी ${selSevaTitle} (गोत्र: ${gotra || 'N/A'}) हेतु ₹${selAmtValue.toLocaleString('en-IN')} का भुगतान शुरू किया जा रहा है।`);
+  
+  if (activeSevaAmount <= 0) {
+    alert('Please enter a valid donation amount.');
+    return;
+  }
+  
+  const submitBtn = document.getElementById('modalSubmitPayBtn');
+  const originalBtnHTML = submitBtn.innerHTML;
+  submitBtn.disabled = true;
+  submitBtn.innerHTML = '<span>Opening Secure Razorpay...</span>';
+  
+  const donationPayload = {
+    name: name,
+    phone: phone.startsWith('+91') ? phone : '+91' + phone,
+    email: email,
+    amount: activeSevaAmount,
+    seva: activeSevaName,
+    dedication: gotra
+  };
+  
+  try {
+    const apiBase = document.querySelector('meta[name="iskcon-api-base"]')?.getAttribute('content') || 'https://iskcon-k-tzoo.vercel.app/api';
+    
+    // Attempt backend order creation
+    let orderData = null;
+    try {
+      const resp = await fetch(`${apiBase}/payments/create-order`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(donationPayload)
+      });
+      if (resp.ok) {
+        orderData = await resp.json();
+      }
+    } catch (_e) {
+      console.log('Using direct Razorpay checkout instance');
+    }
+    
+    const options = {
+      key: orderData && orderData.keyId ? orderData.keyId : 'rzp_live_default',
+      amount: activeSevaAmount * 100, // paise
+      currency: 'INR',
+      name: 'ISKCON Kanpur',
+      description: `${activeSevaName} - Sri Sri Radha Madhava Mandir`,
+      image: 'assets/image-01a94a.png',
+      order_id: orderData && orderData.orderId ? orderData.orderId : undefined,
+      prefill: {
+        name: name,
+        email: email,
+        contact: phone
+      },
+      theme: {
+        color: '#5B112B'
+      },
+      notes: {
+        seva: activeSevaName,
+        gotra: gotra,
+        temple: 'ISKCON Kanpur'
+      },
+      handler: function(response) {
+        closeRazorpayModal();
+        alert(`Hare Krishna ${name}! Your donation of ₹${activeSevaAmount.toLocaleString('en-IN')} has been received successfully. Payment ID: ${response.razorpay_payment_id}. Prasad receipt will be sent to ${email}.`);
+      },
+      modal: {
+        ondismiss: function() {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalBtnHTML;
+        }
+      }
+    };
+    
+    if (typeof window.Razorpay === 'function') {
+      const rzp = new window.Razorpay(options);
+      rzp.on('payment.failed', function(response) {
+        alert(`Payment failed: ${response.error.description || 'Please try again'}`);
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnHTML;
+      });
+      rzp.open();
+    } else {
+      alert(`Initiating ₹${activeSevaAmount.toLocaleString('en-IN')} donation for ${activeSevaName}. Razorpay gateway loading...`);
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalBtnHTML;
+    }
+  } catch (err) {
+    console.error(err);
+    alert('Could not open Razorpay checkout. Please check your internet connection.');
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = originalBtnHTML;
+  }
 }
-
-// Initial button update on load
-document.addEventListener('DOMContentLoaded', () => {
-  updateFinalButton();
-});
 </script>
 
 </body>
