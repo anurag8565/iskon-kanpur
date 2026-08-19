@@ -2468,17 +2468,17 @@ body {
                 </div>
               </div>
               
-              <div class="exact-amt-card active" onclick="chooseExactAmount(this, 2100)">
-                <span class="popular-badge-tag" id="amtPopularBadge">सर्वाधिक लोकप्रिय</span>
-                <input type="radio" name="exactAmtRadio" checked style="accent-color:#0B2545;">
+              <div class="exact-amt-card" onclick="chooseExactAmount(this, 2100)">
+                <input type="radio" name="exactAmtRadio" style="accent-color:#0B2545;">
                 <div>
                   <div class="exact-amt-val-text">₹2,100</div>
                   <div class="exact-amt-sub-text" id="amtOpt2Sub">विशेष सेवा - Vishesh Seva</div>
                 </div>
               </div>
               
-              <div class="exact-amt-card" onclick="chooseExactAmount(this, 3100)">
-                <input type="radio" name="exactAmtRadio" style="accent-color:#0B2545;">
+              <div class="exact-amt-card active" onclick="chooseExactAmount(this, 3100)">
+                <span class="popular-badge-tag" id="amtPopularBadge">सर्वाधिक लोकप्रिय</span>
+                <input type="radio" name="exactAmtRadio" checked style="accent-color:#0B2545;">
                 <div>
                   <div class="exact-amt-val-text">₹3,100</div>
                   <div class="exact-amt-sub-text" id="amtOpt3Sub">विशेष सेवा - Vishesh Seva</div>
@@ -2542,7 +2542,7 @@ body {
           
           <button type="submit" class="full-red-submit-btn">
             <span>🔒</span>
-            <span id="finalBtnSpan">₹2,100 अर्पित करने हेतु आगे बढ़ें — मिश्री माखन भोग</span>
+            <span id="finalBtnSpan">₹3,100 अर्पित करने हेतु आगे बढ़ें — मिश्री माखन भोग</span>
             <span>➔</span>
           </button>
           
@@ -2580,7 +2580,7 @@ body {
 // SEVA SELECTION, AMOUNT MANAGEMENT & FORM SUBMISSION
 // ============================================================
 let selSevaTitle = 'मिश्री माखन भोग';
-let selAmtValue = 2100;
+let selAmtValue = 3100;
 
 function chooseExactSeva(cardEl, key, nameHi, nameEn) {
   document.querySelectorAll('.exact-seva-card').forEach(c => c.classList.remove('active'));
