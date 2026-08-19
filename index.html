@@ -96,25 +96,25 @@ body {
 }
 
 .hero-eyebrow-text {
-  font-size: clamp(1.2rem, 1.9vw, 1.55rem);
+  font-size: clamp(1.35rem, 2.2vw, 1.8rem);
   color: #FFFFFF;
   font-weight: 700;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   font-family: 'Noto Serif Devanagari', serif;
   font-style: italic;
   letter-spacing: 0.04em;
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   text-shadow: 0 2px 10px rgba(0,0,0,0.95), 0 0 20px rgba(247,202,69,0.7);
 }
 
 .hero-main-title {
-  font-size: clamp(2.9rem, 5.2vw, 4.4rem);
+  font-size: clamp(3.4rem, 6.2vw, 5.2rem);
   font-weight: 900;
-  line-height: 1.1;
-  margin-bottom: 16px;
-  letter-spacing: -0.02em;
+  line-height: 1.12;
+  margin-bottom: 18px;
+  letter-spacing: -0.01em;
   font-family: 'Rozha One', 'Noto Serif Devanagari', serif;
   display: flex;
   flex-direction: column;
@@ -165,14 +165,14 @@ body {
 }
 
 .hero-main-desc {
-  font-size: clamp(1.02rem, 1.25vw, 1.18rem);
+  font-size: clamp(1.08rem, 1.35vw, 1.25rem);
   line-height: 1.65;
   color: #F1F5F9;
   margin-bottom: 24px;
   font-weight: 400;
   font-family: 'Hind', sans-serif;
   text-shadow: 0 2px 12px rgba(0,0,0,0.95), 0 1px 3px rgba(0,0,0,0.9);
-  max-width: 560px;
+  max-width: 580px;
 }
 
 /* Hero Buttons */
@@ -573,8 +573,10 @@ body {
 
 .cards-three-column-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 28px;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .offering-card-item {
@@ -1368,6 +1370,367 @@ body {
 }
 
 /* ============================================================
+   MAKE A GENERAL DONATION (NO FIXED SCHEME) SECTION
+   ============================================================ */
+.general-donation-section-wrap {
+  background: #FBF7F0;
+  padding: 65px 0 80px 0;
+  position: relative;
+  border-bottom: 2px solid #EFE5D5;
+}
+
+.general-donation-layout-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.08fr;
+  gap: 48px;
+  align-items: start;
+}
+
+/* Left Column Styling */
+.general-donation-left-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.general-eyebrow-pill {
+  display: inline-block;
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #A87612;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.general-heading-title {
+  font-family: 'Rozha One', 'Noto Serif Devanagari', 'Playfair Display', serif;
+  font-size: clamp(2.1rem, 3.3vw, 2.8rem);
+  font-weight: 700;
+  color: #241202;
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
+
+.general-desc-para {
+  font-size: clamp(0.96rem, 1.1vw, 1.06rem);
+  color: #52402E;
+  line-height: 1.65;
+  margin-bottom: 22px;
+}
+
+.general-feature-bullets-list {
+  list-style: none;
+  margin-bottom: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.general-bullet-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.96rem;
+  color: #3B2A18;
+  font-weight: 600;
+}
+
+.general-bullet-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #D4902B;
+  flex-shrink: 0;
+  box-shadow: 0 0 6px rgba(212, 144, 43, 0.7);
+}
+
+.general-seva-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.general-seva-card-item {
+  background: #FFFFFF;
+  border: 1.5px solid #EFE5D5;
+  border-radius: 16px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  box-shadow: 0 4px 14px rgba(4, 18, 43, 0.04);
+  transition: all 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
+  cursor: pointer;
+}
+
+.general-seva-card-item:hover {
+  transform: translateY(-3px);
+  border-color: #F7CA45;
+  box-shadow: 0 8px 22px rgba(247, 202, 69, 0.25);
+}
+
+.general-seva-icon-circle {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #FDF4E3;
+  border: 1px solid #ECD4A4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.general-seva-card-item:hover .general-seva-icon-circle {
+  transform: scale(1.08);
+  background: #FFE8A3;
+}
+
+.general-seva-card-name {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #221200;
+  line-height: 1.3;
+}
+
+.general-quote-note-box {
+  background: linear-gradient(135deg, #FBF4E6 0%, #F5E8CE 100%);
+  border: 1.2px solid #E5C88A;
+  border-radius: 14px;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  box-shadow: 0 4px 12px rgba(186, 119, 30, 0.06);
+}
+
+.general-quote-icon-wrap {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.general-quote-text {
+  font-size: 0.92rem;
+  color: #5C4318;
+  font-style: italic;
+  line-height: 1.45;
+}
+
+/* Right Column: Donation Form Card */
+.general-donation-form-card {
+  background: #FFFFFF;
+  border: 2px solid #EFE5D5;
+  border-radius: 28px;
+  padding: 36px 32px 30px 32px;
+  box-shadow: 0 15px 45px rgba(4, 18, 43, 0.08);
+  position: relative;
+}
+
+.general-field-heading {
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: #4A3825;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.general-amount-chips-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.general-chip-btn {
+  background: #FAF6EE;
+  border: 1.5px solid #E8DCBE;
+  border-radius: 10px;
+  padding: 12px 6px;
+  font-weight: 700;
+  font-size: 1.05rem;
+  font-family: 'Space Grotesk', sans-serif;
+  color: #221200;
+  cursor: pointer;
+  transition: all 0.22s ease;
+  text-align: center;
+}
+
+.general-chip-btn:hover {
+  border-color: #A87612;
+  background: #FFF9ED;
+  transform: translateY(-2px);
+}
+
+.general-chip-btn.active {
+  background: linear-gradient(135deg, #5B112B 0%, #3D0819 100%);
+  border-color: #F7CA45;
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(91, 17, 43, 0.35);
+  transform: translateY(-2px);
+}
+
+.general-form-group {
+  margin-bottom: 16px;
+}
+
+.general-field-label {
+  display: block;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: #4A3825;
+  margin-bottom: 6px;
+}
+
+.required-star {
+  color: #C5292A;
+  font-weight: 700;
+}
+
+.optional-hint {
+  color: #8A7A68;
+  font-weight: 400;
+  font-size: 0.76rem;
+}
+
+.general-custom-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.general-rupee-symbol {
+  position: absolute;
+  left: 16px;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #7A5B30;
+  pointer-events: none;
+}
+
+.general-custom-input {
+  width: 100%;
+  background: #FAF6EE;
+  border: 1.5px solid #E8DCBE;
+  border-radius: 10px;
+  padding: 12px 16px 12px 38px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #221200;
+  font-family: 'Space Grotesk', sans-serif;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.general-custom-input:focus {
+  border-color: #A87612;
+  background: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(247, 202, 69, 0.25);
+}
+
+.general-two-col-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.general-text-input {
+  width: 100%;
+  background: #FAF6EE;
+  border: 1.5px solid #E8DCBE;
+  border-radius: 10px;
+  padding: 11px 14px;
+  font-size: 0.95rem;
+  color: #221200;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.general-text-input:focus {
+  border-color: #A87612;
+  background: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(247, 202, 69, 0.2);
+}
+
+.general-phone-input-wrap {
+  display: flex;
+  align-items: center;
+  background: #FAF6EE;
+  border: 1.5px solid #E8DCBE;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.general-phone-input-wrap:focus-within {
+  border-color: #A87612;
+  background: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(247, 202, 69, 0.2);
+}
+
+.general-phone-code {
+  padding: 11px 12px;
+  background: #F1E7D5;
+  color: #4A3825;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border-right: 1px solid #E8DCBE;
+  user-select: none;
+}
+
+.general-text-input.phone-field {
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  padding-left: 12px;
+}
+
+.general-text-input.uppercase-text {
+  text-transform: uppercase;
+}
+
+.general-donate-cta-btn {
+  width: 100%;
+  background: linear-gradient(180deg, #FAD663 0%, #F7CA45 35%, #DF9A12 85%, #B87300 100%);
+  color: #120500;
+  font-weight: 800;
+  font-size: 1.15rem;
+  padding: 15px 24px;
+  border: 1.5px solid rgba(255, 248, 200, 0.95);
+  border-radius: 14px;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(247, 180, 20, 0.5);
+  transition: all 0.25s ease;
+  letter-spacing: 0.5px;
+  font-family: inherit;
+  margin-top: 6px;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.general-donate-cta-btn:hover {
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 8px 26px rgba(247, 190, 30, 0.7);
+}
+
+.general-donate-cta-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.general-card-trust-note {
+  text-align: center;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #7A6B58;
+}
+
+/* ============================================================
    CHECKOUT DETAILS MODAL (RAZORPAY DIRECT POPUP)
    ============================================================ */
 .checkout-modal-overlay {
@@ -1719,67 +2082,112 @@ body {
   }
 }
 
+/* ── GENERAL DONATION RESPONSIVE ── */
+@media (max-width: 960px) {
+  .general-donation-layout-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .general-donation-form-card {
+    padding: 28px 20px;
+    border-radius: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .general-donation-section-wrap {
+    padding: 45px 0 55px 0;
+  }
+  .general-heading-title {
+    font-size: 1.85rem;
+  }
+  .general-two-col-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .general-amount-chips-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  .general-seva-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .general-donate-cta-btn {
+    font-size: 1.02rem;
+    padding: 13px 18px;
+  }
+}
+
 /* STICKY BOTTOM BANNER (EXACT SCREENSHOT MATCH) */
 .bottom-sticky-banner-wrap {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(90deg, #FFFDF6 0%, #FFF5E0 100%);
-  border-top: 2px solid var(--jm-gold-primary);
-  padding: 10px 0;
+  background: linear-gradient(100deg, #1a0a00 0%, #3b1800 40%, #5c2800 100%);
+  border-top: 3px solid #D4A017;
+  padding: 0;
   z-index: 1000;
-  box-shadow: 0 -4px 15px rgba(0,0,0,0.12);
+  box-shadow: 0 -6px 30px rgba(0,0,0,0.35);
 }
 
 .sticky-banner-flex-layout {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: 20px;
+  padding: 14px 0;
 }
 
 .sticky-msg-block {
   display: flex;
   align-items: center;
-  gap: 12px;
-  font-size: 0.96rem;
-  font-weight: 700;
-  color: #2D1A00;
+  gap: 14px;
 }
 
 .sticky-msg-block span.sticky-clock-icon {
-  font-size: 1.35rem;
+  font-size: 2rem;
+  line-height: 1;
+  filter: drop-shadow(0 0 6px rgba(212,160,23,0.6));
 }
 
 .sticky-msg-title {
-  font-size: 0.98rem;
+  font-size: 1.05rem;
   font-weight: 800;
-  color: #1F1100;
+  color: #FFD966;
+  letter-spacing: 0.01em;
+  line-height: 1.3;
 }
 
 .sticky-msg-sub {
   font-size: 0.82rem;
-  font-weight: 500;
-  color: #594433;
+  font-weight: 400;
+  color: #F5C897;
+  margin-top: 2px;
+  line-height: 1.4;
 }
 
 .sticky-action-button {
-  background: #0B3C5D;
-  color: #FFFFFF;
-  font-weight: 700;
-  font-size: 0.92rem;
-  padding: 10px 22px;
-  border-radius: 8px;
+  background: linear-gradient(135deg, #D4A017 0%, #B8860B 100%);
+  color: #1a0a00;
+  font-weight: 800;
+  font-size: 0.9rem;
+  padding: 12px 28px;
+  border-radius: 50px;
   text-decoration: none;
   white-space: nowrap;
-  box-shadow: 0 4px 12px rgba(11, 60, 93, 0.3);
+  box-shadow: 0 4px 18px rgba(212,160,23,0.45);
   transition: all 0.25s ease;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  border: 2px solid rgba(255,255,255,0.25);
 }
 
 .sticky-action-button:hover {
-  background: #08293F;
-  transform: translateY(-1px);
+  background: linear-gradient(135deg, #FFD966 0%, #D4A017 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(212,160,23,0.6);
 }
 
 /* Floating WhatsApp Button */
@@ -1858,7 +2266,7 @@ body {
   .hero-brand-top-logo { margin-bottom: 10px; }
   .hero-floating-trust-card { padding: 12px 18px; margin-top: 18px; }
   .trust-three-cols-grid { gap: 6px; }
-  .cards-three-column-grid { grid-template-columns: 1fr; }
+  .cards-three-column-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 850px; }
   .exact-impact-four-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
   .exact-stat-col { border-right: none; border-bottom: 1px solid rgba(247,202,69,0.2); padding-bottom: 16px; }
   .form-outer-card-box { grid-template-columns: 1fr; }
@@ -1926,8 +2334,8 @@ body {
   }
   .hero-content-left { max-width: 100%; text-align: center; align-items: center; padding-bottom: 6px; }
   .hero-brand-top-logo { margin: 0 auto 14px auto; }
-  .hero-eyebrow-text { justify-content: center; }
-  .hero-main-title { align-items: center; font-size: clamp(2.2rem, 6vw, 3rem); }
+  .hero-eyebrow-text { justify-content: center; font-size: 1.45rem; }
+  .hero-main-title { align-items: center; font-size: clamp(2.6rem, 7vw, 3.6rem); }
   .hero-main-desc { margin-left: auto; margin-right: auto; text-align: center; }
   .hero-buttons-row { justify-content: center; }
   .hero-floating-trust-card { margin-top: 16px; padding: 10px 16px; border-radius: 14px; }
@@ -1947,10 +2355,10 @@ body {
   }
   .hero-brand-top-logo { margin: 0 auto 12px auto; }
   .hero-iskcon-logo-img { height: 50px !important; }
-  .hero-eyebrow-text { font-size: 0.88rem; font-weight: 700; margin-bottom: 8px; }
-  .hero-main-title { font-size: 2.35rem !important; line-height: 1.15; margin-bottom: 14px; }
+  .hero-eyebrow-text { font-size: 1.15rem; font-weight: 700; margin-bottom: 8px; }
+  .hero-main-title { font-size: 2.75rem !important; line-height: 1.15; margin-bottom: 14px; }
   .hero-main-desc { 
-    font-size: 1rem; 
+    font-size: 1.05rem; 
     line-height: 1.6; 
     color: #F1F5F9;
     text-shadow: 0 2px 10px rgba(0,0,0,1), 0 0 25px rgba(0,0,0,0.9);
@@ -1968,6 +2376,7 @@ body {
     padding: 10px 12px !important;
   }
   .trust-col-item:last-child { border-bottom: none; }
+  .cards-three-column-grid { grid-template-columns: 1fr; gap: 20px; }
   .exact-impact-four-grid { grid-template-columns: 1fr; }
   .sticky-banner-flex-layout { flex-direction: column; text-align: center; }
 }
@@ -1982,10 +2391,10 @@ body {
   }
   .hero-brand-top-logo { margin: 0 auto 10px auto; }
   .hero-iskcon-logo-img { height: 44px !important; }
-  .hero-eyebrow-text { font-size: 0.82rem; font-weight: 700; margin-bottom: 8px; }
-  .hero-main-title { font-size: 2.15rem !important; line-height: 1.16; margin-bottom: 12px; }
+  .hero-eyebrow-text { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; }
+  .hero-main-title { font-size: 2.45rem !important; line-height: 1.16; margin-bottom: 12px; }
   .hero-main-desc { 
-    font-size: 0.95rem; 
+    font-size: 0.98rem; 
     line-height: 1.55; 
     color: #F1F5F9;
     text-shadow: 0 2px 10px rgba(0,0,0,1), 0 0 25px rgba(0,0,0,0.9);
@@ -2285,85 +2694,7 @@ body {
       </div>
     </div>
     
-    <!-- Bottom Enclosed Box: Large Seva Table -->
-    <div class="seva-bottom-table-box">
-      <div class="seva-table-rows-list">
-        
-        <!-- Row 1: 20 People -->
-        <div class="seva-table-row-item">
-          <div class="seva-row-col-label">Donate prasadam for 20 people</div>
-          <div class="seva-row-col-amount">₹ 1,100</div>
-          <button type="button" class="seva-row-col-btn" onclick="openRazorpayDonation('Donate prasadam for 20 people', 1100)">
-            Donate Now
-          </button>
-        </div>
-        
-        <!-- Row 2: 50 People -->
-        <div class="seva-table-row-item">
-          <div class="seva-row-col-label">Donate prasadam for 50 people</div>
-          <div class="seva-row-col-amount">₹ 2,100</div>
-          <button type="button" class="seva-row-col-btn" onclick="openRazorpayDonation('Donate prasadam for 50 people', 2100)">
-            Donate Now
-          </button>
-        </div>
-        
-        <!-- Row 3: 100 People -->
-        <div class="seva-table-row-item">
-          <div class="seva-row-col-label">Donate prasadam for 100 people</div>
-          <div class="seva-row-col-amount">₹ 3,100</div>
-          <button type="button" class="seva-row-col-btn" onclick="openRazorpayDonation('Donate prasadam for 100 people', 3100)">
-            Donate Now
-          </button>
-        </div>
-        
-        <!-- Row 4: 250 People -->
-        <div class="seva-table-row-item">
-          <div class="seva-row-col-label">Donate prasadam for 250 people</div>
-          <div class="seva-row-col-amount">₹ 5,100</div>
-          <button type="button" class="seva-row-col-btn" onclick="openRazorpayDonation('Donate prasadam for 250 people', 5100)">
-            Donate Now
-          </button>
-        </div>
-        
-        <!-- Row 5: 500 People -->
-        <div class="seva-table-row-item">
-          <div class="seva-row-col-label">Donate prasadam for 500 people</div>
-          <div class="seva-row-col-amount">₹ 8,100</div>
-          <button type="button" class="seva-row-col-btn" onclick="openRazorpayDonation('Donate prasadam for 500 people', 8100)">
-            Donate Now
-          </button>
-        </div>
-        
-        <!-- Row 6: 1000 People -->
-        <div class="seva-table-row-item">
-          <div class="seva-row-col-label">Donate prasadam for 1,000 people</div>
-          <div class="seva-row-col-amount">₹ 11,000</div>
-          <button type="button" class="seva-row-col-btn" onclick="openRazorpayDonation('Donate prasadam for 1,000 people', 11000)">
-            Donate Now
-          </button>
-        </div>
-        
-        <!-- Row 7: 2000 People -->
-        <div class="seva-table-row-item">
-          <div class="seva-row-col-label">Donate prasadam for 2,000 people</div>
-          <div class="seva-row-col-amount">₹ 25,000</div>
-          <button type="button" class="seva-row-col-btn" onclick="openRazorpayDonation('Donate prasadam for 2,000 people', 25000)">
-            Donate Now
-          </button>
-        </div>
-        
-      </div>
-      
-      <!-- Bottom Actions & Custom / International -->
-      <div class="seva-table-bottom-actions">
-        <div class="seva-actions-sub-text">For custom offering or international transactions</div>
-        <button type="button" class="seva-contribute-cta-btn" onclick="openCustomDonation()">
-          Contribute Now
-        </button>
-        <div class="seva-csr-query-note">For Corporate / CSR & Direct Festival Enquiries</div>
-        <a href="mailto:kanpur@iskcon.org" class="seva-csr-email-link">kanpur@iskcon.org</a>
-      </div>
-    </div>
+
     
   </div>
 </section>
@@ -2381,7 +2712,7 @@ body {
     </div>
     
     <div class="section-head-title-block">
-      <h2 class="section-main-h2" id="offeringMainH2">Three Sacred Ways to Serve Krishna <span class="highlight-red">This Janmashtami</span></h2>
+      <h2 class="section-main-h2" id="offeringMainH2">Let's Serve Krishna <span class="highlight-red">This Janmashtami</span></h2>
       <div class="section-sub-h2" id="offeringSubH2">Choose your personal offering for Sri Sri Radha Madhava at ISKCON Kanpur</div>
       <div class="section-desc-ribbon">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F7CA45" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/><circle cx="12" cy="12" r="3" fill="#F7CA45"/></svg>
@@ -2392,39 +2723,7 @@ body {
     
     <div class="cards-three-column-grid">
       
-      <!-- Card 1: Mishri Makhan Bhog -->
-      <div class="offering-card-item">
-        <!-- 4 Ornate Gold Corner Accents -->
-        <svg class="filigree-card-corner card-corner-tl" viewBox="0 0 32 32" fill="none"><path d="M3 18V6C3 4.3 4.3 3 6 3H18" stroke="#F7CA45" stroke-width="2.5" stroke-linecap="round"/><circle cx="7" cy="7" r="2" fill="#F7CA45"/></svg>
-        <svg class="filigree-card-corner card-corner-tr" viewBox="0 0 32 32" fill="none"><path d="M3 18V6C3 4.3 4.3 3 6 3H18" stroke="#F7CA45" stroke-width="2.5" stroke-linecap="round"/><circle cx="7" cy="7" r="2" fill="#F7CA45"/></svg>
-        <svg class="filigree-card-corner card-corner-bl" viewBox="0 0 32 32" fill="none"><path d="M3 18V6C3 4.3 4.3 3 6 3H18" stroke="#F7CA45" stroke-width="2.5" stroke-linecap="round"/><circle cx="7" cy="7" r="2" fill="#F7CA45"/></svg>
-        <svg class="filigree-card-corner card-corner-br" viewBox="0 0 32 32" fill="none"><path d="M3 18V6C3 4.3 4.3 3 6 3H18" stroke="#F7CA45" stroke-width="2.5" stroke-linecap="round"/><circle cx="7" cy="7" r="2" fill="#F7CA45"/></svg>
-
-        <div class="card-img-header-box">
-          <div class="card-top-icon-circle">
-            <img src="assets/coin_mandala_blue.png" alt="Royal Mandala Coin Badge" class="card-coin-badge-img">
-          </div>
-          <img src="assets/mishri_makhan.jpg" alt="Mishri Makhan Bhog">
-        </div>
-        <div class="card-body-text-box">
-          <h3 class="card-title-hi">Mishri Makhan Bhog</h3>
-          <div class="card-title-en">Sacred Midnight Bhog Offering</div>
-          <p class="card-p-en">
-            Offer Krishna's favourite hand-churned butter & sugar-crystal bhog at the midnight aarti — performed in your name and gotra at the temple.
-          </p>
-          <div class="card-bottom-pill-box pill-gold-theme">
-            <div class="pill-icon-circle">
-              <img src="assets/coin_mandala_blue.png" alt="Mandala Coin" class="pill-coin-img">
-            </div>
-            <div class="pill-text-block">
-              <div class="pill-main-hi">Midnight Aarti Offering</div>
-              <div class="pill-sub-en">Performed in your name</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Card 2: Anna Daan Prasadam -->
+      <!-- Card 1: Anna Daan Prasadam -->
       <div class="offering-card-item">
         <!-- 4 Ornate Gold Corner Accents -->
         <svg class="filigree-card-corner card-corner-tl" viewBox="0 0 32 32" fill="none"><path d="M3 18V6C3 4.3 4.3 3 6 3H18" stroke="#F7CA45" stroke-width="2.5" stroke-linecap="round"/><circle cx="7" cy="7" r="2" fill="#F7CA45"/></svg>
@@ -2449,14 +2748,14 @@ body {
               <img src="assets/coin_devotees_green.png" alt="Devotees Coin" class="pill-coin-img">
             </div>
             <div class="pill-text-block">
-              <div class="pill-main-hi"><strong class="price-highlight-text">₹100</strong> feeds 1 person</div>
+              <div class="pill-main-hi"><strong class="price-highlight-text">₹1,100</strong> feeds 10 people</div>
               <div class="pill-sub-en">Fresh temple kitchen meals</div>
             </div>
           </div>
         </div>
       </div>
       
-      <!-- Card 3: Gau Seva -->
+      <!-- Card 2: Mishri Makhan Bhog -->
       <div class="offering-card-item">
         <!-- 4 Ornate Gold Corner Accents -->
         <svg class="filigree-card-corner card-corner-tl" viewBox="0 0 32 32" fill="none"><path d="M3 18V6C3 4.3 4.3 3 6 3H18" stroke="#F7CA45" stroke-width="2.5" stroke-linecap="round"/><circle cx="7" cy="7" r="2" fill="#F7CA45"/></svg>
@@ -2466,23 +2765,23 @@ body {
 
         <div class="card-img-header-box">
           <div class="card-top-icon-circle">
-            <img src="assets/coin_goshala_brown.png" alt="Copper Cow Coin Badge" class="card-coin-badge-img">
+            <img src="assets/coin_mandala_blue.png" alt="Royal Mandala Coin Badge" class="card-coin-badge-img">
           </div>
-          <img src="assets/goshala_cow.jpg" alt="Gau Seva">
+          <img src="assets/mishri_makhan.jpg" alt="Mishri Makhan Bhog">
         </div>
         <div class="card-body-text-box">
-          <h3 class="card-title-hi">Gau Seva — Care for Holy Cows</h3>
-          <div class="card-title-en">Goshala Cow Protection</div>
+          <h3 class="card-title-hi">Mishri Makhan Bhog</h3>
+          <div class="card-title-en">Sacred Midnight Bhog Offering</div>
           <p class="card-p-en">
-            Support the daily feed, care and shelter of the ISKCON Kanpur goshala's cows — beloved by Lord Krishna, the eternal cowherd of Vrindavan.
+            Offer Krishna's favourite hand-churned butter & sugar-crystal bhog at the midnight aarti — performed in your name and gotra at the temple.
           </p>
-          <div class="card-bottom-pill-box pill-brown-theme">
+          <div class="card-bottom-pill-box pill-gold-theme">
             <div class="pill-icon-circle">
-              <img src="assets/coin_goshala_brown.png" alt="Goshala Cow Coin" class="pill-coin-img">
+              <img src="assets/coin_mandala_blue.png" alt="Mandala Coin" class="pill-coin-img">
             </div>
             <div class="pill-text-block">
-              <div class="pill-main-hi">Care for the Goshala</div>
-              <div class="pill-sub-en">Daily feed & shelter support</div>
+              <div class="pill-main-hi">Offer <strong class="price-highlight-text" style="color: #92400E;">₹ 1,100</strong> for Makhan Mishri</div>
+              <div class="pill-sub-en">Performed in your name</div>
             </div>
           </div>
         </div>
@@ -2779,6 +3078,183 @@ body {
 })();
 </script>
 
+<!-- ============================================================
+     MAKE A GENERAL DONATION (NO FIXED SCHEME) SECTION
+     ============================================================ -->
+<section id="general-donation" class="general-donation-section-wrap">
+  <div class="wrap">
+    
+    <div class="general-donation-layout-grid">
+      
+      <!-- Left Column: Information & Seva Highlights -->
+      <div class="general-donation-left-col">
+        <div class="general-eyebrow-pill">NO FIXED SCHEME</div>
+        <h2 class="general-heading-title">Make a General Donation</h2>
+        <p class="general-desc-para">
+          Prefer to give without choosing a specific seva? Your general donation goes toward daily temple worship, prasadam distribution, and the upkeep of the Deities — directed wherever the need is greatest.
+        </p>
+
+        <ul class="general-feature-bullets-list">
+          <li class="general-bullet-item">
+            <span class="general-bullet-dot"></span>
+            <span>Supports daily aarti, deity care and temple maintenance</span>
+          </li>
+          <li class="general-bullet-item">
+            <span class="general-bullet-dot"></span>
+            <span>One-time or in memory of a loved one</span>
+          </li>
+        </ul>
+
+        <!-- 4 Quick Seva Cards (2x2 Grid) -->
+        <div class="general-seva-cards-grid">
+          
+          <div class="general-seva-card-item" onclick="selectGeneralPurpose('Daily Deity Seva')">
+            <div class="general-seva-icon-circle">
+              <!-- Aarti / Clock Icon -->
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#A87612" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </div>
+            <div class="general-seva-card-name">Daily Deity Seva</div>
+          </div>
+
+          <div class="general-seva-card-item" onclick="selectGeneralPurpose('Prasadam Distribution')">
+            <div class="general-seva-icon-circle">
+              <!-- Prasadam Bowl Icon -->
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#A87612" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+                <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+                <line x1="6" y1="2" x2="6" y2="4"></line>
+                <line x1="10" y1="2" x2="10" y2="4"></line>
+                <line x1="14" y1="2" x2="14" y2="4"></line>
+              </svg>
+            </div>
+            <div class="general-seva-card-name">Prasadam Distribution</div>
+          </div>
+
+          <div class="general-seva-card-item" onclick="selectGeneralPurpose('Temple Maintenance')">
+            <div class="general-seva-icon-circle">
+              <!-- Temple / Mandir Icon -->
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#A87612" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 21h18"></path>
+                <path d="M5 21V10l7-5 7 5v11"></path>
+                <path d="M9 21v-6a3 3 0 0 1 6 0v6"></path>
+                <circle cx="12" cy="3" r="1.5" fill="#A87612"></circle>
+              </svg>
+            </div>
+            <div class="general-seva-card-name">Temple Maintenance</div>
+          </div>
+
+          <div class="general-seva-card-item" onclick="selectGeneralPurpose('Festivals & Utsavs')">
+            <div class="general-seva-icon-circle">
+              <!-- Festival Sparkle / Diya Icon -->
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#A87612" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2c0 4-3 6-3 9a3 3 0 0 0 6 0c0-3-3-5-3-9z" fill="#F7CA45"></path>
+                <path d="M4 17h16c0 3-3.6 5-8 5s-8-2-8-5z"></path>
+              </svg>
+            </div>
+            <div class="general-seva-card-name">Festivals & Utsavs</div>
+          </div>
+
+        </div>
+
+        <!-- Quote Box -->
+        <div class="general-quote-note-box">
+          <div class="general-quote-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#BA771E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 15 9 22 12 15 15 12 22 9 15 2 12 9 9"></polygon>
+            </svg>
+          </div>
+          <div class="general-quote-text">
+            <em>Every offering, big or small, becomes part of the temple's daily service to Sri Sri Radha Madhava ji.</em>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right Column: Interactive Donation Card -->
+      <div class="general-donation-right-col">
+        <div class="general-donation-form-card">
+          
+          <form id="generalDonationForm" onsubmit="event.preventDefault(); initiateDirectGeneralDonation();">
+            
+            <!-- Choose Amount Title -->
+            <div class="general-form-group">
+              <label class="general-field-heading">Choose an amount</label>
+              <div class="general-amount-chips-grid">
+                <button type="button" class="general-chip-btn" data-amt="501" onclick="selectGeneralAmount(501, this)">₹501</button>
+                <button type="button" class="general-chip-btn" data-amt="1101" onclick="selectGeneralAmount(1101, this)">₹1,101</button>
+                <button type="button" class="general-chip-btn" data-amt="2101" onclick="selectGeneralAmount(2101, this)">₹2,101</button>
+                <button type="button" class="general-chip-btn active" data-amt="5001" onclick="selectGeneralAmount(5001, this)">₹5,001</button>
+                <button type="button" class="general-chip-btn" data-amt="8100" onclick="selectGeneralAmount(8100, this)">₹8,100</button>
+                <button type="button" class="general-chip-btn" data-amt="11000" onclick="selectGeneralAmount(11000, this)">₹11,000</button>
+                <button type="button" class="general-chip-btn" data-amt="25000" onclick="selectGeneralAmount(25000, this)">₹25,000</button>
+              </div>
+            </div>
+
+            <!-- Custom Amount Input -->
+            <div class="general-form-group">
+              <label class="general-field-label">Or enter a custom amount</label>
+              <div class="general-custom-input-wrap">
+                <span class="general-rupee-symbol">₹</span>
+                <input type="number" id="genCustomAmountInput" class="general-custom-input" min="1" value="5001" placeholder="Enter custom amount" oninput="handleGeneralCustomInput(this.value)">
+              </div>
+            </div>
+
+            <!-- Full Name & Phone Row -->
+            <div class="general-two-col-row">
+              <div class="general-form-group">
+                <label class="general-field-label">Full name <span class="required-star">*</span></label>
+                <input type="text" id="genDonorName" class="general-text-input" placeholder="Your name" required>
+              </div>
+              <div class="general-form-group">
+                <label class="general-field-label">Phone number <span class="required-star">*</span></label>
+                <div class="general-phone-input-wrap">
+                  <span class="general-phone-code">+91</span>
+                  <input type="tel" id="genDonorPhone" class="general-text-input phone-field" placeholder="98xxxxxxxx" maxlength="10" required>
+                </div>
+              </div>
+            </div>
+
+            <!-- Email Address -->
+            <div class="general-form-group">
+              <label class="general-field-label">Email address <span class="required-star">*</span></label>
+              <input type="email" id="genDonorEmail" class="general-text-input" placeholder="you@example.com" required>
+            </div>
+
+            <!-- PAN (optional) -->
+            <div class="general-form-group">
+              <label class="general-field-label">PAN <span class="optional-hint">(optional - for 80G tax benefit)</span></label>
+              <input type="text" id="genDonorPAN" class="general-text-input uppercase-text" placeholder="ABCDE1234F" maxlength="10">
+            </div>
+
+            <!-- Dedicate this donation (optional) -->
+            <div class="general-form-group">
+              <label class="general-field-label">Dedicate this donation <span class="optional-hint">(optional)</span></label>
+              <input type="text" id="genDonorDedication" class="general-text-input" placeholder="In memory of / on behalf of...">
+            </div>
+
+            <!-- Submit CTA Button -->
+            <button type="submit" class="general-donate-cta-btn" id="genSubmitBtn">
+              <span id="genBtnText">Donate ₹5,001</span>
+            </button>
+
+            <!-- Trust / Tax Exemption Note -->
+            <div class="general-card-trust-note">
+              🔒 100% Safe & Encrypted • Instant 80G Tax Exemption Receipt
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
 <!-- RAZORPAY CHECKOUT MODAL POPUP -->
 <div class="checkout-modal-overlay" id="donationCheckoutModal" onclick="if(event.target === this) closeRazorpayModal();">
   <div class="checkout-modal-card">
@@ -2851,11 +3327,11 @@ body {
       <div class="sticky-msg-block">
         <span class="sticky-clock-icon">⏰</span>
         <div>
-          <div class="sticky-msg-title" id="stickyMsgTitle">Janmashtami Festival is Almost Here!</div>
-          <div class="sticky-msg-sub" id="stickyMsgSub">Bhog, prasadam & goshala preparations are underway. Offer your seva now.</div>
+          <div class="sticky-msg-title" id="stickyMsgTitle">जन्माष्टमी महोत्सव नज़दीक है! </div>
+          <div class="sticky-msg-sub" id="stickyMsgSub">सेवा और प्रसाद की तैयारियाँ चल रही हैं। अभी अपनी सेवा अर्पित करें।.</div>
         </div>
       </div>
-      <a href="#offer-form" class="sticky-action-button" id="stickyBtnText">Offer Seva Now</a>
+      <a href="#offer-form" class="sticky-action-button" id="stickyBtnText"> Donate Now</a>
     </div>
   </div>
 </div>
@@ -2893,21 +3369,194 @@ function openRazorpayDonation(sevaName, amount) {
 }
 
 function openCustomDonation() {
-  activeSevaName = 'Custom Seva Contribution';
-  activeSevaAmount = 2100;
-  isCustomAmountMode = true;
+  const genSec = document.getElementById('general-donation');
+  if (genSec) {
+    genSec.scrollIntoView({ behavior: 'smooth' });
+    const input = document.getElementById('genCustomAmountInput');
+    if (input) {
+      setTimeout(() => input.focus(), 600);
+    }
+  } else {
+    activeSevaName = 'Custom Seva Contribution';
+    activeSevaAmount = 2100;
+    isCustomAmountMode = true;
+    
+    document.getElementById('modalSevaTitle').textContent = activeSevaName;
+    document.getElementById('modalAmountDisplay').textContent = '₹2,100';
+    document.getElementById('modalBtnAmountText').textContent = '₹2,100';
+    
+    const customGroup = document.getElementById('modalCustomAmountGroup');
+    customGroup.style.display = 'block';
+    document.getElementById('modalCustomAmountInput').value = '2100';
+    
+    const modal = document.getElementById('donationCheckoutModal');
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+// ============================================================
+// GENERAL DONATION (NO FIXED SCHEME) FORM CONTROLLER
+// ============================================================
+let selectedGeneralAmount = 5001;
+let selectedGeneralPurpose = 'General Deity & Temple Seva';
+
+function selectGeneralAmount(amount, btnEl) {
+  selectedGeneralAmount = amount;
+  document.querySelectorAll('.general-chip-btn').forEach(btn => btn.classList.remove('active'));
+  if (btnEl) btnEl.classList.add('active');
   
-  document.getElementById('modalSevaTitle').textContent = activeSevaName;
-  document.getElementById('modalAmountDisplay').textContent = '₹2,100';
-  document.getElementById('modalBtnAmountText').textContent = '₹2,100';
+  const customInput = document.getElementById('genCustomAmountInput');
+  if (customInput) customInput.value = amount;
   
-  const customGroup = document.getElementById('modalCustomAmountGroup');
-  customGroup.style.display = 'block';
-  document.getElementById('modalCustomAmountInput').value = '2100';
+  updateGeneralDonateBtnText(amount);
+}
+
+function handleGeneralCustomInput(val) {
+  const parsed = parseInt(val, 10);
+  if (!isNaN(parsed) && parsed > 0) {
+    selectedGeneralAmount = parsed;
+    document.querySelectorAll('.general-chip-btn').forEach(btn => {
+      if (parseInt(btn.getAttribute('data-amt'), 10) === parsed) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    });
+    updateGeneralDonateBtnText(parsed);
+  } else {
+    selectedGeneralAmount = 0;
+    document.querySelectorAll('.general-chip-btn').forEach(btn => btn.classList.remove('active'));
+    updateGeneralDonateBtnText(0);
+  }
+}
+
+function updateGeneralDonateBtnText(amount) {
+  const btnText = document.getElementById('genBtnText');
+  if (btnText) {
+    if (amount > 0) {
+      btnText.textContent = `Donate ₹${amount.toLocaleString('en-IN')}`;
+    } else {
+      btnText.textContent = 'Enter Donation Amount';
+    }
+  }
+}
+
+function selectGeneralPurpose(purposeName) {
+  selectedGeneralPurpose = purposeName;
+  const dedInput = document.getElementById('genDonorDedication');
+  if (dedInput) {
+    dedInput.value = purposeName;
+  }
+  const generalCard = document.querySelector('.general-donation-form-card');
+  if (generalCard) {
+    generalCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+}
+
+async function initiateDirectGeneralDonation() {
+  const name = document.getElementById('genDonorName').value.trim();
+  const phone = document.getElementById('genDonorPhone').value.trim();
+  const email = document.getElementById('genDonorEmail').value.trim();
+  const pan = document.getElementById('genDonorPAN')?.value.trim() || '';
+  const dedication = document.getElementById('genDonorDedication')?.value.trim() || selectedGeneralPurpose;
   
-  const modal = document.getElementById('donationCheckoutModal');
-  modal.classList.add('active');
-  document.body.style.overflow = 'hidden';
+  if (!name || !phone || !email) {
+    alert('Please enter your full name, phone number, and email.');
+    return;
+  }
+  
+  if (selectedGeneralAmount <= 0) {
+    alert('Please choose or enter a valid donation amount.');
+    return;
+  }
+  
+  const submitBtn = document.getElementById('genSubmitBtn');
+  const originalBtnHTML = submitBtn.innerHTML;
+  submitBtn.disabled = true;
+  submitBtn.innerHTML = '<span>Opening Secure Razorpay...</span>';
+  
+  const donationPayload = {
+    name: name,
+    phone: phone.startsWith('+91') ? phone : '+91' + phone,
+    email: email,
+    amount: selectedGeneralAmount,
+    seva: 'General Donation - Sri Sri Radha Madhava Seva',
+    pan: pan,
+    dedication: dedication
+  };
+  
+  try {
+    const apiBase = document.querySelector('meta[name="iskcon-api-base"]')?.getAttribute('content') || 'https://iskcon-k-tzoo.vercel.app/api';
+    
+    let orderData = null;
+    try {
+      const resp = await fetch(`${apiBase}/payments/create-order`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(donationPayload)
+      });
+      if (resp.ok) {
+        orderData = await resp.json();
+      }
+    } catch (_e) {
+      console.log('Using direct Razorpay checkout instance');
+    }
+    
+    const options = {
+      key: orderData && orderData.keyId ? orderData.keyId : 'rzp_live_default',
+      amount: selectedGeneralAmount * 100,
+      currency: 'INR',
+      name: 'ISKCON Kanpur',
+      description: 'General Donation - Sri Sri Radha Madhava Mandir',
+      image: 'assets/image-01a94a.png',
+      order_id: orderData && orderData.orderId ? orderData.orderId : undefined,
+      prefill: {
+        name: name,
+        email: email,
+        contact: phone
+      },
+      theme: {
+        color: '#5B112B'
+      },
+      notes: {
+        seva: 'General Donation',
+        pan: pan,
+        dedication: dedication,
+        temple: 'ISKCON Kanpur'
+      },
+      handler: function(response) {
+        alert(`Hare Krishna ${name}! Your donation of ₹${selectedGeneralAmount.toLocaleString('en-IN')} has been received successfully. Payment ID: ${response.razorpay_payment_id}. Prasad receipt will be sent to ${email}.`);
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnHTML;
+      },
+      modal: {
+        ondismiss: function() {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalBtnHTML;
+        }
+      }
+    };
+    
+    if (typeof window.Razorpay === 'function') {
+      const rzp = new window.Razorpay(options);
+      rzp.on('payment.failed', function(response) {
+        alert(`Payment failed: ${response.error.description || 'Please try again'}`);
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnHTML;
+      });
+      rzp.open();
+    } else {
+      alert(`Initiating ₹${selectedGeneralAmount.toLocaleString('en-IN')} donation for General Seva. Razorpay gateway loading...`);
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalBtnHTML;
+    }
+  } catch (err) {
+    console.error(err);
+    alert('Could not open Razorpay checkout. Please check your internet connection.');
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = originalBtnHTML;
+  }
 }
 
 function updateCustomModalAmount(val) {
