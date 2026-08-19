@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com/">
 <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Hind:wght@400;500;600;700;800&family=Karla:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Yatra+One&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/stylea94a.css?v=20260818">
+<link rel="stylesheet" href="css/stylea94a.css?v=20260819_04">
 
 <style>
 /* ============================================================
@@ -1234,7 +1234,7 @@ body {
 }
 
 .form-right-builder-panel {
-  padding: 38px 34px;
+  padding: 32px 28px;
   background: #FFFFFF;
 }
 
@@ -1243,32 +1243,36 @@ body {
   align-items: center;
   justify-content: space-between;
   border-bottom: 2px solid #F1E5D5;
-  padding-bottom: 18px;
-  margin-bottom: 30px;
+  padding-bottom: 16px;
+  margin-bottom: 24px;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
 .step-node-item {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 0.95rem;
+  gap: 8px;
+  font-size: clamp(0.78rem, 1.2vw, 0.95rem);
   font-weight: 700;
   color: #0B2545;
+  white-space: nowrap;
 }
 
 .step-number-circle {
-  width: 34px;
-  height: 34px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   background: linear-gradient(135deg, #FFE89C 0%, #F7CA45 100%);
   color: #221200;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.98rem;
+  font-size: 0.9rem;
   font-weight: 800;
   box-shadow: 0 3px 10px rgba(247, 202, 69, 0.4);
   border: 1px solid #FFEFA6;
+  flex-shrink: 0;
 }
 
 .form-sub-three-columns {
@@ -1290,9 +1294,9 @@ body {
   display: flex;
   align-items: center;
   gap: 14px;
-  padding: 12px 14px;
+  padding: 12px 42px 12px 14px;
   border-radius: 18px;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
   background: #FFFFFF;
@@ -1354,16 +1358,18 @@ body {
 
 .card-top-radio-dot {
   position: absolute;
-  top: 12px;
-  right: 12px;
-  width: 18px;
-  height: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 14px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   border: 2px solid #CBD5E1;
   background: #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 
 .exact-seva-card.active .card-top-radio-dot {
@@ -1372,8 +1378,8 @@ body {
 
 .exact-seva-card.active .card-top-radio-dot::after {
   content: '';
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   background: #D9A229;
 }
@@ -1544,7 +1550,7 @@ body {
 }
 
 /* ============================================================
-   HERO SECTION RESPONSIVE — All Breakpoints
+   COMPLETE RESPONSIVE SYSTEM — All Breakpoints
    ============================================================ */
 
 /* Tablet Landscape: 861px–1024px */
@@ -1564,7 +1570,57 @@ body {
   .exact-impact-four-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
   .exact-stat-col { border-right: none; border-bottom: 1px solid rgba(247,202,69,0.2); padding-bottom: 16px; }
   .form-outer-card-box { grid-template-columns: 1fr; }
-  .form-sub-three-columns { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .form-sub-three-columns { grid-template-columns: 1fr !important; gap: 24px; }
+}
+
+/* Tablet Portrait & Mobile: max 900px */
+@media (max-width: 900px) {
+  .donation-form-section-wrap { padding: 30px 0 110px 0; }
+  .form-outer-card-box { 
+    display: block; 
+    border-radius: 20px; 
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08); 
+  }
+  .form-left-info-panel { 
+    padding: 24px 20px 20px 20px; 
+    border-right: none; 
+    border-bottom: 1.5px solid #F0E2D3; 
+    text-align: center; 
+  }
+  .info-title-hi { font-size: 1.5rem; }
+  .info-illustration-center { padding: 10px 0; }
+  .info-illustration-center img { max-width: 170px; border-radius: 16px; }
+  .info-bottom-guarantee-grid { 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 8px; 
+    margin-top: 14px; 
+    padding-top: 14px; 
+  }
+  .guarantee-item-box { padding: 8px 4px; }
+  .guarantee-icon-wrap { width: 30px; height: 30px; }
+  .guarantee-title { font-size: 0.75rem; }
+  .guarantee-sub { font-size: 0.68rem; }
+  
+  .form-right-builder-panel { padding: 24px 18px; }
+  .stepper-header-flex-bar { gap: 4px; padding-bottom: 12px; margin-bottom: 22px; }
+  .step-node-item { font-size: 0.8rem; gap: 6px; }
+  .step-number-circle { width: 26px; height: 26px; font-size: 0.82rem; }
+  
+  .form-sub-three-columns { 
+    display: grid !important; 
+    grid-template-columns: 1fr !important; 
+    gap: 28px !important; 
+  }
+  
+  .sub-col-title-lbl { 
+    font-size: 1.05rem; 
+    font-weight: 800; 
+    color: #0B2545; 
+    margin-bottom: 14px; 
+    padding-bottom: 6px; 
+    border-bottom: 1.5px solid #F1E5D5; 
+  }
 }
 
 /* Tablet Portrait: 601px–860px */
@@ -1612,6 +1668,14 @@ body {
   .trust-col-item:last-child { border-bottom: none; }
   .exact-impact-four-grid { grid-template-columns: 1fr; }
   .sticky-banner-flex-layout { flex-direction: column; text-align: center; }
+  
+  .form-right-builder-panel { padding: 20px 14px; }
+  .exact-seva-card { padding: 12px 40px 12px 12px; gap: 12px; }
+  .form-coin-icon-img { width: 38px; height: 38px; }
+  .exact-seva-title-hi { font-size: 0.98rem; }
+  .exact-amt-card { padding: 11px 12px; }
+  .exact-amt-val-text { font-size: 1.05rem; }
+  .full-red-submit-btn { padding: 14px 12px; font-size: 0.96rem; }
 }
 
 /* Mobile Small: max 480px */
@@ -1630,6 +1694,33 @@ body {
   .btn-pill-gold, .btn-pill-dark { padding: 12px 18px; font-size: 0.9rem; }
   .btn-main-hi { font-size: 0.92rem; }
   .btn-sub-en { font-size: 0.7rem; }
+  
+  .donation-form-section-wrap { padding: 24px 0 120px 0; }
+  .form-outer-card-box { border-radius: 16px; }
+  .form-left-info-panel { padding: 20px 14px; }
+  .info-title-hi { font-size: 1.35rem; }
+  .info-sub-desc-p { font-size: 0.88rem; margin-bottom: 12px; }
+  .info-illustration-center img { max-width: 140px; }
+  
+  .form-right-builder-panel { padding: 18px 12px; }
+  .stepper-header-flex-bar { display: none; }
+  .form-sub-three-columns { gap: 22px !important; }
+  .sub-col-title-lbl { font-size: 0.98rem; }
+  .exact-seva-card { padding: 10px 36px 10px 10px; border-radius: 14px; }
+  .form-coin-icon-img { width: 34px; height: 34px; }
+  .exact-seva-title-hi { font-size: 0.92rem; }
+  .exact-seva-title-en { font-size: 0.74rem; }
+  .card-top-radio-dot { width: 18px; height: 18px; right: 10px; }
+  
+  .exact-amt-card { padding: 10px 12px; border-radius: 10px; }
+  .exact-amt-val-text { font-size: 0.98rem; }
+  .exact-amt-sub-text { font-size: 0.7rem; }
+  .popular-badge-tag { font-size: 0.6rem; padding: 1px 6px; top: -7px; right: 8px; }
+  
+  .form-text-input { padding: 10px 12px; font-size: 0.9rem; }
+  .phone-code-prefix { padding: 10px; font-size: 0.88rem; }
+  .full-red-submit-btn { padding: 14px 10px; font-size: 0.9rem; flex-direction: column; gap: 6px; text-align: center; }
+  .form-footer-guarantee-note { font-size: 0.74rem; }
 }
 </style>
 </head>
