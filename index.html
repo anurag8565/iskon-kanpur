@@ -56,20 +56,75 @@ body {
   flex-direction: column;
 }
 
-/* Top Nav Link */
-.top-nav-right-link {
-  position: absolute;
-  top: 16px;
-  right: 28px;
-  font-size: 0.9rem;
-  color: var(--jm-gold-primary);
-  font-weight: 600;
-  z-index: 10;
-  background: rgba(3, 12, 30, 0.6);
-  padding: 6px 14px;
+/* Hero Top Bar Row (Logo Left, Language Switcher Right) */
+.hero-top-bar-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 20;
+}
+
+/* Language Switcher Capsule Toggle (Royal Midnight Navy Glass & 3D Gold Theme) */
+.lang-switch-capsule-toggle {
+  display: inline-flex;
+  align-items: center;
+  background: linear-gradient(135deg, rgba(247, 202, 69, 0.14) 0%, rgba(3, 12, 34, 0.88) 100%);
+  border: 1.5px solid rgba(247, 202, 69, 0.55);
+  border-radius: 30px;
+  padding: 3px 4px;
+  box-shadow: 
+    0 6px 20px rgba(0, 0, 0, 0.65), 
+    0 0 15px rgba(247, 202, 69, 0.25), 
+    inset 0 1px 1px rgba(247, 202, 69, 0.4);
+  backdrop-filter: blur(14px);
+  gap: 3px;
+  user-select: none;
+  transition: all 0.35s ease;
+}
+
+.lang-switch-capsule-toggle:hover {
+  border-color: rgba(247, 202, 69, 0.85);
+  box-shadow: 
+    0 8px 25px rgba(0, 0, 0, 0.75), 
+    0 0 22px rgba(247, 202, 69, 0.4), 
+    inset 0 1px 1px rgba(255, 255, 255, 0.5);
+}
+
+.lang-opt-btn {
+  border: none;
+  background: transparent;
+  padding: 5px 14px;
   border-radius: 20px;
-  border: 1px solid rgba(247, 202, 69, 0.4);
-  backdrop-filter: blur(4px);
+  font-family: 'Hind', 'Karla', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #E2E8F0;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  line-height: 1.25;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+}
+
+.lang-opt-btn:hover:not(.active) {
+  color: #FFE89C;
+  background: rgba(247, 202, 69, 0.16);
+  text-shadow: 0 0 10px rgba(247, 202, 69, 0.6);
+}
+
+.lang-opt-btn.active {
+  background: linear-gradient(180deg, #FFF8D0 0%, #FFDF6B 25%, #F7BC18 60%, #DF8200 100%);
+  color: #120500;
+  font-weight: 800;
+  border: 1px solid rgba(255, 248, 200, 0.9);
+  box-shadow: 
+    0 0 16px rgba(247, 188, 24, 0.7), 
+    0 2px 6px rgba(0, 0, 0, 0.7), 
+    inset 0 1px 1px #FFFFFF, 
+    inset 0 -1px 2px rgba(160, 85, 0, 0.5);
+  text-shadow: none;
 }
 
 /* Hero Content Area */
@@ -82,12 +137,13 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  width: 100%;
 }
 
 .hero-brand-top-logo {
   display: inline-flex;
   align-items: center;
-  margin-bottom: 12px;
+  margin-bottom: 0;
   padding: 4px 10px;
   background: linear-gradient(135deg, rgba(247, 202, 69, 0.12) 0%, rgba(3, 12, 34, 0.75) 100%);
   border: 1.2px solid rgba(247, 202, 69, 0.45);
@@ -96,6 +152,7 @@ body {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(247,202,69,0.3);
   transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
+
 
 .hero-brand-top-logo:hover {
   transform: translateY(-2px) scale(1.03);
@@ -1629,11 +1686,12 @@ body {
     background:
       linear-gradient(180deg, rgba(2, 8, 24, 0.35) 0%, rgba(2, 8, 24, 0.60) 35%, rgba(2, 8, 24, 0.92) 70%, rgba(2, 7, 22, 0.99) 100%),
       url('assets/janmashtami_hero.jpg?v=20260819_04') 78% top / cover no-repeat;
-    padding: 38px 0 20px 0;
+    padding: 30px 0 20px 0;
     min-height: auto;
   }
+  .hero-top-bar-row { justify-content: space-between; width: 100%; margin-bottom: 14px; }
+  .hero-brand-top-logo { margin: 0; }
   .hero-content-left { max-width: 100%; text-align: center; align-items: center; padding-bottom: 6px; }
-  .hero-brand-top-logo { margin-left: auto; margin-right: auto; margin-bottom: 10px; }
   .hero-eyebrow-text { justify-content: center; }
   .hero-main-title { align-items: center; font-size: clamp(2.2rem, 6vw, 3rem); }
   .hero-p-hi, .hero-p-en { margin-left: auto; margin-right: auto; text-align: center; }
@@ -1651,10 +1709,12 @@ body {
     background:
       linear-gradient(180deg, rgba(2, 8, 24, 0.28) 0%, rgba(2, 8, 24, 0.50) 30%, rgba(2, 8, 24, 0.90) 65%, rgba(2, 7, 22, 0.99) 100%),
       url('assets/janmashtami_hero.jpg?v=20260819_04') 80% top / cover no-repeat;
-    padding: 30px 0 16px 0;
+    padding: 24px 0 16px 0;
   }
-  .hero-main-title { font-size: 2.15rem; }
+  .hero-top-bar-row { justify-content: space-between; width: 100%; margin-bottom: 12px; }
+  .hero-brand-top-logo { margin: 0; }
   .hero-iskcon-logo-img { height: 48px !important; }
+  .hero-main-title { font-size: 2.15rem; }
   .hero-p-hi { font-size: 0.93rem; }
   .hero-p-en { display: none; }
   .btn-pill-gold, .btn-pill-dark { width: 100%; justify-content: center; }
@@ -1684,12 +1744,14 @@ body {
     background:
       linear-gradient(180deg, rgba(2, 8, 24, 0.22) 0%, rgba(2, 8, 24, 0.45) 28%, rgba(2, 8, 24, 0.88) 60%, rgba(2, 7, 22, 0.99) 100%),
       url('assets/janmashtami_hero.jpg?v=20260819_04') 82% top / cover no-repeat;
-    padding: 26px 0 14px 0;
+    padding: 20px 0 14px 0;
   }
+  .hero-top-bar-row { justify-content: space-between; width: 100%; margin-bottom: 10px; }
+  .hero-brand-top-logo { margin: 0; }
+  .hero-iskcon-logo-img { height: 42px !important; }
+  .lang-opt-btn { padding: 4px 10px; font-size: 0.8rem; }
   .hero-main-title { font-size: 1.95rem !important; line-height: 1.15; }
   .hero-eyebrow-text { font-size: 1.05rem; }
-  .hero-brand-top-logo { margin-bottom: 8px; }
-  .hero-iskcon-logo-img { height: 44px !important; }
   .hero-p-hi { font-size: 0.88rem; line-height: 1.5; }
   .hero-floating-trust-card { padding: 8px 12px; margin-top: 12px; border-radius: 12px; }
   .trust-badge-wrap { width: 40px; height: 40px; }
@@ -1736,23 +1798,59 @@ body {
 
   <div class="wrap" style="display: flex; flex-direction: column; justify-content: flex-start;">
     
-    <!-- Hero Main Left Content -->
-    <div class="hero-content-left">
-      
+    <!-- Top Row: Full Width of Container (Logo Left, Language Switcher Far Right) -->
+    <div class="hero-top-bar-row">
       <div class="hero-brand-top-logo">
         <img src="assets/iskcon_kanpur_gold_logo.png" alt="ISKCON Kanpur" class="hero-iskcon-logo-img">
       </div>
       
-      <div class="hero-eyebrow-text"><span>🪶</span> <span>इस जन्माष्टमी,</span></div>
+      <!-- Language Switcher Capsule Toggle (Far Right) -->
+      <div class="lang-switch-capsule-toggle" id="heroLangToggle">
+        <button type="button" class="lang-opt-btn" id="btnLangEn" data-lang="en" onclick="switchSiteLanguage('en')">EN</button>
+        <button type="button" class="lang-opt-btn active" id="btnLangHi" data-lang="hi" onclick="switchSiteLanguage('hi')">हिं</button>
+      </div>
+    </div>
+    
+    <!-- Hero Main Left Content -->
+    <div class="hero-content-left">
+      
+      <div class="hero-eyebrow-text" id="heroEyebrow">
+        <svg width="24" height="24" viewBox="0 0 36 36" fill="none" style="vertical-align:middle; filter:drop-shadow(0 0 8px rgba(247,202,69,0.9)); flex-shrink:0;">
+          <defs>
+            <linearGradient id="pankhGrad" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#FFE89C"/>
+              <stop offset="50%" stop-color="#F7CA45"/>
+              <stop offset="100%" stop-color="#A87612"/>
+            </linearGradient>
+            <radialGradient id="eyeGrad" cx="18" cy="11" r="8" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#00E5FF"/>
+              <stop offset="40%" stop-color="#0B3C5D"/>
+              <stop offset="70%" stop-color="#F7CA45"/>
+              <stop offset="100%" stop-color="#1B5E20"/>
+            </radialGradient>
+          </defs>
+          <path d="M18 4 Q19 20 8 32" stroke="url(#pankhGrad)" stroke-width="2" stroke-linecap="round"/>
+          <ellipse cx="18" cy="11" rx="8" ry="7" fill="url(#eyeGrad)"/>
+          <ellipse cx="18" cy="11" rx="4" ry="3.5" fill="#04122B"/>
+          <circle cx="18" cy="11" r="1.8" fill="#00E5FF"/>
+          <path d="M12 9 Q6 6 4 10" stroke="url(#pankhGrad)" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M24 9 Q30 6 32 10" stroke="url(#pankhGrad)" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M11 14 Q5 13 4 17" stroke="url(#pankhGrad)" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M25 14 Q31 13 32 17" stroke="url(#pankhGrad)" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M13 19 Q8 20 6 24" stroke="url(#pankhGrad)" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M23 19 Q28 20 30 24" stroke="url(#pankhGrad)" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+        <span id="heroEyebrowText">इस जन्माष्टमी,</span>
+      </div>
       <h1 class="hero-main-title heading-serif">
-        <span class="hero-title-gold">श्री कृष्ण को</span>
-        <span class="hero-title-white">सेवा अर्पित करें</span>
+        <span class="hero-title-gold" id="heroTitleLine1">श्री कृष्ण को</span>
+        <span class="hero-title-white" id="heroTitleLine2">सेवा अर्पित करें</span>
       </h1>
       
-      <p class="hero-p-hi">
+      <p class="hero-p-hi" id="heroDescHi">
         मध्यरात्रि भोग अर्पित करें, कृष्ण के नाम पर भूखों को भोजन कराएं, और उनकी प्रिय गायों की सेवा करें — हर सेवा मंदिर में आपके नाम व गोत्र सहित अर्पित की जाती है।
       </p>
-      <p class="hero-p-en">
+      <p class="hero-p-en" id="heroDescEn">
         This Janmashtami, sponsor the midnight bhog, feed the hungry in Krishna's name, and care for the cows he loved — every seva is offered with your name and gotra at the temple.
       </p>
       
@@ -1768,8 +1866,8 @@ body {
             </svg>
           </div>
           <div class="btn-text-col">
-            <div class="btn-main-hi">सेवा अर्पित करें एवं दान करें</div>
-            <div class="btn-sub-en">Offer Seva & Donate</div>
+            <div class="btn-main-hi" id="heroBtn1Hi">सेवा अर्पित करें एवं दान करें</div>
+            <div class="btn-sub-en" id="heroBtn1En">Offer Seva & Donate</div>
           </div>
           <span class="btn-arrow-icon">➔</span>
         </a>
@@ -1784,8 +1882,8 @@ body {
             </svg>
           </div>
           <div class="btn-text-col">
-            <div class="btn-main-hi" style="color:#FFFFFF;">सेवाएं देखें</div>
-            <div class="btn-sub-en" style="color:#94A3B8;">See the Sevas</div>
+            <div class="btn-main-hi" id="heroBtn2Hi" style="color:#FFFFFF;">सेवाएं देखें</div>
+            <div class="btn-sub-en" id="heroBtn2En" style="color:#94A3B8;">See the Sevas</div>
           </div>
           <span class="btn-arrow-icon" style="color:#F7CA45;">➔</span>
         </a>
@@ -1852,8 +1950,8 @@ body {
           </div>
           <div class="trust-text-block">
             <div class="trust-col-num">12,000+</div>
-            <div class="trust-col-title-bold">भक्त परिवारों का विश्वास</div>
-            <div class="trust-col-subtext">Trusted by 12,000+ devotee families</div>
+            <div class="trust-col-title-bold" id="trustCol1Title">भक्त परिवारों का विश्वास</div>
+            <div class="trust-col-subtext" id="trustCol1Sub">Trusted by 12,000+ devotee families</div>
           </div>
         </div>
         
@@ -1864,8 +1962,8 @@ body {
           </div>
           <div class="trust-text-block">
             <div class="trust-col-num">100%</div>
-            <div class="trust-col-title-bold">भोग अर्पण की राशि सेवा में उपयोग होती है</div>
-            <div class="trust-col-subtext">100% of bhog offerings go to seva</div>
+            <div class="trust-col-title-bold" id="trustCol2Title">भोग अर्पण की राशि सेवा में उपयोग होती है</div>
+            <div class="trust-col-subtext" id="trustCol2Sub">100% of bhog offerings go to seva</div>
           </div>
         </div>
         
@@ -1875,9 +1973,9 @@ body {
             <img src="assets/trust_badge_lock.svg" alt="Shield Lock Ornate Gold Badge" class="trust-ornate-badge-img">
           </div>
           <div class="trust-text-block">
-            <div class="trust-col-num">सुरक्षित भुगतान</div>
-            <div class="trust-col-title-bold">UPI, कार्ड, नेट बैंकिंग द्वारा</div>
-            <div class="trust-col-subtext">Secure payments via UPI, Cards & Net Banking</div>
+            <div class="trust-col-num" id="trustCol3Num">सुरक्षित भुगतान</div>
+            <div class="trust-col-title-bold" id="trustCol3Title">UPI, कार्ड, नेट बैंकिंग द्वारा</div>
+            <div class="trust-col-subtext" id="trustCol3Sub">Secure payments via UPI, Cards & Net Banking</div>
           </div>
         </div>
         
@@ -1894,17 +1992,17 @@ body {
     <div class="ornament-header-wrap">
       <div class="ornament-pill-badge">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="#A87612"><polygon points="12 2 15 9 22 12 15 15 12 22 9 15 2 12 9 9"/></svg>
-        <span>CHOOSE YOUR OFFERING</span>
+        <span id="offeringBadgeText">CHOOSE YOUR OFFERING</span>
         <svg width="14" height="14" viewBox="0 0 24 24" fill="#A87612"><polygon points="12 2 15 9 22 12 15 15 12 22 9 15 2 12 9 9"/></svg>
       </div>
     </div>
     
     <div class="section-head-title-block">
-      <h2 class="section-main-h2">इस जन्माष्टमी कृष्ण की सेवा के <span class="highlight-red">तीन माध्यम</span></h2>
-      <div class="section-sub-h2">Three ways to serve Krishna this Janmashtami</div>
+      <h2 class="section-main-h2" id="offeringMainH2">इस जन्माष्टमी कृष्ण की सेवा के <span class="highlight-red">तीन माध्यम</span></h2>
+      <div class="section-sub-h2" id="offeringSubH2">Three ways to serve Krishna this Janmashtami</div>
       <div class="section-desc-ribbon">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F7CA45" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/><circle cx="12" cy="12" r="3" fill="#F7CA45"/></svg>
-        <span>आपकी अर्पित की गई हर राशि उसी दिन भोग तैयार करने, प्रसादम् वितरण और गौशाला की गौ सेवा में उपयोग होती है।</span>
+        <span id="offeringDescRibbon">आपकी अर्पित की गई हर राशि उसी दिन भोग तैयार करने, प्रसादम् वितरण और गौशाला की गौ सेवा में उपयोग होती है।</span>
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F7CA45" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/><circle cx="12" cy="12" r="3" fill="#F7CA45"/></svg>
       </div>
     </div>
@@ -2321,9 +2419,9 @@ body {
       
       <!-- Left Info Panel -->
       <div class="form-left-info-panel">
-        <h3 class="info-title-hi">अपना जन्माष्टमी अर्पण करें</h3>
-        <div class="info-title-en">Make your Janmashtami offering</div>
-        <p class="info-sub-desc-p">
+        <h3 class="info-title-hi" id="formInfoTitleHi">अपना जन्माष्टमी अर्पण करें</h3>
+        <div class="info-title-en" id="formInfoTitleEn">Make your Janmashtami offering</div>
+        <p class="info-sub-desc-p" id="formInfoDesc">
           एक सेवा चुनें, राशि चुनें, और मंदिर में लिए गए आपके नाम सहित प्रसादम् आशीर्वाद प्राप्त करें।
         </p>
         
@@ -2336,22 +2434,22 @@ body {
             <div class="guarantee-icon-wrap">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F7CA45" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4" stroke="#FFF" stroke-width="2"/></svg>
             </div>
-            <div class="guarantee-title">सुरक्षित</div>
-            <div class="guarantee-sub">256-Bit SSL</div>
+            <div class="guarantee-title" id="guar1Title">सुरक्षित</div>
+            <div class="guarantee-sub" id="guar1Sub">256-Bit SSL</div>
           </div>
           <div class="guarantee-item-box">
             <div class="guarantee-icon-wrap">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F7CA45" stroke-width="2.2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
             </div>
-            <div class="guarantee-title">तेज भुगतान</div>
-            <div class="guarantee-sub">UPI, Cards</div>
+            <div class="guarantee-title" id="guar2Title">तेज भुगतान</div>
+            <div class="guarantee-sub" id="guar2Sub">UPI, Cards</div>
           </div>
           <div class="guarantee-item-box">
             <div class="guarantee-icon-wrap">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F7CA45" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
             </div>
-            <div class="guarantee-title">कर-छूट रसीद</div>
-            <div class="guarantee-sub">24 घंटे में</div>
+            <div class="guarantee-title" id="guar3Title">कर-छूट रसीद</div>
+            <div class="guarantee-sub" id="guar3Sub">24 घंटे में</div>
           </div>
         </div>
       </div>
@@ -2364,8 +2462,8 @@ body {
           <div class="step-node-item">
             <div class="step-number-circle">1</div>
             <div>
-              <div>सेवा चुनें</div>
-              <div style="font-size:0.74rem; color:#64748B; font-weight:400;">Select seva</div>
+              <div id="step1Header">सेवा चुनें</div>
+              <div style="font-size:0.74rem; color:#64748B; font-weight:400;" id="step1HeaderSub">Select seva</div>
             </div>
           </div>
           
@@ -2374,8 +2472,8 @@ body {
           <div class="step-node-item">
             <div class="step-number-circle">2</div>
             <div>
-              <div>राशि चुनें (₹)</div>
-              <div style="font-size:0.74rem; color:#64748B; font-weight:400;">Select amount</div>
+              <div id="step2Header">राशि चुनें (₹)</div>
+              <div style="font-size:0.74rem; color:#64748B; font-weight:400;" id="step2HeaderSub">Select amount</div>
             </div>
           </div>
           
@@ -2384,8 +2482,8 @@ body {
           <div class="step-node-item">
             <div class="step-number-circle">3</div>
             <div>
-              <div>आपका विवरण</div>
-              <div style="font-size:0.74rem; color:#64748B; font-weight:400;">Your details</div>
+              <div id="step3Header">आपका विवरण</div>
+              <div style="font-size:0.74rem; color:#64748B; font-weight:400;" id="step3HeaderSub">Your details</div>
             </div>
           </div>
         </div>
@@ -2396,54 +2494,54 @@ body {
             
             <!-- Col 1: Seva Radio Cards -->
             <div>
-              <div class="sub-col-title-lbl">1. सेवा चुनें</div>
+              <div class="sub-col-title-lbl" id="step1Lbl">1. सेवा चुनें</div>
               
-              <div class="exact-seva-card active" onclick="chooseExactSeva(this, 'मिश्री माखन भोग')">
+              <div class="exact-seva-card active" onclick="chooseExactSeva(this, 'मishri', 'मिश्री माखन भोग', 'Mishri Makhan Bhog')">
                 <div class="card-top-radio-dot"></div>
                 <img src="assets/coin_mandala_blue.png" alt="Mishri Makhan Bhog Coin" class="form-coin-icon-img">
                 <div>
-                  <div class="exact-seva-title-hi">मिश्री माखन भोग</div>
-                  <div class="exact-seva-title-en">Mishri Makhan Bhog</div>
+                  <div class="exact-seva-title-hi" id="cardSeva1TitleHi">मिश्री माखन भोग</div>
+                  <div class="exact-seva-title-en" id="cardSeva1TitleEn">Mishri Makhan Bhog</div>
                 </div>
               </div>
               
-              <div class="exact-seva-card" onclick="chooseExactSeva(this, 'अन्न दान प्रसादम्')">
+              <div class="exact-seva-card" onclick="chooseExactSeva(this, 'anna', 'अन्न दान प्रसादम्', 'Anna Daan Prasadam')">
                 <div class="card-top-radio-dot"></div>
                 <img src="assets/coin_devotees_green.png" alt="Anna Daan Prasadam Coin" class="form-coin-icon-img">
                 <div>
-                  <div class="exact-seva-title-hi">अन्न दान प्रसादम्</div>
-                  <div class="exact-seva-title-en">Anna Daan Prasadam</div>
+                  <div class="exact-seva-title-hi" id="cardSeva2TitleHi">अन्न दान प्रसादम्</div>
+                  <div class="exact-seva-title-en" id="cardSeva2TitleEn">Anna Daan Prasadam</div>
                 </div>
               </div>
               
-              <div class="exact-seva-card" onclick="chooseExactSeva(this, 'गौ सेवा')">
+              <div class="exact-seva-card" onclick="chooseExactSeva(this, 'gau', 'गौ सेवा', 'Gau Seva')">
                 <div class="card-top-radio-dot"></div>
                 <img src="assets/coin_goshala_brown.png" alt="Gau Seva Coin" class="form-coin-icon-img">
                 <div>
-                  <div class="exact-seva-title-hi">गौ सेवा</div>
-                  <div class="exact-seva-title-en">Gau Seva</div>
+                  <div class="exact-seva-title-hi" id="cardSeva3TitleHi">गौ सेवा</div>
+                  <div class="exact-seva-title-en" id="cardSeva3TitleEn">Gau Seva</div>
                 </div>
               </div>
             </div>
             
             <!-- Col 2: Amount Options -->
             <div>
-              <div class="sub-col-title-lbl">2. राशि चुनें (₹)</div>
+              <div class="sub-col-title-lbl" id="step2Lbl">2. राशि चुनें (₹)</div>
               
               <div class="exact-amt-card" onclick="chooseExactAmount(this, 1100)">
                 <input type="radio" name="exactAmtRadio" style="accent-color:#0B2545;">
                 <div>
                   <div class="exact-amt-val-text">₹1,100</div>
-                  <div class="exact-amt-sub-text">शुभ अर्पण - Shubh Arambh</div>
+                  <div class="exact-amt-sub-text" id="amtOpt1Sub">शुभ अर्पण - Shubh Arambh</div>
                 </div>
               </div>
               
               <div class="exact-amt-card active" onclick="chooseExactAmount(this, 2100)">
-                <span class="popular-badge-tag">सर्वाधिक लोकप्रिय</span>
+                <span class="popular-badge-tag" id="amtPopularBadge">सर्वाधिक लोकप्रिय</span>
                 <input type="radio" name="exactAmtRadio" checked style="accent-color:#0B2545;">
                 <div>
                   <div class="exact-amt-val-text">₹2,100</div>
-                  <div class="exact-amt-sub-text">विशेष सेवा - Vishesh Seva</div>
+                  <div class="exact-amt-sub-text" id="amtOpt2Sub">विशेष सेवा - Vishesh Seva</div>
                 </div>
               </div>
               
@@ -2451,7 +2549,7 @@ body {
                 <input type="radio" name="exactAmtRadio" style="accent-color:#0B2545;">
                 <div>
                   <div class="exact-amt-val-text">₹3,100</div>
-                  <div class="exact-amt-sub-text">विशेष सेवा - Vishesh Seva</div>
+                  <div class="exact-amt-sub-text" id="amtOpt3Sub">विशेष सेवा - Vishesh Seva</div>
                 </div>
               </div>
               
@@ -2459,7 +2557,7 @@ body {
                 <input type="radio" name="exactAmtRadio" style="accent-color:#0B2545;">
                 <div>
                   <div class="exact-amt-val-text">₹5,100</div>
-                  <div class="exact-amt-sub-text">भोग प्रायोजक - Bhog Sponsor</div>
+                  <div class="exact-amt-sub-text" id="amtOpt4Sub">भोग प्रायोजक - Bhog Sponsor</div>
                 </div>
               </div>
               
@@ -2467,35 +2565,35 @@ body {
                 <input type="radio" name="exactAmtRadio" style="accent-color:#0B2545;">
                 <div>
                   <div class="exact-amt-val-text">₹11,100</div>
-                  <div class="exact-amt-sub-text">महासेवा - Mahaseva</div>
+                  <div class="exact-amt-sub-text" id="amtOpt5Sub">महासेवा - Mahaseva</div>
                 </div>
               </div>
               
               <div class="exact-amt-card" onclick="chooseExactAmount(this, 0)">
                 <input type="radio" name="exactAmtRadio" style="accent-color:#0B2545;">
                 <div>
-                  <div class="exact-amt-val-text" style="font-size:0.92rem;">अन्य राशि दर्ज करें</div>
-                  <div class="exact-amt-sub-text">Other amount</div>
+                  <div class="exact-amt-val-text" style="font-size:0.92rem;" id="amtOptCustomText">अन्य राशि दर्ज करें</div>
+                  <div class="exact-amt-sub-text" id="amtOptCustomSub">Other amount</div>
                 </div>
               </div>
             </div>
             
             <!-- Col 3: Form Inputs -->
             <div>
-              <div class="sub-col-title-lbl">3. आपका विवरण</div>
+              <div class="sub-col-title-lbl" id="step3Lbl">3. आपका विवरण</div>
               
               <div class="form-input-group">
-                <label class="form-label-title">नाम (Name) <span style="color:#C5292A;">*</span></label>
+                <label class="form-label-title" id="lblName">नाम (Name) <span style="color:#C5292A;">*</span></label>
                 <input type="text" id="finalName" class="form-text-input" placeholder="आपका पूरा नाम" required>
               </div>
               
               <div class="form-input-group">
-                <label class="form-label-title">गोत्र (Gotra)</label>
+                <label class="form-label-title" id="lblGotra">गोत्र (Gotra)</label>
                 <input type="text" id="finalGotra" class="form-text-input" placeholder="अपना गोत्र लिखें">
               </div>
               
               <div class="form-input-group">
-                <label class="form-label-title">मोबाइल नंबर (Mobile) <span style="color:#C5292A;">*</span></label>
+                <label class="form-label-title" id="lblMobile">मोबाइल नंबर (Mobile) <span style="color:#C5292A;">*</span></label>
                 <div class="phone-input-flex-row">
                   <span class="phone-code-prefix">+91</span>
                   <input type="tel" id="finalPhone" class="form-text-input" placeholder="XXXXX XXXXX" required pattern="[0-9]{10}">
@@ -2503,7 +2601,7 @@ body {
               </div>
               
               <div class="form-input-group">
-                <label class="form-label-title">ईमेल (Email) <span style="color:#C5292A;">*</span></label>
+                <label class="form-label-title" id="lblEmail">ईमेल (Email) <span style="color:#C5292A;">*</span></label>
                 <input type="email" id="finalEmail" class="form-text-input" placeholder="youremail@example.com" required>
               </div>
             </div>
@@ -2516,7 +2614,7 @@ body {
             <span>➔</span>
           </button>
           
-          <div class="form-footer-guarantee-note">
+          <div class="form-footer-guarantee-note" id="formGuarNote">
             सुरक्षित भुगतान UPI, कार्ड एवं नेट बैंकिंग द्वारा। कर-छूट रसीद 24 घंटे में आपके ईमेल पर भेजी जाएगी।<br>
             <span style="font-size:0.75rem; color:#94A3B8;">Secure payment via UPI, cards & net banking. Tax-exemption receipt sent within 24 hours.</span>
           </div>
@@ -2536,23 +2634,282 @@ body {
       <div class="sticky-msg-block">
         <span style="font-size:1.3rem;">⏰</span>
         <div>
-          <strong>जन्माष्टमी महोत्सव नज़दीक है!</strong><br>
-          <span style="font-size:0.82rem; color:#594433;">भोग, प्रसादम् और गौ सेवा की तैयारियां चल रही हैं। अभी अपनी सेवा अर्पित करें।</span>
+          <strong id="stickyMsgTitle">जन्माष्टमी महोत्सव नज़दीक है!</strong><br>
+          <span id="stickyMsgSub" style="font-size:0.82rem; color:#594433;">भोग, प्रसादम् और गौ सेवा की तैयारियां चल रही हैं। अभी अपनी सेवा अर्पित करें।</span>
         </div>
       </div>
-      <a href="#offer-form" class="sticky-action-button">अभी सेवा अर्पित करें / Offer Seva Now</a>
+      <a href="#offer-form" class="sticky-action-button" id="stickyBtnText">अभी सेवा अर्पित करें / Offer Seva Now</a>
     </div>
   </div>
 </div>
 
 <script>
-let selSevaTitle = 'मिश्री माखन भोग';
+// ============================================================
+// BILINGUAL TRANSLATIONS & SEVA STATE MANAGEMENT
+// ============================================================
+const SITE_TRANSLATIONS = {
+  hi: {
+    heroEyebrow: "इस जन्माष्टमी,",
+    heroTitle1: "श्री कृष्ण को",
+    heroTitle2: "सेवा अर्पित करें",
+    heroDesc: "मध्यरात्रि भोग अर्पित करें, कृष्ण के नाम पर भूखों को भोजन कराएं, और उनकी प्रिय गायों की सेवा करें — हर सेवा मंदिर में आपके नाम व गोत्र सहित अर्पित की जाती है।",
+    heroBtn1Hi: "सेवा अर्पित करें एवं दान करें",
+    heroBtn1En: "Offer Seva & Donate",
+    heroBtn2Hi: "सेवाएं देखें",
+    heroBtn2En: "See the Sevas",
+    trust1Title: "भक्त परिवारों का विश्वास",
+    trust1Sub: "Trusted by 12,000+ devotee families",
+    trust2Title: "भोग अर्पण की राशि सेवा में उपयोग होती है",
+    trust2Sub: "100% of bhog offerings go to seva",
+    trust3Num: "सुरक्षित भुगतान",
+    trust3Title: "UPI, कार्ड, नेट बैंकिंग द्वारा",
+    trust3Sub: "Secure payments via UPI, Cards & Net Banking",
+    offeringBadge: "CHOOSE YOUR OFFERING",
+    offeringH2: 'इस जन्माष्टमी कृष्ण की सेवा के <span class="highlight-red">तीन माध्यम</span>',
+    offeringSubH2: "Three ways to serve Krishna this Janmashtami",
+    offeringDesc: "आपकी अर्पित की गई हर राशि उसी दिन भोग तैयार करने, प्रसादम् वितरण और गौशाला की गौ सेवा में उपयोग होती है।",
+    formTitle: "अपना जन्माष्टमी अर्पण करें",
+    formSub: "Make your Janmashtami offering",
+    formDesc: "एक सेवा चुनें, राशि चुनें, और मंदिर में लिए गए आपके नाम सहित प्रसादम् आशीर्वाद प्राप्त करें।",
+    guar1Title: "सुरक्षित",
+    guar1Sub: "256-Bit SSL",
+    guar2Title: "तेज भुगतान",
+    guar2Sub: "UPI, Cards",
+    guar3Title: "कर-छूट रसीद",
+    guar3Sub: "24 घंटे में",
+    step1Header: "सेवा चुनें",
+    step2Header: "राशि चुनें (₹)",
+    step3Header: "आपका विवरण",
+    step1: "1. सेवा चुनें",
+    step2: "2. राशि चुनें (₹)",
+    step3: "3. आपका विवरण",
+    popularBadge: "सर्वाधिक लोकप्रिय",
+    amtOptCustomText: "अन्य राशि दर्ज करें",
+    amtOptCustomSub: "Other amount",
+    lblName: 'नाम (Name) <span style="color:#C5292A;">*</span>',
+    namePlaceholder: "आपका पूरा नाम",
+    lblGotra: "गोत्र (Gotra)",
+    gotraPlaceholder: "अपना गोत्र लिखें",
+    lblMobile: 'मोबाइल नंबर (Mobile) <span style="color:#C5292A;">*</span>',
+    lblEmail: 'ईमेल (Email) <span style="color:#C5292A;">*</span>',
+    btnSubmitPrefix: "अर्पित करने हेतु आगे बढ़ें — ",
+    guaranteeNote: 'सुरक्षित भुगतान UPI, कार्ड एवं नेट बैंकिंग द्वारा। कर-छूट रसीद 24 घंटे में आपके ईमेल पर भेजी जाएगी।<br><span style="font-size:0.75rem; color:#94A3B8;">Secure payment via UPI, cards & net banking. Tax-exemption receipt sent within 24 hours.</span>',
+    stickyTitle: "जन्माष्टमी महोत्सव नज़दीक है!",
+    stickyDesc: "भोग, प्रसादम् और गौ सेवा की तैयारियां चल रही हैं। अभी अपनी सेवा अर्पित करें।",
+    stickyBtn: "अभी सेवा अर्पित करें / Offer Seva Now",
+    alertMissing: "कृपया नाम, मोबाइल नंबर और ईमेल भरें।",
+    alertSuccess: (name, seva, gotra, amt) => `धन्यवाद ${name}! आपकी ${seva} (गोत्र: ${gotra || 'N/A'}) हेतु ₹${amt.toLocaleString('en-IN')} का भुगतान शुरू किया जा रहा है।`
+  },
+  en: {
+    heroEyebrow: "This Janmashtami,",
+    heroTitle1: "Serve Lord Krishna,",
+    heroTitle2: "Offer Your Seva",
+    heroDesc: "Sponsor the midnight bhog, feed the hungry in Krishna's name, and care for the cows he loved — every seva is offered with your name and gotra at the temple.",
+    heroBtn1Hi: "Offer Seva & Donate",
+    heroBtn1En: "Receive Divine Blessings",
+    heroBtn2Hi: "View Seva Schemes",
+    heroBtn2En: "See All Offerings",
+    trust1Title: "Trusted by Devotee Families",
+    trust1Sub: "Over 12,000+ donors blessed",
+    trust2Title: "100% of Offerings Go Directly to Seva",
+    trust2Sub: "Same-day temple service utilization",
+    trust3Num: "100% Secure Checkout",
+    trust3Title: "UPI, Cards & Net Banking",
+    trust3Sub: "Instant 80G Tax Exemption Receipt",
+    offeringBadge: "CHOOSE YOUR OFFERING",
+    offeringH2: 'Three Sacred Ways to Serve Krishna <span class="highlight-red">This Janmashtami</span>',
+    offeringSubH2: "Choose your personal offering for Sri Sri Radha Madhava",
+    offeringDesc: "Every rupee offered is utilized on the same day for fresh bhog preparation, prasadam distribution & goshala seva at ISKCON Kanpur.",
+    formTitle: "Make Your Janmashtami Offering",
+    formSub: "Offer Seva in your name & gotra",
+    formDesc: "Select an offering, choose an amount, and receive sacred prasadam blessings performed directly at ISKCON Kanpur temple.",
+    guar1Title: "100% Secure",
+    guar1Sub: "256-Bit SSL",
+    guar2Title: "Fast Checkout",
+    guar2Sub: "UPI & Cards",
+    guar3Title: "80G Tax Receipt",
+    guar3Sub: "Within 24 Hours",
+    step1Header: "Select Seva",
+    step2Header: "Select Amount (₹)",
+    step3Header: "Your Details",
+    step1: "1. Select Seva",
+    step2: "2. Select Amount (₹)",
+    step3: "3. Your Details",
+    popularBadge: "Most Popular",
+    amtOptCustomText: "Enter Custom Amount",
+    amtOptCustomSub: "Other amount",
+    lblName: 'Full Name <span style="color:#C5292A;">*</span>',
+    namePlaceholder: "Your full name",
+    lblGotra: "Gotra (Optional)",
+    gotraPlaceholder: "Enter your gotra",
+    lblMobile: 'Mobile Number <span style="color:#C5292A;">*</span>',
+    lblEmail: 'Email Address <span style="color:#C5292A;">*</span>',
+    btnSubmitPrefix: "Proceed to Offer — ",
+    guaranteeNote: 'Secure payment via UPI, debit/credit cards & net banking. 80G Tax-exemption receipt delivered within 24 hours to your email.<br><span style="font-size:0.75rem; color:#94A3B8;">ISKCON Kanpur is a registered charitable trust.</span>',
+    stickyTitle: "Sri Krishna Janmashtami is Approaching!",
+    stickyDesc: "Preparations for grand midnight bhog, prasadam & gau seva are underway. Offer your seva now.",
+    stickyBtn: "Offer Your Seva Now ➔",
+    alertMissing: "Please enter your Name, Mobile number and Email.",
+    alertSuccess: (name, seva, gotra, amt) => `Thank you ${name}! Proceeding to payment of ₹${amt.toLocaleString('en-IN')} for ${seva} (Gotra: ${gotra || 'N/A'}).`
+  }
+};
+
+let currentSiteLang = localStorage.getItem('iskconLang') || 'hi';
+let currentSevaKey = 'mishri';
+let selSevaTitleHi = 'मिश्री माखन भोग';
+let selSevaTitleEn = 'Mishri Makhan Bhog';
 let selAmtValue = 2100;
 
-function chooseExactSeva(cardEl, name) {
+function switchSiteLanguage(lang) {
+  currentSiteLang = lang;
+  localStorage.setItem('iskconLang', lang);
+  
+  // Toggle Switcher Active Pill
+  const btnEn = document.getElementById('btnLangEn');
+  const btnHi = document.getElementById('btnLangHi');
+  if (btnEn && btnHi) {
+    if (lang === 'en') {
+      btnEn.classList.add('active');
+      btnHi.classList.remove('active');
+    } else {
+      btnHi.classList.add('active');
+      btnEn.classList.remove('active');
+    }
+  }
+  
+  const d = SITE_TRANSLATIONS[lang];
+  if (!d) return;
+  
+  // Update Hero Section
+  const heroEyebrowText = document.getElementById('heroEyebrowText');
+  if (heroEyebrowText) heroEyebrowText.textContent = d.heroEyebrow;
+  
+  const heroTitleLine1 = document.getElementById('heroTitleLine1');
+  if (heroTitleLine1) heroTitleLine1.textContent = d.heroTitle1;
+  
+  const heroTitleLine2 = document.getElementById('heroTitleLine2');
+  if (heroTitleLine2) heroTitleLine2.textContent = d.heroTitle2;
+  
+  const heroDescHi = document.getElementById('heroDescHi');
+  if (heroDescHi) heroDescHi.textContent = d.heroDesc;
+  
+  const heroBtn1Hi = document.getElementById('heroBtn1Hi');
+  if (heroBtn1Hi) heroBtn1Hi.textContent = d.heroBtn1Hi;
+  
+  const heroBtn1En = document.getElementById('heroBtn1En');
+  if (heroBtn1En) heroBtn1En.textContent = d.heroBtn1En;
+  
+  const heroBtn2Hi = document.getElementById('heroBtn2Hi');
+  if (heroBtn2Hi) heroBtn2Hi.textContent = d.heroBtn2Hi;
+  
+  const heroBtn2En = document.getElementById('heroBtn2En');
+  if (heroBtn2En) heroBtn2En.textContent = d.heroBtn2En;
+  
+  // Trust Banner
+  const trust1 = document.getElementById('trustCol1Title');
+  if (trust1) trust1.textContent = d.trust1Title;
+  const trust1Sub = document.getElementById('trustCol1Sub');
+  if (trust1Sub) trust1Sub.textContent = d.trust1Sub;
+  
+  const trust2 = document.getElementById('trustCol2Title');
+  if (trust2) trust2.textContent = d.trust2Title;
+  const trust2Sub = document.getElementById('trustCol2Sub');
+  if (trust2Sub) trust2Sub.textContent = d.trust2Sub;
+  
+  const trust3Num = document.getElementById('trustCol3Num');
+  if (trust3Num) trust3Num.textContent = d.trust3Num;
+  const trust3 = document.getElementById('trustCol3Title');
+  if (trust3) trust3.textContent = d.trust3Title;
+  const trust3Sub = document.getElementById('trustCol3Sub');
+  if (trust3Sub) trust3Sub.textContent = d.trust3Sub;
+  
+  // Offerings Section
+  const offBadge = document.getElementById('offeringBadgeText');
+  if (offBadge) offBadge.textContent = d.offeringBadge;
+  const offH2 = document.getElementById('offeringMainH2');
+  if (offH2) offH2.innerHTML = d.offeringH2;
+  const offSub = document.getElementById('offeringSubH2');
+  if (offSub) offSub.textContent = d.offeringSubH2;
+  const offDesc = document.getElementById('offeringDescRibbon');
+  if (offDesc) offDesc.textContent = d.offeringDesc;
+  
+  // Form Section
+  const formTitle = document.getElementById('formInfoTitleHi');
+  if (formTitle) formTitle.textContent = d.formTitle;
+  const formSub = document.getElementById('formInfoTitleEn');
+  if (formSub) formSub.textContent = d.formSub;
+  const formDesc = document.getElementById('formInfoDesc');
+  if (formDesc) formDesc.textContent = d.formDesc;
+  
+  const g1T = document.getElementById('guar1Title');
+  if (g1T) g1T.textContent = d.guar1Title;
+  const g1S = document.getElementById('guar1Sub');
+  if (g1S) g1S.textContent = d.guar1Sub;
+  
+  const g2T = document.getElementById('guar2Title');
+  if (g2T) g2T.textContent = d.guar2Title;
+  const g2S = document.getElementById('guar2Sub');
+  if (g2S) g2S.textContent = d.guar2Sub;
+  
+  const g3T = document.getElementById('guar3Title');
+  if (g3T) g3T.textContent = d.guar3Title;
+  const g3S = document.getElementById('guar3Sub');
+  if (g3S) g3S.textContent = d.guar3Sub;
+  
+  const s1H = document.getElementById('step1Header');
+  if (s1H) s1H.textContent = d.step1Header;
+  const s2H = document.getElementById('step2Header');
+  if (s2H) s2H.textContent = d.step2Header;
+  const s3H = document.getElementById('step3Header');
+  if (s3H) s3H.textContent = d.step3Header;
+  
+  const s1L = document.getElementById('step1Lbl');
+  if (s1L) s1L.textContent = d.step1;
+  const s2L = document.getElementById('step2Lbl');
+  if (s2L) s2L.textContent = d.step2;
+  const s3L = document.getElementById('step3Lbl');
+  if (s3L) s3L.textContent = d.step3;
+  
+  const popBadge = document.getElementById('amtPopularBadge');
+  if (popBadge) popBadge.textContent = d.popularBadge;
+  
+  const customTxt = document.getElementById('amtOptCustomText');
+  if (customTxt) customTxt.textContent = d.amtOptCustomText;
+  
+  const lblName = document.getElementById('lblName');
+  if (lblName) lblName.innerHTML = d.lblName;
+  const inputName = document.getElementById('finalName');
+  if (inputName) inputName.setAttribute('placeholder', d.namePlaceholder);
+  
+  const lblGotra = document.getElementById('lblGotra');
+  if (lblGotra) lblGotra.innerHTML = d.lblGotra;
+  const inputGotra = document.getElementById('finalGotra');
+  if (inputGotra) inputGotra.setAttribute('placeholder', d.gotraPlaceholder);
+  
+  const lblMobile = document.getElementById('lblMobile');
+  if (lblMobile) lblMobile.innerHTML = d.lblMobile;
+  const lblEmail = document.getElementById('lblEmail');
+  if (lblEmail) lblEmail.innerHTML = d.lblEmail;
+  
+  const guarNote = document.getElementById('formGuarNote');
+  if (guarNote) guarNote.innerHTML = d.guaranteeNote;
+  
+  const stickyTitle = document.getElementById('stickyMsgTitle');
+  if (stickyTitle) stickyTitle.textContent = d.stickyTitle;
+  const stickyDesc = document.getElementById('stickyMsgSub');
+  if (stickyDesc) stickyDesc.textContent = d.stickyDesc;
+  const stickyBtn = document.getElementById('stickyBtnText');
+  if (stickyBtn) stickyBtn.textContent = d.stickyBtn;
+  
+  updateFinalButton();
+}
+
+function chooseExactSeva(cardEl, key, nameHi, nameEn) {
   document.querySelectorAll('.exact-seva-card').forEach(c => c.classList.remove('active'));
   cardEl.classList.add('active');
-  selSevaTitle = name;
+  currentSevaKey = key;
+  selSevaTitleHi = nameHi;
+  selSevaTitleEn = nameEn;
   updateFinalButton();
 }
 
@@ -2567,7 +2924,10 @@ function chooseExactAmount(cardEl, val) {
   if (activeRadio) activeRadio.checked = true;
 
   if (val === 0) {
-    const customVal = prompt('कृपया अपनी इच्छानुसार राशि दर्ज करें (₹):', '2100');
+    const promptMsg = currentSiteLang === 'en' 
+      ? 'Please enter your custom amount (₹):' 
+      : 'कृपया अपनी इच्छानुसार राशि दर्ज करें (₹):';
+    const customVal = prompt(promptMsg, '2100');
     if (customVal && !isNaN(customVal) && Number(customVal) > 0) {
       selAmtValue = Number(customVal);
     }
@@ -2579,8 +2939,14 @@ function chooseExactAmount(cardEl, val) {
 
 function updateFinalButton() {
   const span = document.getElementById('finalBtnSpan');
-  if (span) {
-    span.textContent = `₹${selAmtValue.toLocaleString('en-IN')} अर्पित करने हेतु आगे बढ़ें — ${selSevaTitle}`;
+  if (!span) return;
+  const sevaName = currentSiteLang === 'en' ? selSevaTitleEn : selSevaTitleHi;
+  const formattedAmt = `₹${selAmtValue.toLocaleString('en-IN')}`;
+  
+  if (currentSiteLang === 'en') {
+    span.textContent = `Proceed to Offer ${formattedAmt} — ${sevaName}`;
+  } else {
+    span.textContent = `${formattedAmt} अर्पित करने हेतु आगे बढ़ें — ${sevaName}`;
   }
 }
 
@@ -2589,14 +2955,22 @@ function submitFinalForm() {
   const gotra = document.getElementById('finalGotra').value.trim();
   const phone = document.getElementById('finalPhone').value.trim();
   const email = document.getElementById('finalEmail').value.trim();
+  const d = SITE_TRANSLATIONS[currentSiteLang] || SITE_TRANSLATIONS.hi;
 
   if (!name || !phone || !email) {
-    alert('कृपया नाम, मोबाइल नंबर और ईमेल भरें।');
+    alert(d.alertMissing);
     return;
   }
 
-  alert(`धन्यवाद ${name}! आपकी ${selSevaTitle} (गोत्र: ${gotra || 'N/A'}) हेतु ₹${selAmtValue.toLocaleString('en-IN')} का भुगतान शुरू किया जा रहा है।`);
+  const sevaName = currentSiteLang === 'en' ? selSevaTitleEn : selSevaTitleHi;
+  alert(d.alertSuccess(name, sevaName, gotra, selAmtValue));
 }
+
+// Initialize on DOM load
+document.addEventListener('DOMContentLoaded', () => {
+  const savedLang = localStorage.getItem('iskconLang') || 'hi';
+  switchSiteLanguage(savedLang);
+});
 </script>
 
 </body>
