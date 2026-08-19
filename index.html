@@ -1707,18 +1707,28 @@ body {
 @media (max-width: 640px) {
   .hero-full-bg-section {
     background:
-      linear-gradient(180deg, rgba(2, 8, 24, 0.28) 0%, rgba(2, 8, 24, 0.50) 30%, rgba(2, 8, 24, 0.90) 65%, rgba(2, 7, 22, 0.99) 100%),
-      url('assets/janmashtami_hero.jpg?v=20260819_04') 80% top / cover no-repeat;
-    padding: 24px 0 16px 0;
+      linear-gradient(180deg, rgba(2, 8, 24, 0.22) 0%, rgba(2, 8, 24, 0.42) 26%, rgba(2, 8, 24, 0.88) 58%, rgba(2, 7, 22, 0.99) 100%),
+      url('assets/janmashtami_hero.jpg?v=20260819_04') 80% 8% / cover no-repeat;
+    padding: 24px 0 18px 0;
   }
-  .hero-top-bar-row { justify-content: space-between; width: 100%; margin-bottom: 12px; }
+  .hero-top-bar-row { justify-content: space-between; width: 100%; margin-bottom: 14px; }
   .hero-brand-top-logo { margin: 0; }
-  .hero-iskcon-logo-img { height: 48px !important; }
-  .hero-main-title { font-size: 2.15rem; }
-  .hero-p-hi { font-size: 0.93rem; }
+  .hero-iskcon-logo-img { height: 50px !important; }
+  .hero-eyebrow-text { font-size: 1.25rem; font-weight: 800; margin-bottom: 6px; }
+  .hero-main-title { font-size: 2.35rem !important; line-height: 1.15; margin-bottom: 12px; }
+  .hero-p-hi { 
+    font-size: 1.02rem; 
+    line-height: 1.65; 
+    font-weight: 600; 
+    color: #FFFFFF;
+    text-shadow: 0 2px 10px rgba(0,0,0,1), 0 0 25px rgba(0,0,0,0.9);
+    margin-bottom: 16px;
+  }
   .hero-p-en { display: none; }
-  .btn-pill-gold, .btn-pill-dark { width: 100%; justify-content: center; }
-  .hero-buttons-row { gap: 12px; flex-direction: column; }
+  .btn-pill-gold, .btn-pill-dark { width: 100%; justify-content: center; padding: 14px 22px; }
+  .btn-main-hi { font-size: 1.02rem; font-weight: 800; }
+  .btn-sub-en { font-size: 0.78rem; }
+  .hero-buttons-row { gap: 12px; flex-direction: column; width: 100%; }
   .trust-three-cols-grid { grid-template-columns: 1fr; gap: 0; }
   .trust-col-item { 
     border-right: none;
@@ -1732,35 +1742,42 @@ body {
   .form-right-builder-panel { padding: 20px 14px; }
   .exact-seva-card { padding: 12px 40px 12px 12px; gap: 12px; }
   .form-coin-icon-img { width: 38px; height: 38px; }
-  .exact-seva-title-hi { font-size: 0.98rem; }
+  .exact-seva-title-hi { font-size: 1rem; font-weight: 700; }
   .exact-amt-card { padding: 11px 12px; }
   .exact-amt-val-text { font-size: 1.05rem; }
-  .full-red-submit-btn { padding: 14px 12px; font-size: 0.96rem; }
+  .full-red-submit-btn { padding: 14px 12px; font-size: 0.98rem; }
 }
 
 /* Mobile Small: max 480px */
 @media (max-width: 480px) {
   .hero-full-bg-section {
     background:
-      linear-gradient(180deg, rgba(2, 8, 24, 0.22) 0%, rgba(2, 8, 24, 0.45) 28%, rgba(2, 8, 24, 0.88) 60%, rgba(2, 7, 22, 0.99) 100%),
-      url('assets/janmashtami_hero.jpg?v=20260819_04') 82% top / cover no-repeat;
-    padding: 20px 0 14px 0;
+      linear-gradient(180deg, rgba(2, 8, 24, 0.18) 0%, rgba(2, 8, 24, 0.40) 24%, rgba(2, 8, 24, 0.88) 55%, rgba(2, 7, 22, 1) 100%),
+      url('assets/janmashtami_hero.jpg?v=20260819_04') 82% 6% / cover no-repeat;
+    padding: 20px 0 16px 0;
   }
-  .hero-top-bar-row { justify-content: space-between; width: 100%; margin-bottom: 10px; }
+  .hero-top-bar-row { justify-content: space-between; width: 100%; margin-bottom: 12px; }
   .hero-brand-top-logo { margin: 0; }
-  .hero-iskcon-logo-img { height: 42px !important; }
-  .lang-opt-btn { padding: 4px 10px; font-size: 0.8rem; }
-  .hero-main-title { font-size: 1.95rem !important; line-height: 1.15; }
-  .hero-eyebrow-text { font-size: 1.05rem; }
-  .hero-p-hi { font-size: 0.88rem; line-height: 1.5; }
-  .hero-floating-trust-card { padding: 8px 12px; margin-top: 12px; border-radius: 12px; }
-  .trust-badge-wrap { width: 40px; height: 40px; }
-  .trust-ornate-badge-img { width: 40px; height: 40px; }
-  .trust-col-num { font-size: 1.1rem; }
-  .trust-col-title-bold { font-size: 0.72rem; }
-  .btn-pill-gold, .btn-pill-dark { padding: 12px 18px; font-size: 0.9rem; }
-  .btn-main-hi { font-size: 0.92rem; }
-  .btn-sub-en { font-size: 0.7rem; }
+  .hero-iskcon-logo-img { height: 44px !important; }
+  .lang-opt-btn { padding: 4px 11px; font-size: 0.82rem; }
+  .hero-eyebrow-text { font-size: 1.18rem; font-weight: 800; margin-bottom: 6px; }
+  .hero-main-title { font-size: 2.15rem !important; line-height: 1.16; margin-bottom: 12px; }
+  .hero-p-hi { 
+    font-size: 0.96rem; 
+    line-height: 1.6; 
+    font-weight: 600; 
+    color: #FFFFFF;
+    text-shadow: 0 2px 10px rgba(0,0,0,1), 0 0 25px rgba(0,0,0,0.9);
+    margin-bottom: 14px;
+  }
+  .hero-floating-trust-card { padding: 10px 14px; margin-top: 14px; border-radius: 14px; }
+  .trust-badge-wrap { width: 42px; height: 42px; }
+  .trust-ornate-badge-img { width: 42px; height: 42px; }
+  .trust-col-num { font-size: 1.15rem; }
+  .trust-col-title-bold { font-size: 0.76rem; }
+  .btn-pill-gold, .btn-pill-dark { padding: 13px 20px; font-size: 0.95rem; }
+  .btn-main-hi { font-size: 0.98rem; font-weight: 800; }
+  .btn-sub-en { font-size: 0.74rem; }
   
   .donation-form-section-wrap { padding: 24px 0 120px 0; }
   .form-outer-card-box { border-radius: 16px; }
