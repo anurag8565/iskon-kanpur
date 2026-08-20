@@ -49,7 +49,7 @@ body {
   color: #FFFFFF;
   position: relative;
   overflow: hidden;
-  padding: 48px 0 46px 0;
+  padding: 50px 0 78px 0;
   min-height: auto;
   display: flex;
   flex-direction: column;
@@ -96,76 +96,85 @@ body {
   display: none;
 }
 
-@keyframes janmashtamiGlowPulse {
+@keyframes janmashtamiShimmerGlow {
   0%, 100% {
-    box-shadow: 0 0 20px rgba(247, 202, 69, 0.75), 0 0 45px rgba(200, 30, 30, 0.4), inset 0 1px 2px rgba(255, 239, 166, 0.6);
-    border-color: #FFD700;
-    transform: scale(1);
+    color: #FFE680;
+    text-shadow: 
+      0 0 16px rgba(255, 215, 0, 0.9),
+      0 0 35px rgba(247, 188, 24, 0.6),
+      0 2px 8px rgba(0, 0, 0, 0.95);
+    transform: translateY(0);
   }
   50% {
-    box-shadow: 0 0 32px rgba(255, 215, 0, 0.95), 0 0 60px rgba(247, 202, 69, 0.65), inset 0 1px 3px rgba(255, 255, 255, 0.8);
-    border-color: #FFE89C;
-    transform: scale(1.03);
+    color: #FFFDF0;
+    text-shadow: 
+      0 0 25px rgba(255, 240, 160, 1),
+      0 0 50px rgba(255, 215, 0, 0.95),
+      0 0 75px rgba(247, 188, 24, 0.6),
+      0 2px 10px rgba(0, 0, 0, 0.95);
+    transform: translateY(-1px);
   }
 }
 
 .hero-eyebrow-text {
-  font-size: clamp(0.98rem, 1.25vw, 1.15rem);
-  color: #FFECA0;
+  font-size: clamp(1.15rem, 1.45vw, 1.38rem);
   font-weight: 900;
-  margin-bottom: 16px;
-  letter-spacing: 0.16em;
+  margin-bottom: 18px;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 8px 24px;
-  background: linear-gradient(135deg, rgba(160, 20, 20, 0.88) 0%, rgba(100, 10, 10, 0.92) 50%, rgba(35, 5, 5, 0.95) 100%);
-  border: 2px solid #FFD700;
-  border-radius: 30px;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  text-shadow: 0 2px 8px rgba(0,0,0,0.95), 0 0 14px rgba(247,202,69,0.7);
+  display: inline-block;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  animation: janmashtamiShimmerGlow 2.5s ease-in-out infinite;
+  font-family: 'Hind', sans-serif;
   transition: all 0.3s ease;
-  animation: janmashtamiGlowPulse 2.4s ease-in-out infinite;
-  position: relative;
 }
 
 .hero-eyebrow-text:hover {
-  box-shadow: 0 0 40px rgba(255, 215, 0, 1), 0 0 70px rgba(247, 202, 69, 0.7);
-  transform: translateY(-2px) scale(1.05);
-  animation-play-state: paused;
+  transform: scale(1.05);
+  color: #FFFFFF;
+  text-shadow: 
+    0 0 25px rgba(255, 255, 255, 1),
+    0 0 55px rgba(255, 215, 0, 1);
 }
 
 .hero-main-title {
   font-size: clamp(2.6rem, 4.6vw, 3.8rem);
   font-weight: 800;
-  line-height: 1.18;
-  margin-bottom: 16px;
+  line-height: 1.2;
+  margin-bottom: 20px;
   letter-spacing: -0.01em;
   font-family: 'Playfair Display', 'Rozha One', serif;
   display: flex;
   flex-direction: column;
 }
 
-/* Line 1: Serve (White) + Lord Krishna, (Gold) */
+/* Line 1: Serve Lord Krishna, (Light Yellow Glow with spacing below) */
 .hero-main-title .hero-title-line1 {
   display: block;
   font-family: 'Playfair Display', serif;
   font-weight: 800;
-  color: #FFFDF9;
-  text-shadow: 0 3px 18px rgba(0, 0, 0, 0.95), 0 1px 3px rgba(0, 0, 0, 0.85);
+  color: #FFE57F;
+  margin-bottom: 6px;
+  text-shadow: 
+    0 2px 14px rgba(0, 0, 0, 0.95),
+    0 0 22px rgba(255, 229, 127, 0.65),
+    0 0 45px rgba(247, 188, 24, 0.4);
 }
 
 .hero-main-title .hero-text-gold {
   font-family: 'Playfair Display', serif;
   font-weight: 800;
-  color: #FFD23F;
+  color: #FFE57F;
   display: inline-block;
   text-shadow: 
-    0 2px 10px rgba(0, 0, 0, 0.95),
-    0 0 24px rgba(255, 210, 63, 0.9),
-    0 0 45px rgba(247, 188, 24, 0.6);
+    0 2px 14px rgba(0, 0, 0, 0.95),
+    0 0 24px rgba(255, 229, 127, 0.7),
+    0 0 45px rgba(247, 188, 24, 0.4);
 }
 
 /* Line 2: Earn His Blessings (White) */
@@ -179,13 +188,13 @@ body {
 
 .hero-main-desc {
   font-size: clamp(0.96rem, 1.1vw, 1.1rem);
-  line-height: 1.6;
+  line-height: 1.68;
   color: #F1F5F9;
-  margin-bottom: 22px;
+  margin-bottom: 26px;
   font-weight: 400;
   font-family: 'Hind', sans-serif;
   text-shadow: 0 2px 12px rgba(0,0,0,0.95), 0 1px 3px rgba(0,0,0,0.9);
-  max-width: 520px;
+  max-width: 530px;
 }
 
 /* Hero Buttons */
@@ -193,7 +202,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
   margin-bottom: 0;
 }
 
@@ -201,18 +210,18 @@ body {
   background: linear-gradient(180deg, #FFF6C4 0%, #FFDF6B 25%, #F7BC18 60%, #DF8200 90%, #B86000 100%);
   color: #120500;
   border-radius: 50px;
-  padding: 13px 28px;
+  padding: 10px 22px;
   display: inline-flex;
   align-items: center;
-  gap: 14px;
+  gap: 10px;
   text-decoration: none;
   border: 1px solid rgba(255, 248, 200, 0.9);
   box-shadow:
     0 0 0 1px rgba(255,240,150,0.6),
-    0 8px 32px rgba(247, 180, 20, 0.7),
-    0 3px 8px rgba(0,0,0,0.6),
-    inset 0 2px 2px rgba(255,255,255,0.9),
-    inset 0 -2px 4px rgba(160, 85, 0, 0.4);
+    0 6px 24px rgba(247, 180, 20, 0.65),
+    0 2px 6px rgba(0,0,0,0.5),
+    inset 0 1.5px 2px rgba(255,255,255,0.9),
+    inset 0 -2px 3px rgba(160, 85, 0, 0.4);
   cursor: pointer;
   transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
   position: relative;
@@ -246,21 +255,21 @@ body {
 }
 
 .btn-pill-gold:hover {
-  transform: translateY(-3px) scale(1.03);
+  transform: translateY(-2px) scale(1.02);
   box-shadow:
     0 0 0 2px rgba(255,240,150,0.9),
-    0 14px 45px rgba(247, 190, 30, 0.85),
-    0 6px 16px rgba(0,0,0,0.7),
+    0 10px 35px rgba(247, 190, 30, 0.85),
+    0 4px 12px rgba(0,0,0,0.7),
     inset 0 2px 2px rgba(255,255,255,0.95);
   color: #0B0300;
 }
 
 .btn-circle-icon {
-  width: 38px;
-  height: 38px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
-  background: rgba(20, 8, 0, 0.2);
-  border: 1.5px solid rgba(20, 8, 0, 0.25);
+  background: rgba(20, 8, 0, 0.18);
+  border: 1.2px solid rgba(20, 8, 0, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -269,7 +278,7 @@ body {
 
 .btn-circle-icon.dark-icon-bg {
   background: rgba(247, 202, 69, 0.16);
-  border: 1.5px solid rgba(247, 202, 69, 0.5);
+  border: 1.2px solid rgba(247, 202, 69, 0.5);
 }
 
 .btn-text-col {
@@ -279,27 +288,27 @@ body {
 }
 
 .btn-label-text {
-  font-size: 1.05rem;
-  font-weight: 800;
+  font-size: 0.95rem;
+  font-weight: 700;
   letter-spacing: 0.2px;
   line-height: 1.2;
   white-space: nowrap;
 }
 
 .btn-main-hi {
-  font-size: 1.02rem;
-  font-weight: 800;
+  font-size: 0.95rem;
+  font-weight: 700;
   line-height: 1.2;
 }
 
 .btn-sub-en {
-  font-size: 0.76rem;
+  font-size: 0.74rem;
   font-weight: 600;
   opacity: 0.88;
 }
 
 .btn-arrow-icon {
-  font-size: 1.15rem;
+  font-size: 1.02rem;
   margin-left: 2px;
   transition: transform 0.3s ease;
 }
@@ -313,20 +322,20 @@ body {
   background: linear-gradient(180deg, rgba(12, 36, 92, 0.92) 0%, rgba(4, 15, 45, 0.98) 100%);
   color: #FFFFFF;
   border-radius: 50px;
-  padding: 12px 26px;
+  padding: 9.5px 20px;
   display: inline-flex;
   align-items: center;
-  gap: 14px;
+  gap: 10px;
   text-decoration: none;
-  border: 1.8px solid #F7CA45;
+  border: 1.6px solid #F7CA45;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   cursor: pointer;
   transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
   box-shadow:
     0 0 0 1px rgba(247,202,69,0.25),
-    0 8px 28px rgba(0,0,0,0.7),
-    0 0 24px rgba(247,202,69,0.3),
+    0 6px 20px rgba(0,0,0,0.65),
+    0 0 18px rgba(247,202,69,0.25),
     inset 0 1px 0 rgba(247,202,69,0.4);
   font-family: 'Hind', sans-serif;
 }
@@ -1190,6 +1199,40 @@ body {
   .seva-top-cards-grid .seva-tier-card:nth-child(7) { grid-column: span 2; }
 }
 
+@keyframes mostLovedPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 4px 14px rgba(220, 20, 60, 0.5), 0 0 12px rgba(255, 215, 0, 0.4);
+  }
+  50% {
+    transform: scale(1.06);
+    box-shadow: 0 6px 20px rgba(220, 20, 60, 0.75), 0 0 20px rgba(255, 215, 0, 0.7);
+  }
+}
+
+.most-loved-badge {
+  position: absolute;
+  top: -12px;
+  right: 10px;
+  background: linear-gradient(135deg, #E60026 0%, #BA0018 60%, #850010 100%);
+  color: #FFFFFF;
+  font-size: 0.70rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 3.5px 11px;
+  border-radius: 20px;
+  border: 1.6px solid #FFD700;
+  box-shadow: 0 4px 14px rgba(220, 20, 60, 0.55);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  z-index: 10;
+  animation: mostLovedPulse 2s ease-in-out infinite;
+  white-space: nowrap;
+  font-family: 'Hind', sans-serif;
+}
+
 .seva-tier-card {
   background: linear-gradient(180deg, #0B2545 0%, #030F24 100%);
   border: 1.5px solid #E5C88A;
@@ -2035,6 +2078,13 @@ body {
     margin: 0 auto;
     width: 100%;
   }
+  .most-loved-badge {
+    top: -9px;
+    right: 6px;
+    font-size: 0.58rem;
+    padding: 2px 7px;
+    border-width: 1.2px;
+  }
   .seva-card-sub-label {
     font-size: 0.72rem;
     line-height: 1.22;
@@ -2354,7 +2404,7 @@ body {
     background:
       linear-gradient(90deg, rgba(2, 8, 24, 0.92) 0%, rgba(2, 8, 24, 0.72) 48%, rgba(2, 8, 24, 0.20) 78%, transparent 100%),
       url('assets/janmashtami_hero_krishna.jpg?v=20260820_09') 82% center / cover no-repeat;
-    padding: 38px 0 34px 0;
+    padding: 42px 0 68px 0;
   }
   .hero-content-left { max-width: 480px; }
   .hero-main-title { font-size: clamp(2.3rem, 4.2vw, 3.2rem); }
@@ -2425,7 +2475,7 @@ body {
     background:
       linear-gradient(180deg, rgba(2, 8, 24, 0.60) 0%, rgba(2, 8, 24, 0.28) 25%, rgba(2, 8, 24, 0.65) 60%, rgba(2, 7, 22, 0.98) 100%),
       url('assets/janmashtami_hero_krishna.jpg?v=20260820_09') 78% 18% / cover no-repeat;
-    padding: 34px 0 30px 0;
+    padding: 36px 0 58px 0;
     min-height: auto;
   }
   .hero-content-left { max-width: 100%; text-align: center; align-items: center; padding-bottom: 6px; }
@@ -2449,18 +2499,31 @@ body {
     background:
       linear-gradient(180deg, rgba(2, 8, 24, 0.70) 0%, rgba(2, 8, 24, 0.22) 22%, rgba(2, 8, 24, 0.40) 50%, rgba(2, 7, 22, 0.98) 100%),
       url('assets/janmashtami_hero_krishna.jpg?v=20260820_09') 80% 20% / cover no-repeat;
-    padding: 26px 0 24px 0;
+    padding: 24px 0 68px 0;
+    overflow: visible !important;
   }
-  .hero-brand-top-logo { margin: 0 auto 8px auto; }
-  .hero-iskcon-logo-img { height: 58px !important; }
-  .hero-eyebrow-text { font-size: 0.90rem; font-weight: 700; margin-bottom: 8px; }
-  .hero-main-title { font-size: 2.15rem !important; line-height: 1.18; margin-bottom: 10px; }
+  .hero-brand-top-logo { 
+    position: sticky;
+    top: 10px;
+    z-index: 1000;
+    margin: 0 auto 10px auto; 
+    display: flex;
+    justify-content: center;
+  }
+  .hero-iskcon-logo-img { 
+    height: 52px !important; 
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.85), 0 0 18px rgba(247, 202, 69, 0.6);
+    border: 2px solid #FFD700;
+  }
+  .hero-eyebrow-text { font-size: 1.02rem; font-weight: 900; letter-spacing: 0.18em; margin-bottom: 12px; text-align: center; }
+  .hero-main-title { font-size: 2.15rem !important; line-height: 1.2; margin-bottom: 14px; }
+  .hero-main-title .hero-title-line1 { margin-bottom: 4px; }
   .hero-main-desc { 
     font-size: 0.88rem; 
-    line-height: 1.5; 
+    line-height: 1.55; 
     color: #F1F5F9;
     text-shadow: 0 2px 10px rgba(0,0,0,1), 0 0 20px rgba(0,0,0,0.95);
-    margin-bottom: 16px;
+    margin-bottom: 18px;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -2469,24 +2532,24 @@ body {
   .hero-buttons-row { 
     display: flex; 
     flex-direction: column; 
-    gap: 10px; 
+    gap: 8px; 
     width: 100%; 
-    max-width: 320px; 
+    max-width: 290px; 
     margin: 0 auto; 
   }
   .btn-pill-gold, .btn-pill-dark { 
     width: 100%; 
     justify-content: center; 
-    padding: 12px 18px; 
-    font-size: 0.94rem; 
+    padding: 9.5px 16px; 
+    font-size: 0.90rem; 
     border-radius: 30px;
     gap: 8px;
     white-space: nowrap;
   }
   .btn-pill-gold .btn-circle-icon,
-  .btn-pill-dark .btn-circle-icon { width: 26px; height: 26px; }
+  .btn-pill-dark .btn-circle-icon { width: 24px; height: 24px; }
   .btn-pill-gold .btn-circle-icon svg,
-  .btn-pill-dark .btn-circle-icon svg { width: 16px; height: 16px; }
+  .btn-pill-dark .btn-circle-icon svg { width: 14px; height: 14px; }
   .btn-arrow-icon { display: inline-block; }
   
   /* Trust Banner Section on Mobile */
@@ -2541,18 +2604,31 @@ body {
     background:
       linear-gradient(180deg, rgba(2, 8, 24, 0.68) 0%, rgba(2, 8, 24, 0.20) 20%, rgba(2, 8, 24, 0.38) 48%, rgba(2, 7, 22, 0.98) 100%),
       url('assets/janmashtami_hero_krishna.jpg?v=20260820_09') 80% 18% / cover no-repeat;
-    padding: 22px 0 20px 0;
+    padding: 20px 0 58px 0;
+    overflow: visible !important;
   }
-  .hero-brand-top-logo { margin: 0 auto 6px auto; }
-  .hero-iskcon-logo-img { height: 52px !important; }
-  .hero-eyebrow-text { font-size: 0.84rem; font-weight: 700; margin-bottom: 6px; padding: 6px 16px; }
-  .hero-main-title { font-size: 1.95rem !important; line-height: 1.16; margin-bottom: 8px; }
+  .hero-brand-top-logo { 
+    position: sticky;
+    top: 8px;
+    z-index: 1000;
+    margin: 0 auto 8px auto; 
+    display: flex;
+    justify-content: center;
+  }
+  .hero-iskcon-logo-img { 
+    height: 48px !important; 
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.85), 0 0 16px rgba(247, 202, 69, 0.6);
+    border: 2px solid #FFD700;
+  }
+  .hero-eyebrow-text { font-size: 0.94rem; font-weight: 900; letter-spacing: 0.16em; margin-bottom: 10px; text-align: center; }
+  .hero-main-title { font-size: 1.95rem !important; line-height: 1.18; margin-bottom: 12px; }
+  .hero-main-title .hero-title-line1 { margin-bottom: 3px; }
   .hero-main-desc { 
     font-size: 0.84rem; 
-    line-height: 1.45; 
+    line-height: 1.5; 
     color: #F1F5F9;
     text-shadow: 0 2px 10px rgba(0,0,0,1), 0 0 20px rgba(0,0,0,0.95);
-    margin-bottom: 14px;
+    margin-bottom: 16px;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -2563,12 +2639,12 @@ body {
     flex-direction: column; 
     gap: 8px; 
     width: 100%; 
-    max-width: 300px; 
+    max-width: 280px; 
     margin: 0 auto; 
   }
   .btn-pill-gold, .btn-pill-dark { 
-    padding: 11px 16px; 
-    font-size: 0.90rem; 
+    padding: 9px 14px; 
+    font-size: 0.88rem; 
     border-radius: 28px;
     gap: 8px;
     white-space: nowrap;
@@ -2576,10 +2652,10 @@ body {
     justify-content: center;
   }
   .btn-pill-gold .btn-circle-icon,
-  .btn-pill-dark .btn-circle-icon { width: 24px; height: 24px; }
+  .btn-pill-dark .btn-circle-icon { width: 22px; height: 22px; }
   .btn-pill-gold .btn-circle-icon svg,
-  .btn-pill-dark .btn-circle-icon svg { width: 15px; height: 15px; }
-  .btn-arrow-icon { display: inline-block; font-size: 1rem; }
+  .btn-pill-dark .btn-circle-icon svg { width: 13px; height: 13px; }
+  .btn-arrow-icon { display: inline-block; font-size: 0.95rem; }
   
   .hero-trust-bar-section { padding: 8px 0; }
   .hero-floating-trust-card { 
@@ -2643,32 +2719,7 @@ body {
       </div>
       
       <div class="hero-eyebrow-text" id="heroEyebrow">
-        <svg width="22" height="22" viewBox="0 0 36 36" fill="none" style="vertical-align:middle; filter:drop-shadow(0 0 8px rgba(247,202,69,0.95)); flex-shrink:0;">
-          <defs>
-            <linearGradient id="pankhGrad" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stop-color="#FFE89C"/>
-              <stop offset="50%" stop-color="#F7CA45"/>
-              <stop offset="100%" stop-color="#A87612"/>
-            </linearGradient>
-            <radialGradient id="eyeGrad" cx="18" cy="11" r="8" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stop-color="#00E5FF"/>
-              <stop offset="40%" stop-color="#0B3C5D"/>
-              <stop offset="70%" stop-color="#F7CA45"/>
-              <stop offset="100%" stop-color="#1B5E20"/>
-            </radialGradient>
-          </defs>
-          <path d="M18 4 Q19 20 8 32" stroke="url(#pankhGrad)" stroke-width="2" stroke-linecap="round"/>
-          <ellipse cx="18" cy="11" rx="8" ry="7" fill="url(#eyeGrad)"/>
-          <ellipse cx="18" cy="11" rx="4" ry="3.5" fill="#04122B"/>
-          <circle cx="18" cy="11" r="1.8" fill="#00E5FF"/>
-          <path d="M12 9 Q6 6 4 10" stroke="url(#pankhGrad)" stroke-width="1.2" stroke-linecap="round"/>
-          <path d="M24 9 Q30 6 32 10" stroke="url(#pankhGrad)" stroke-width="1.2" stroke-linecap="round"/>
-          <path d="M11 14 Q5 13 4 17" stroke="url(#pankhGrad)" stroke-width="1.2" stroke-linecap="round"/>
-          <path d="M25 14 Q31 13 32 17" stroke="url(#pankhGrad)" stroke-width="1.2" stroke-linecap="round"/>
-          <path d="M13 19 Q8 20 6 24" stroke="url(#pankhGrad)" stroke-width="1.2" stroke-linecap="round"/>
-          <path d="M23 19 Q28 20 30 24" stroke="url(#pankhGrad)" stroke-width="1.2" stroke-linecap="round"/>
-        </svg>
-        <span id="heroEyebrowText" style="text-transform: uppercase; font-size: 0.98em; letter-spacing: 0.16em; font-family: 'Hind', sans-serif; font-style: normal; font-weight: 800; color: #FFECA0; text-shadow: 0 1px 4px rgba(0,0,0,0.8), 0 0 10px rgba(247,202,69,0.8);">This Janmashtami</span>
+        <span id="heroEyebrowText">This Janmashtami</span>
       </div>
       <h1 class="hero-main-title">
         <span class="hero-title-line1" id="heroTitleLine1">Serve <span class="hero-text-gold">Lord Krishna,</span></span>
@@ -2848,8 +2899,9 @@ body {
           </button>
         </div>
         
-        <!-- Card 4: 250 People -->
+        <!-- Card 4: 250 People (Most Loved) -->
         <div class="seva-tier-card">
+          <div class="most-loved-badge">Most Loved</div>
           <div class="seva-card-sub-label">Donate prasadam for 250 people</div>
           <div class="seva-card-amount-val">₹ 5,100</div>
           <button type="button" class="seva-card-donate-btn" onclick="openRazorpayDonation('Donate prasadam for 250 people', 5100)">
