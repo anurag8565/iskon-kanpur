@@ -45,7 +45,7 @@ body {
 .hero-full-bg-section {
   background:
     linear-gradient(90deg, rgba(2, 8, 24, 0.88) 0%, rgba(2, 8, 24, 0.65) 42%, rgba(2, 8, 24, 0.15) 68%, transparent 100%),
-    url('assets/janmashtami_hero_krishna.jpg?v=20260820_07') right center / cover no-repeat;
+    url('assets/janmashtami_hero_krishna.jpg?v=20260820_09') right center / cover no-repeat;
   color: #FFFFFF;
   position: relative;
   overflow: hidden;
@@ -73,26 +73,22 @@ body {
   display: inline-flex;
   align-items: center;
   margin-bottom: 14px;
-  padding: 6px 14px;
-  background: linear-gradient(135deg, rgba(247, 202, 69, 0.15) 0%, rgba(3, 12, 34, 0.82) 100%);
-  border: 1.3px solid rgba(247, 202, 69, 0.55);
-  border-radius: 14px;
-  backdrop-filter: blur(12px);
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.65), inset 0 1px 1px rgba(247,202,69,0.4);
-  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .hero-brand-top-logo:hover {
-  transform: translateY(-2px) scale(1.03);
-  border-color: rgba(247, 202, 69, 0.95);
-  box-shadow: 0 0 25px rgba(247, 202, 69, 0.55), inset 0 1px 1px rgba(255,255,255,0.6);
+  transform: translateY(-2px) scale(1.05);
 }
 
 .hero-iskcon-logo-img {
-  height: clamp(48px, 4.5vw, 62px);
+  height: clamp(62px, 6vw, 80px);
   width: auto;
+  border-radius: 50%;
   object-fit: contain;
   display: block;
+  box-shadow: 0 4px 22px rgba(0, 0, 0, 0.8), 0 0 22px rgba(247, 202, 69, 0.45);
+  border: 2px solid rgba(247, 202, 69, 0.85);
+  background: #FFFFFF;
 }
 
 /* Hero Krishna Image — visible on mobile, hidden on desktop */
@@ -1980,110 +1976,136 @@ body {
   }
 }
 
-/* ── MOBILE (max 600px): 1 card per row, stacked table ── */
+/* ── MOBILE (max 600px): 2 cards per row compact grid, stacked table ── */
 @media (max-width: 600px) {
   .seva-tier-section-wrap {
-    padding: 40px 0 50px 0;
+    padding: 30px 0 40px 0;
   }
   .seva-top-enclosed-box {
-    padding: 42px 12px 20px 12px;
-    border-radius: 16px;
-    margin-bottom: 28px;
+    padding: 34px 10px 16px 10px;
+    border-radius: 14px;
+    margin-bottom: 24px;
   }
   .seva-top-pill-badge {
-    padding: 8px 20px;
-    font-size: 1rem;
-    top: -20px;
-    white-space: normal;
+    padding: 6px 18px;
+    font-size: 0.92rem;
+    top: -16px;
+    white-space: nowrap;
     text-align: center;
-    width: 80%;
-    line-height: 1.3;
+    line-height: 1.2;
   }
   .seva-top-cards-grid {
-    grid-template-columns: 1fr 1fr !important;
-    gap: 12px;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
   }
   .seva-top-cards-grid .seva-tier-card {
     grid-column: span 1 !important;
-    padding: 18px 10px 20px 10px;
+    padding: 12px 8px 12px 8px !important;
+    border-radius: 12px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .seva-top-cards-grid .seva-tier-card:nth-child(7) {
+    grid-column: 1 / span 2 !important;
+    max-width: 240px;
+    margin: 0 auto;
+    width: 100%;
   }
   .seva-card-sub-label {
     font-size: 0.72rem;
-    min-height: 32px;
+    line-height: 1.22;
+    min-height: 26px;
+    margin-bottom: 2px;
   }
   .seva-card-amount-val {
-    font-size: 1.35rem;
+    font-size: 1.18rem;
+    font-weight: 800;
+    margin: 3px 0 6px 0;
   }
   .seva-card-donate-btn {
-    font-size: 0.78rem;
-    padding: 9px 14px;
+    font-size: 0.72rem;
+    padding: 7px 6px;
     width: 100%;
+    border-radius: 20px;
+    font-weight: 800;
+    letter-spacing: 0.02em;
   }
   /* Bottom Table: Stack each row as card */
   .seva-bottom-table-box {
-    padding: 22px 12px 18px 12px;
+    padding: 18px 10px 16px 10px;
     max-width: 100%;
-    border-radius: 16px;
+    border-radius: 14px;
   }
   .seva-table-rows-list {
-    gap: 10px;
+    gap: 8px;
   }
   .seva-table-row-item {
     grid-template-columns: 1fr;
     gap: 0;
     background: #F4F0E8;
-    border-radius: 12px;
-    padding: 12px;
+    border-radius: 10px;
+    padding: 10px;
     border: 1px solid rgba(247, 202, 69, 0.3);
     overflow: hidden;
   }
   .seva-row-col-label {
     background: #04122B;
     color: #FFE8A3;
-    border-radius: 8px 8px 0 0;
-    font-size: 0.8rem;
-    padding: 10px 12px;
+    border-radius: 6px 6px 0 0;
+    font-size: 0.78rem;
+    padding: 8px 10px;
     text-align: center;
   }
   .seva-row-col-amount {
     background: linear-gradient(90deg, #D4902B 0%, #BA771E 100%);
     border-radius: 0;
-    font-size: 1.1rem;
-    padding: 10px 12px;
+    font-size: 1.05rem;
+    padding: 8px 10px;
     justify-content: center;
   }
   .seva-row-col-btn {
-    border-radius: 0 0 8px 8px;
-    padding: 11px 12px;
-    font-size: 0.88rem;
+    border-radius: 0 0 6px 6px;
+    padding: 9px 10px;
+    font-size: 0.82rem;
     justify-content: center;
   }
   .seva-actions-sub-text {
-    font-size: 0.82rem;
+    font-size: 0.80rem;
   }
   .seva-contribute-cta-btn {
-    padding: 12px 28px;
-    font-size: 1rem;
+    padding: 11px 24px;
+    font-size: 0.95rem;
     width: 100%;
     text-align: center;
   }
   .seva-csr-query-note {
-    font-size: 0.72rem;
+    font-size: 0.70rem;
   }
   .seva-csr-email-link {
-    font-size: 0.85rem;
+    font-size: 0.82rem;
   }
 }
 
-/* ── VERY SMALL MOBILE (max 380px) ── */
+/* ── VERY SMALL MOBILE (max 380px): maintain clean 2-col ── */
 @media (max-width: 380px) {
   .seva-top-cards-grid {
-    grid-template-columns: 1fr !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 6px !important;
   }
   .seva-top-pill-badge {
-    font-size: 0.9rem;
-    padding: 7px 16px;
-    width: 85%;
+    font-size: 0.85rem;
+    padding: 5px 14px;
+  }
+  .seva-card-sub-label {
+    font-size: 0.68rem;
+  }
+  .seva-card-amount-val {
+    font-size: 1.08rem;
+  }
+  .seva-card-donate-btn {
+    font-size: 0.68rem;
+    padding: 6px 4px;
   }
 }
 
@@ -2214,32 +2236,40 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 4px 14px;
-    gap: 14px;
+    gap: 12px;
   }
   .sticky-msg-block {
+    display: flex;
+    align-items: center;
     gap: 10px;
     text-align: left;
+    min-width: 0;
   }
   .sticky-msg-block span.sticky-clock-icon {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+    flex-shrink: 0;
   }
   .sticky-msg-title {
     font-size: 0.95rem;
-    line-height: 1.3;
+    line-height: 1.2;
     font-family: 'Noto Serif Devanagari', serif;
+    font-weight: 700;
+    white-space: nowrap !important;
   }
   .sticky-msg-sub {
     display: none;
   }
   .sticky-action-button {
-    padding: 10px 20px;
-    font-size: 0.84rem;
+    padding: 9px 18px;
+    font-size: 0.82rem;
     letter-spacing: 0.03em;
     flex-shrink: 0;
+    white-space: nowrap;
+    border-radius: 25px;
   }
 }
 
-/* Mobile (max 540px): title + DONATE NOW compact */
+/* Mobile (max 540px): title + DONATE NOW strictly 1 line */
 @media (max-width: 540px) {
   .clean-features-2x2-grid {
     grid-template-columns: 1fr;
@@ -2257,29 +2287,37 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 4px 10px;
-    gap: 10px;
+    padding: 4px 8px;
+    gap: 8px;
   }
   .sticky-msg-block {
-    gap: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
     text-align: left;
+    min-width: 0;
   }
   .sticky-msg-block span.sticky-clock-icon {
-    font-size: 1.3rem;
+    font-size: 1.15rem;
+    flex-shrink: 0;
   }
   .sticky-msg-title {
-    font-size: 0.84rem;
-    line-height: 1.25;
+    font-size: clamp(0.70rem, 2.7vw, 0.85rem);
+    line-height: 1.2;
     font-family: 'Noto Serif Devanagari', serif;
+    font-weight: 700;
+    white-space: nowrap !important;
   }
   .sticky-msg-sub {
     display: none;
   }
   .sticky-action-button {
-    padding: 8px 14px;
-    font-size: 0.78rem;
+    padding: 7px 12px;
+    font-size: 0.74rem;
     letter-spacing: 0.02em;
     flex-shrink: 0;
+    white-space: nowrap;
+    border-radius: 20px;
   }
 }
 
@@ -2292,7 +2330,7 @@ body {
   .hero-full-bg-section {
     background:
       linear-gradient(90deg, rgba(2, 8, 24, 0.92) 0%, rgba(2, 8, 24, 0.72) 48%, rgba(2, 8, 24, 0.20) 78%, transparent 100%),
-      url('assets/janmashtami_hero_krishna.jpg?v=20260820_07') 82% center / cover no-repeat;
+      url('assets/janmashtami_hero_krishna.jpg?v=20260820_09') 82% center / cover no-repeat;
     padding: 26px 0 22px 0;
   }
   .hero-content-left { max-width: 480px; }
@@ -2362,12 +2400,13 @@ body {
   .hero-full-bg-section {
     background:
       linear-gradient(180deg, rgba(2, 8, 24, 0.60) 0%, rgba(2, 8, 24, 0.28) 25%, rgba(2, 8, 24, 0.65) 60%, rgba(2, 7, 22, 0.98) 100%),
-      url('assets/janmashtami_hero_krishna.jpg?v=20260820_07') 78% 18% / cover no-repeat;
+      url('assets/janmashtami_hero_krishna.jpg?v=20260820_09') 78% 18% / cover no-repeat;
     padding: 26px 0 20px 0;
     min-height: auto;
   }
   .hero-content-left { max-width: 100%; text-align: center; align-items: center; padding-bottom: 6px; }
   .hero-brand-top-logo { margin: 0 auto 12px auto; }
+  .hero-iskcon-logo-img { height: 68px !important; }
   .hero-eyebrow-text { justify-content: center; font-size: 1.05rem; }
   .hero-main-title { align-items: center; font-size: clamp(2.3rem, 5.5vw, 3rem); line-height: 1.2; }
   .hero-main-desc { margin-left: auto; margin-right: auto; text-align: center; max-width: 480px; font-size: 0.98rem; }
@@ -2383,12 +2422,12 @@ body {
 @media (max-width: 640px) {
   .hero-full-bg-section {
     background:
-      linear-gradient(180deg, rgba(2, 8, 24, 0.70) 0%, rgba(2, 8, 24, 0.22) 22%, rgba(2, 8, 24, 0.38) 48%, rgba(2, 8, 24, 0.75) 75%, rgba(2, 7, 22, 0.98) 100%),
-      url('assets/janmashtami_hero_krishna.jpg?v=20260820_07') 80% 20% / cover no-repeat;
+      linear-gradient(180deg, rgba(2, 8, 24, 0.70) 0%, rgba(2, 8, 24, 0.22) 22%, rgba(2, 8, 24, 0.38) 48%, rgba(2, 7, 22, 0.98) 100%),
+      url('assets/janmashtami_hero_krishna.jpg?v=20260820_09') 80% 20% / cover no-repeat;
     padding: 18px 0 16px 0;
   }
-  .hero-brand-top-logo { margin: 0 auto 8px auto; padding: 5px 14px; }
-  .hero-iskcon-logo-img { height: 48px !important; }
+  .hero-brand-top-logo { margin: 0 auto 8px auto; }
+  .hero-iskcon-logo-img { height: 58px !important; }
   .hero-eyebrow-text { font-size: 0.90rem; font-weight: 700; margin-bottom: 6px; }
   .hero-main-title { font-size: 2.15rem !important; line-height: 1.18; margin-bottom: 8px; }
   .hero-main-desc { 
@@ -2476,12 +2515,12 @@ body {
 @media (max-width: 480px) {
   .hero-full-bg-section {
     background:
-      linear-gradient(180deg, rgba(2, 8, 24, 0.68) 0%, rgba(2, 8, 24, 0.20) 20%, rgba(2, 8, 24, 0.36) 46%, rgba(2, 8, 24, 0.78) 72%, rgba(2, 7, 22, 0.98) 100%),
-      url('assets/janmashtami_hero_krishna.jpg?v=20260820_07') 80% 18% / cover no-repeat;
+      linear-gradient(180deg, rgba(2, 8, 24, 0.68) 0%, rgba(2, 8, 24, 0.20) 20%, rgba(2, 8, 24, 0.36) 46%, rgba(2, 7, 22, 0.98) 100%),
+      url('assets/janmashtami_hero_krishna.jpg?v=20260820_09') 80% 18% / cover no-repeat;
     padding: 16px 0 14px 0;
   }
-  .hero-brand-top-logo { margin: 0 auto 6px auto; padding: 5px 12px; }
-  .hero-iskcon-logo-img { height: 44px !important; }
+  .hero-brand-top-logo { margin: 0 auto 6px auto; }
+  .hero-iskcon-logo-img { height: 52px !important; }
   .hero-eyebrow-text { font-size: 0.84rem; font-weight: 700; margin-bottom: 5px; }
   .hero-main-title { font-size: 1.95rem !important; line-height: 1.16; margin-bottom: 6px; }
   .hero-main-desc { 
@@ -2575,7 +2614,7 @@ body {
     <div class="hero-content-left">
       
       <div class="hero-brand-top-logo">
-        <img src="assets/iskcon_kanpur_gold_logo.png" alt="ISKCON Kanpur" class="hero-iskcon-logo-img">
+        <img src="assets/iskcon_kanpur_official_circle.png?v=20260820_09" alt="ISKCON Kanpur" class="hero-iskcon-logo-img">
       </div>
       
       <div class="hero-eyebrow-text" id="heroEyebrow">
@@ -3420,12 +3459,6 @@ body {
           <input type="email" id="modalDonorEmail" class="modal-text-input" placeholder="you@example.com" required>
         </div>
         
-        <!-- Gotra & Dedication (Optional) -->
-        <div class="modal-form-group">
-          <label class="modal-field-label">Gotra / Dedication <span style="color:#64748B; font-weight:400;">(optional for sankalp)</span></label>
-          <input type="text" id="modalDonorGotra" class="modal-text-input" placeholder="Your Gotra or in memory of..">
-        </div>
-        
         <!-- Submit Button -->
         <button type="submit" class="modal-submit-pay-btn" id="modalSubmitPayBtn">
           <span>Proceed to Pay</span>
@@ -3740,7 +3773,7 @@ async function initiateRazorpayPayment() {
   const name = document.getElementById('modalDonorName').value.trim();
   const phone = document.getElementById('modalDonorPhone').value.trim();
   const email = document.getElementById('modalDonorEmail').value.trim();
-  const gotra = document.getElementById('modalDonorGotra').value.trim();
+  const gotra = document.getElementById('modalDonorGotra')?.value?.trim() || '';
   
   if (!name || !phone || !email) {
     alert('Please enter your full name, phone number, and email.');
